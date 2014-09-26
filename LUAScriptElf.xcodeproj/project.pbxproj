@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA3C64679D30465E833A548D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
+		AB0ED80A19D55B7400F3A18A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
+		AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
+		AB0ED81019D570ED00F3A18A /* LUAScripEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */; };
+		AB0ED82319D582A700F3A18A /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED82219D582A700F3A18A /* GraphicsServices.framework */; };
+		AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
+		AB0ED82919D584A600F3A18A /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82719D584A600F3A18A /* UIFakeTouch.m */; };
+		AB4EA30B19D53C7C005F1AF5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */; };
+		AB4EA31719D53C7C005F1AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4EA31619D53C7C005F1AF5 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		76CBE73ACC174A8987D20574 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AB0ED80919D55B7400F3A18A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AB0ED80B19D56FAB00F3A18A /* LuaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaManager.h; sourceTree = "<group>"; };
+		AB0ED80C19D56FAB00F3A18A /* LuaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaManager.m; sourceTree = "<group>"; };
+		AB0ED80E19D570ED00F3A18A /* LUAScripEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAScripEngine.h; sourceTree = "<group>"; };
+		AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAScripEngine.m; sourceTree = "<group>"; };
+		AB0ED81319D582A700F3A18A /* Availability2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Availability2.h; sourceTree = "<group>"; };
+		AB0ED81419D582A700F3A18A /* GraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsServices.h; sourceTree = "<group>"; };
+		AB0ED81519D582A700F3A18A /* GSBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBase.h; sourceTree = "<group>"; };
+		AB0ED81619D582A700F3A18A /* GSCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSCapability.h; sourceTree = "<group>"; };
+		AB0ED81719D582A700F3A18A /* GSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSColor.h; sourceTree = "<group>"; };
+		AB0ED81819D582A700F3A18A /* GSEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSEvent.h; sourceTree = "<group>"; };
+		AB0ED81919D582A700F3A18A /* GSFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSFont.h; sourceTree = "<group>"; };
+		AB0ED81A19D582A700F3A18A /* GSGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSGeometry.h; sourceTree = "<group>"; };
+		AB0ED81B19D582A700F3A18A /* GSHeartbeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHeartbeat.h; sourceTree = "<group>"; };
+		AB0ED81C19D582A700F3A18A /* GSHiccup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSHiccup.h; sourceTree = "<group>"; };
+		AB0ED81D19D582A700F3A18A /* GSKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSKeyboard.h; sourceTree = "<group>"; };
+		AB0ED81E19D582A700F3A18A /* GSMainScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMainScreen.h; sourceTree = "<group>"; };
+		AB0ED81F19D582A700F3A18A /* GSMaps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSMaps.h; sourceTree = "<group>"; };
+		AB0ED82019D582A700F3A18A /* GSStatusBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSStatusBar.h; sourceTree = "<group>"; };
+		AB0ED82119D582A700F3A18A /* GSWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSWindow.h; sourceTree = "<group>"; };
+		AB0ED82219D582A700F3A18A /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GraphicsServices.framework; sourceTree = "<group>"; };
+		AB0ED82419D584A600F3A18A /* UIFakeKeypress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFakeKeypress.h; sourceTree = "<group>"; };
+		AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFakeKeypress.m; sourceTree = "<group>"; };
+		AB0ED82619D584A600F3A18A /* UIFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFakeTouch.h; sourceTree = "<group>"; };
+		AB0ED82719D584A600F3A18A /* UIFakeTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFakeTouch.m; sourceTree = "<group>"; };
+		AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimulateTouch.xcodeproj; path = ../../../../../Desktop/SimulateTouch/SimulateTouch.xcodeproj; sourceTree = "<group>"; };
+		AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LUAScriptElf; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		AB4EA30F19D53C7C005F1AF5 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		AB4EA31019D53C7C005F1AF5 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		AB4EA31219D53C7C005F1AF5 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		AB4EA31519D53C7C005F1AF5 /* 0xdeadfa11 */ = {isa = PBXFileReference; lastKnownFileType = text; name = 0xdeadfa11; path = Package/usr/bin/0xdeadfa11; sourceTree = "<group>"; };
+		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AB4EA30419D53C7C005F1AF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0ED80A19D55B7400F3A18A /* Foundation.framework in Frameworks */,
+				AB4EA30B19D53C7C005F1AF5 /* CoreFoundation.framework in Frameworks */,
+				AA3C64679D30465E833A548D /* libPods.a in Frameworks */,
+				AB0ED82319D582A700F3A18A /* GraphicsServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AB0ED81119D582A700F3A18A /* Private Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB0ED81219D582A700F3A18A /* GraphicsServices */,
+				AB0ED82219D582A700F3A18A /* GraphicsServices.framework */,
+			);
+			path = "Private Frameworks";
+			sourceTree = "<group>";
+		};
+		AB0ED81219D582A700F3A18A /* GraphicsServices */ = {
+			isa = PBXGroup;
+			children = (
+				AB0ED81319D582A700F3A18A /* Availability2.h */,
+				AB0ED81419D582A700F3A18A /* GraphicsServices.h */,
+				AB0ED81519D582A700F3A18A /* GSBase.h */,
+				AB0ED81619D582A700F3A18A /* GSCapability.h */,
+				AB0ED81719D582A700F3A18A /* GSColor.h */,
+				AB0ED81819D582A700F3A18A /* GSEvent.h */,
+				AB0ED81919D582A700F3A18A /* GSFont.h */,
+				AB0ED81A19D582A700F3A18A /* GSGeometry.h */,
+				AB0ED81B19D582A700F3A18A /* GSHeartbeat.h */,
+				AB0ED81C19D582A700F3A18A /* GSHiccup.h */,
+				AB0ED81D19D582A700F3A18A /* GSKeyboard.h */,
+				AB0ED81E19D582A700F3A18A /* GSMainScreen.h */,
+				AB0ED81F19D582A700F3A18A /* GSMaps.h */,
+				AB0ED82019D582A700F3A18A /* GSStatusBar.h */,
+				AB0ED82119D582A700F3A18A /* GSWindow.h */,
+			);
+			path = GraphicsServices;
+			sourceTree = "<group>";
+		};
+		AB0ED84119D585FD00F3A18A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB4EA2FE19D53C7C005F1AF5 = {
+			isa = PBXGroup;
+			children = (
+				AB4EA30C19D53C7C005F1AF5 /* LUAScriptElf */,
+				AB4EA30919D53C7C005F1AF5 /* Frameworks */,
+				AB4EA30819D53C7C005F1AF5 /* Products */,
+				76CBE73ACC174A8987D20574 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		AB4EA30819D53C7C005F1AF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB0ED80919D55B7400F3A18A /* Foundation.framework */,
+				AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */,
+				BBA5C5340ABE4C539214A501 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB4EA30C19D53C7C005F1AF5 /* LUAScriptElf */ = {
+			isa = PBXGroup;
+			children = (
+				AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */,
+				AB4EA31619D53C7C005F1AF5 /* main.m */,
+				AB0ED82419D584A600F3A18A /* UIFakeKeypress.h */,
+				AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */,
+				AB0ED82619D584A600F3A18A /* UIFakeTouch.h */,
+				AB0ED82719D584A600F3A18A /* UIFakeTouch.m */,
+				AB0ED80E19D570ED00F3A18A /* LUAScripEngine.h */,
+				AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */,
+				AB0ED80B19D56FAB00F3A18A /* LuaManager.h */,
+				AB0ED80C19D56FAB00F3A18A /* LuaManager.m */,
+				AB0ED81119D582A700F3A18A /* Private Frameworks */,
+				AB4EA30D19D53C7C005F1AF5 /* Package */,
+				AB4EA31119D53C7C005F1AF5 /* Supporting Files */,
+			);
+			path = LUAScriptElf;
+			sourceTree = "<group>";
+		};
+		AB4EA30D19D53C7C005F1AF5 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA30E19D53C7C005F1AF5 /* DEBIAN */,
+				AB4EA31319D53C7C005F1AF5 /* usr */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		AB4EA30E19D53C7C005F1AF5 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA30F19D53C7C005F1AF5 /* control.txt */,
+				AB4EA31019D53C7C005F1AF5 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		AB4EA31119D53C7C005F1AF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA31219D53C7C005F1AF5 /* PackageVersion.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB4EA31319D53C7C005F1AF5 /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA31419D53C7C005F1AF5 /* bin */,
+			);
+			name = usr;
+			sourceTree = "<group>";
+		};
+		AB4EA31419D53C7C005F1AF5 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				AB4EA31519D53C7C005F1AF5 /* 0xdeadfa11 */,
+			);
+			name = bin;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB4EA31A19D53C7C005F1AF5 /* Build configuration list for PBXNativeTarget "LUAScriptElf" */;
+			buildPhases = (
+				96D0525E3EFE472984DB71FC /* Check Pods Manifest.lock */,
+				AB4EA30319D53C7C005F1AF5 /* Sources */,
+				AB4EA30419D53C7C005F1AF5 /* Frameworks */,
+				AB4EA30519D53C7C005F1AF5 /* ShellScript */,
+				5F033ED9F300405EAE644B52 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LUAScriptElf;
+			productName = LUAScriptElf;
+			productReference = AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AB4EA2FF19D53C7C005F1AF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = AB4EA30219D53C7C005F1AF5 /* Build configuration list for PBXProject "LUAScriptElf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AB4EA2FE19D53C7C005F1AF5;
+			productRefGroup = AB4EA30819D53C7C005F1AF5 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = AB0ED84119D585FD00F3A18A /* Products */;
+					ProjectRef = AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F033ED9F300405EAE644B52 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		96D0525E3EFE472984DB71FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4EA30519D53C7C005F1AF5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AB4EA30319D53C7C005F1AF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */,
+				AB0ED82919D584A600F3A18A /* UIFakeTouch.m in Sources */,
+				AB0ED81019D570ED00F3A18A /* LUAScripEngine.m in Sources */,
+				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
+				AB4EA31719D53C7C005F1AF5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB4EA31819D53C7C005F1AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		AB4EA31919D53C7C005F1AF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		AB4EA31B19D53C7C005F1AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76CBE73ACC174A8987D20574 /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LUAScriptElf/Private",
+					Frameworks,
+				);
+				INSTALL_PATH = /usr/bin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 10.2.9.220;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		AB4EA31C19D53C7C005F1AF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76CBE73ACC174A8987D20574 /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LUAScriptElf/Private",
+					Frameworks,
+				);
+				INSTALL_PATH = /usr/bin;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 10.2.9.220;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AB4EA30219D53C7C005F1AF5 /* Build configuration list for PBXProject "LUAScriptElf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4EA31819D53C7C005F1AF5 /* Debug */,
+				AB4EA31919D53C7C005F1AF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB4EA31A19D53C7C005F1AF5 /* Build configuration list for PBXNativeTarget "LUAScriptElf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB4EA31B19D53C7C005F1AF5 /* Debug */,
+				AB4EA31C19D53C7C005F1AF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AB4EA2FF19D53C7C005F1AF5 /* Project object */;
+}
