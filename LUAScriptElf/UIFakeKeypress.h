@@ -8,8 +8,5 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface UIFakeKeypress : NSObject
 
-- (void)sendKeypressForString:(NSString *)string;
-
-@end
+void sendKeypressForString(NSString *string);

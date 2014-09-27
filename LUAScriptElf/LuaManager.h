@@ -9,8 +9,9 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
-
 @interface LuaManager : NSObject
+
++ (instancetype)shareInstance;
 
 - (void)runCodeFromString:(NSString *)code;
 - (void)runCodeFromFileWithPath:(NSString *)path;

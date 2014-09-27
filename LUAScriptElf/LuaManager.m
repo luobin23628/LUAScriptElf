@@ -17,6 +17,15 @@
 
 @implementation LuaManager
 
++ (instancetype)shareInstance {
+    static LuaManager *shareInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareInstance = [[LuaManager alloc] init];
+    });
+    return shareInstance;
+}
+
 - (lua_State *)state {
     if (!_state) {
         _state = luaL_newstate();

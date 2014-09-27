@@ -7,10 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A81E431F19D6F477005C7758 /* entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = A81E431E19D6F477005C7758 /* entitlements.plist */; };
+		A81E432219D6FC26005C7758 /* fifa15NoobPackage.lua in Resources */ = {isa = PBXBuildFile; fileRef = A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */; };
+		A81E432419D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A81E432319D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png */; };
+		A833FF0119D6C5BE00CF9F7E /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */; };
+		A833FF0219D6CD0A00CF9F7E /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */; };
+		A89BFC0619D650EF00DDC568 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BFC0519D650EF00DDC568 /* AppUtil.m */; };
+		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
+		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
+		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
+		A8F6D75619D6795F00B549D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
+		A8F6D75719D6795F00B549D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7865719D677A8003D7645 /* CoreGraphics.framework */; };
+		A8F6D75819D6795F00B549D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
+		A8F6D75E19D6796000B549D0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D75C19D6796000B549D0 /* InfoPlist.strings */; };
+		A8F6D76019D6796000B549D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D75F19D6796000B549D0 /* main.m */; };
+		A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76319D6796000B549D0 /* AppDelegate.m */; };
+		A8F6D76719D6796000B549D0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */; };
+		A8F6D76A19D6796000B549D0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76819D6796000B549D0 /* Main_iPad.storyboard */; };
+		A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76C19D6796000B549D0 /* ViewController.m */; };
+		A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76E19D6796000B549D0 /* Images.xcassets */; };
+		A8FD460319D67D2100EF2C6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
+		A8FD460419D67D6400EF2C6D /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BFC0519D650EF00DDC568 /* AppUtil.m */; };
+		A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
+		A8FD460619D67D6900EF2C6D /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82719D584A600F3A18A /* UIFakeTouch.m */; };
+		A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
+		A8FD460819D67D6D00EF2C6D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
+		A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
+		A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
+		A8FD460B19D67DAE00EF2C6D /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED82219D582A700F3A18A /* GraphicsServices.framework */; };
+		A8FD460C19D6836A00EF2C6D /* test.lua in Resources */ = {isa = PBXBuildFile; fileRef = A8D7865019D675EE003D7645 /* test.lua */; };
+		A8FD460F19D6984300EF2C6D /* HIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD460E19D6984300EF2C6D /* HIDManager.m */; };
+		A8FD461019D6984300EF2C6D /* HIDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A8FD460E19D6984300EF2C6D /* HIDManager.m */; };
 		AA3C64679D30465E833A548D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
 		AB0ED80A19D55B7400F3A18A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
 		AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
-		AB0ED81019D570ED00F3A18A /* LUAScripEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */; };
+		AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
 		AB0ED82319D582A700F3A18A /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED82219D582A700F3A18A /* GraphicsServices.framework */; };
 		AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
 		AB0ED82919D584A600F3A18A /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82719D584A600F3A18A /* UIFakeTouch.m */; };
@@ -20,11 +51,39 @@
 
 /* Begin PBXFileReference section */
 		76CBE73ACC174A8987D20574 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A81E431E19D6F477005C7758 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
+		A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15NoobPackage.lua; sourceTree = "<group>"; };
+		A81E432319D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screenshot 2014.09.27 23.50.09@2x.png"; path = "../LUAScriptElf/Private Frameworks/Screenshot 2014.09.27 23.50.09@2x.png"; sourceTree = "<group>"; };
+		A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../opt/theos/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
+		A89BFC0419D650EF00DDC568 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		A89BFC0519D650EF00DDC568 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		A89BFC0719D6710500DDC568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A89D202619D59E1D0049153D /* UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAddition.h; sourceTree = "<group>"; };
+		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
+		A89D202919D5B3020049153D /* UIColorAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAddition.h; sourceTree = "<group>"; };
+		A89D202A19D5B3020049153D /* UIColorAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAddition.m; sourceTree = "<group>"; };
+		A8D7865019D675EE003D7645 /* test.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
+		A8D7865719D677A8003D7645 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A8D7867619D677A8003D7645 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A8F6D75519D6795F00B549D0 /* TestLUA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLUA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8F6D75B19D6795F00B549D0 /* TestLUA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestLUA-Info.plist"; sourceTree = "<group>"; };
+		A8F6D75D19D6796000B549D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A8F6D75F19D6796000B549D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A8F6D76119D6796000B549D0 /* TestLUA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestLUA-Prefix.pch"; sourceTree = "<group>"; };
+		A8F6D76219D6796000B549D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A8F6D76319D6796000B549D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A8F6D76619D6796000B549D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		A8F6D76919D6796000B549D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		A8F6D76B19D6796000B549D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A8F6D76C19D6796000B549D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A8F6D76E19D6796000B549D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A8FD460D19D6984300EF2C6D /* HIDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDManager.h; sourceTree = "<group>"; };
+		A8FD460E19D6984300EF2C6D /* HIDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDManager.m; sourceTree = "<group>"; };
 		AB0ED80919D55B7400F3A18A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AB0ED80B19D56FAB00F3A18A /* LuaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LuaManager.h; sourceTree = "<group>"; };
 		AB0ED80C19D56FAB00F3A18A /* LuaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LuaManager.m; sourceTree = "<group>"; };
-		AB0ED80E19D570ED00F3A18A /* LUAScripEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAScripEngine.h; sourceTree = "<group>"; };
-		AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAScripEngine.m; sourceTree = "<group>"; };
+		AB0ED80E19D570ED00F3A18A /* LUAScripSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUAScripSupport.h; sourceTree = "<group>"; };
+		AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAScripSupport.m; sourceTree = "<group>"; };
 		AB0ED81319D582A700F3A18A /* Availability2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Availability2.h; sourceTree = "<group>"; };
 		AB0ED81419D582A700F3A18A /* GraphicsServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphicsServices.h; sourceTree = "<group>"; };
 		AB0ED81519D582A700F3A18A /* GSBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSBase.h; sourceTree = "<group>"; };
@@ -45,7 +104,6 @@
 		AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFakeKeypress.m; sourceTree = "<group>"; };
 		AB0ED82619D584A600F3A18A /* UIFakeTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFakeTouch.h; sourceTree = "<group>"; };
 		AB0ED82719D584A600F3A18A /* UIFakeTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFakeTouch.m; sourceTree = "<group>"; };
-		AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SimulateTouch.xcodeproj; path = ../../../../../Desktop/SimulateTouch/SimulateTouch.xcodeproj; sourceTree = "<group>"; };
 		AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LUAScriptElf; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		AB4EA30F19D53C7C005F1AF5 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -57,10 +115,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A8F6D75219D6795F00B549D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A833FF0119D6C5BE00CF9F7E /* libsimulatetouch.dylib in Frameworks */,
+				A8FD460B19D67DAE00EF2C6D /* GraphicsServices.framework in Frameworks */,
+				A8FD460319D67D2100EF2C6D /* libPods.a in Frameworks */,
+				A8F6D75719D6795F00B549D0 /* CoreGraphics.framework in Frameworks */,
+				A8F6D75819D6795F00B549D0 /* UIKit.framework in Frameworks */,
+				A8F6D75619D6795F00B549D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB4EA30419D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A833FF0219D6CD0A00CF9F7E /* libsimulatetouch.dylib in Frameworks */,
+				A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */,
 				AB0ED80A19D55B7400F3A18A /* Foundation.framework in Frameworks */,
 				AB4EA30B19D53C7C005F1AF5 /* CoreFoundation.framework in Frameworks */,
 				AA3C64679D30465E833A548D /* libPods.a in Frameworks */,
@@ -71,9 +144,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8F6D75919D6795F00B549D0 /* TestLUA */ = {
+			isa = PBXGroup;
+			children = (
+				A8F6D76219D6796000B549D0 /* AppDelegate.h */,
+				A8F6D76319D6796000B549D0 /* AppDelegate.m */,
+				A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */,
+				A8F6D76819D6796000B549D0 /* Main_iPad.storyboard */,
+				A8F6D76B19D6796000B549D0 /* ViewController.h */,
+				A8F6D76C19D6796000B549D0 /* ViewController.m */,
+				A8F6D76E19D6796000B549D0 /* Images.xcassets */,
+				A8F6D75A19D6795F00B549D0 /* Supporting Files */,
+			);
+			path = TestLUA;
+			sourceTree = "<group>";
+		};
+		A8F6D75A19D6795F00B549D0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8F6D75B19D6795F00B549D0 /* TestLUA-Info.plist */,
+				A8F6D75C19D6796000B549D0 /* InfoPlist.strings */,
+				A81E432319D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png */,
+				A8F6D75F19D6796000B549D0 /* main.m */,
+				A8F6D76119D6796000B549D0 /* TestLUA-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		AB0ED81119D582A700F3A18A /* Private Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A8FD460D19D6984300EF2C6D /* HIDManager.h */,
+				A8FD460E19D6984300EF2C6D /* HIDManager.m */,
 				AB0ED81219D582A700F3A18A /* GraphicsServices */,
 				AB0ED82219D582A700F3A18A /* GraphicsServices.framework */,
 			);
@@ -102,17 +204,11 @@
 			path = GraphicsServices;
 			sourceTree = "<group>";
 		};
-		AB0ED84119D585FD00F3A18A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		AB4EA2FE19D53C7C005F1AF5 = {
 			isa = PBXGroup;
 			children = (
 				AB4EA30C19D53C7C005F1AF5 /* LUAScriptElf */,
+				A8F6D75919D6795F00B549D0 /* TestLUA */,
 				AB4EA30919D53C7C005F1AF5 /* Frameworks */,
 				AB4EA30819D53C7C005F1AF5 /* Products */,
 				76CBE73ACC174A8987D20574 /* Pods.xcconfig */,
@@ -123,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */,
+				A8F6D75519D6795F00B549D0 /* TestLUA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,9 +227,13 @@
 		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */,
+				A89BFC0719D6710500DDC568 /* UIKit.framework */,
 				AB0ED80919D55B7400F3A18A /* Foundation.framework */,
 				AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */,
 				BBA5C5340ABE4C539214A501 /* libPods.a */,
+				A8D7865719D677A8003D7645 /* CoreGraphics.framework */,
+				A8D7867619D677A8003D7645 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,14 +241,21 @@
 		AB4EA30C19D53C7C005F1AF5 /* LUAScriptElf */ = {
 			isa = PBXGroup;
 			children = (
-				AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */,
+				A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */,
+				A8D7865019D675EE003D7645 /* test.lua */,
 				AB4EA31619D53C7C005F1AF5 /* main.m */,
+				A89BFC0419D650EF00DDC568 /* AppUtil.h */,
+				A89BFC0519D650EF00DDC568 /* AppUtil.m */,
 				AB0ED82419D584A600F3A18A /* UIFakeKeypress.h */,
 				AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */,
 				AB0ED82619D584A600F3A18A /* UIFakeTouch.h */,
 				AB0ED82719D584A600F3A18A /* UIFakeTouch.m */,
-				AB0ED80E19D570ED00F3A18A /* LUAScripEngine.h */,
-				AB0ED80F19D570ED00F3A18A /* LUAScripEngine.m */,
+				AB0ED80E19D570ED00F3A18A /* LUAScripSupport.h */,
+				AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */,
+				A89D202619D59E1D0049153D /* UIImageAddition.h */,
+				A89D202719D59E1D0049153D /* UIImageAddition.m */,
+				A89D202919D5B3020049153D /* UIColorAddition.h */,
+				A89D202A19D5B3020049153D /* UIColorAddition.m */,
 				AB0ED80B19D56FAB00F3A18A /* LuaManager.h */,
 				AB0ED80C19D56FAB00F3A18A /* LuaManager.m */,
 				AB0ED81119D582A700F3A18A /* Private Frameworks */,
@@ -179,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				AB4EA31219D53C7C005F1AF5 /* PackageVersion.plist */,
+				A81E431E19D6F477005C7758 /* entitlements.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -202,6 +311,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A8F6D75419D6795F00B549D0 /* TestLUA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8F6D78219D6796000B549D0 /* Build configuration list for PBXNativeTarget "TestLUA" */;
+			buildPhases = (
+				A8F6D75119D6795F00B549D0 /* Sources */,
+				A8F6D75219D6795F00B549D0 /* Frameworks */,
+				A8F6D75319D6795F00B549D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TestLUA;
+			productName = TestLUA;
+			productReference = A8F6D75519D6795F00B549D0 /* TestLUA.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB4EA31A19D53C7C005F1AF5 /* Build configuration list for PBXNativeTarget "LUAScriptElf" */;
@@ -211,6 +337,7 @@
 				AB4EA30419D53C7C005F1AF5 /* Frameworks */,
 				AB4EA30519D53C7C005F1AF5 /* ShellScript */,
 				5F033ED9F300405EAE644B52 /* Copy Pods Resources */,
+				A81E432019D6F858005C7758 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -235,22 +362,36 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = AB4EA2FE19D53C7C005F1AF5;
 			productRefGroup = AB4EA30819D53C7C005F1AF5 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = AB0ED84119D585FD00F3A18A /* Products */;
-					ProjectRef = AB0ED84019D585FD00F3A18A /* SimulateTouch.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */,
+				A8F6D75419D6795F00B549D0 /* TestLUA */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8F6D75319D6795F00B549D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A81E431F19D6F477005C7758 /* entitlements.plist in Resources */,
+				A8FD460C19D6836A00EF2C6D /* test.lua in Resources */,
+				A8F6D76A19D6796000B549D0 /* Main_iPad.storyboard in Resources */,
+				A81E432419D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png in Resources */,
+				A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */,
+				A8F6D76719D6796000B549D0 /* Main_iPhone.storyboard in Resources */,
+				A8F6D75E19D6796000B549D0 /* InfoPlist.strings in Resources */,
+				A81E432219D6FC26005C7758 /* fifa15NoobPackage.lua in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		5F033ED9F300405EAE644B52 /* Copy Pods Resources */ = {
@@ -283,6 +424,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A81E432019D6F858005C7758 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "dst=${SRCROOT}/LUAScriptElf/Package/usr/bin/LUAScriptElf\nentitPath=${SRCROOT}/LUAScriptElf/entitlements.plist\nldid -S${entitPath} ${dst}";
+		};
 		AB4EA30519D53C7C005F1AF5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -299,21 +453,189 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A8F6D75119D6795F00B549D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FD460619D67D6900EF2C6D /* UIFakeTouch.m in Sources */,
+				A8FD460819D67D6D00EF2C6D /* UIImageAddition.m in Sources */,
+				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
+				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
+				A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */,
+				A8FD461019D6984300EF2C6D /* HIDManager.m in Sources */,
+				A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */,
+				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
+				A8F6D76019D6796000B549D0 /* main.m in Sources */,
+				A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */,
+				A8FD460419D67D6400EF2C6D /* AppUtil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB4EA30319D53C7C005F1AF5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */,
+				A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */,
 				AB0ED82919D584A600F3A18A /* UIFakeTouch.m in Sources */,
-				AB0ED81019D570ED00F3A18A /* LUAScripEngine.m in Sources */,
+				A89BFC0619D650EF00DDC568 /* AppUtil.m in Sources */,
+				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
 				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
+				A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */,
+				A8FD460F19D6984300EF2C6D /* HIDManager.m in Sources */,
 				AB4EA31719D53C7C005F1AF5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		A8F6D75C19D6796000B549D0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8F6D75D19D6796000B549D0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8F6D76619D6796000B549D0 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		A8F6D76819D6796000B549D0 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8F6D76919D6796000B549D0 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		A8F6D78319D6796000B549D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LUAScriptElf/Private",
+					Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestLUA/TestLUA-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					"COCOAPODS=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					/opt/thoes/include,
+				);
+				INFOPLIST_FILE = "TestLUA/TestLUA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					/opt/theos/lib,
+				);
+				OTHER_CFLAGS = (
+					"-isystem",
+					"\"${PODS_ROOT}/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/lua\"",
+				);
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A8F6D78419D6796000B549D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LUAScriptElf/Private",
+					Frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestLUA/TestLUA-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = "COCOAPODS=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					/opt/thoes/include,
+				);
+				INFOPLIST_FILE = "TestLUA/TestLUA-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+					/opt/theos/lib,
+				);
+				OTHER_CFLAGS = (
+					"-isystem",
+					"\"${PODS_ROOT}/Headers\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/lua\"",
+				);
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		AB4EA31819D53C7C005F1AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -335,8 +657,11 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"/opt/thoes/include/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -360,8 +685,11 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"/opt/thoes/include/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,21 +702,32 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76CBE73ACC174A8987D20574 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LUAScriptElf/Private",
 					Frameworks,
 				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					"$(iOSOpenDevPath)/include",
+				);
 				INSTALL_PATH = /usr/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/theos/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.9.220;
+				iOSOpenDevDevice = 192.168.1.102;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
-				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevRespringOnInstall = NO;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
 			name = Debug;
@@ -397,21 +736,32 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 76CBE73ACC174A8987D20574 /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = armv7;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LUAScriptElf/Private",
 					Frameworks,
 				);
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					"$(iOSOpenDevPath)/include",
+				);
 				INSTALL_PATH = /usr/bin;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/theos/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.9.220;
+				iOSOpenDevDevice = 192.168.1.102;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
-				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevRespringOnInstall = NO;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
 			name = Release;
@@ -419,6 +769,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A8F6D78219D6796000B549D0 /* Build configuration list for PBXNativeTarget "TestLUA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8F6D78319D6796000B549D0 /* Debug */,
+				A8F6D78419D6796000B549D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AB4EA30219D53C7C005F1AF5 /* Build configuration list for PBXProject "LUAScriptElf" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

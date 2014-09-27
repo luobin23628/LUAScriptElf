@@ -10,9 +10,7 @@
 
 @end
 
-@implementation UIFakeKeypress
-
-- (void)sendKeypressForString:(NSString *)string {
+void sendKeypressForString(NSString *string) {
     UIKeyboard *keyboard = [UIKeyboard activeKeyboard];
     if (keyboard) {
         for (int i=0; i<string.length; i++) {
@@ -22,4 +20,3 @@
         }
     }
 }
-@end
