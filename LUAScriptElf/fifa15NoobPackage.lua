@@ -4,7 +4,7 @@
 function click(x, y)
 	local r = touchDown(0, x, y)
 	mSleep(100)
-	touchUp(r)
+	touchUp(r, x, y)
 end
 
 function move(x1, y1, x2, y2)
@@ -608,6 +608,16 @@ function main()
     local  minRatting = tonumber(minRattingStr);
     local  minMoney = tonumber(minMoneyStr);
     local  backup = (backupStr == "是")
+    
+    if not minRatting then
+        minRatting = 80;
+    end
+    if not minMoney then
+        minMoney = 4000;
+    end    
+    if not backup then
+        backup = true;
+    end
 
     local findGoodPlayer = false;
 
@@ -624,7 +634,7 @@ function main()
 	mSleep(1000);	
 
 	if not findGoodPlayer then
-		--clearAppData();
+		clearAppData();
 	end
 	mSleep(1000);
 	appRun("com.ea.fifa15.bv");

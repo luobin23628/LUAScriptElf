@@ -19,7 +19,9 @@
 #import "HIDManager.h"
 #import <SimulateTouch.h>
 
+static BOOL keepScreen;
 static NSInteger rotateDegree;
+
 static void rotatePosition(CGFloat *x, CGFloat *y) {
     CGRect bounds = [UIScreen mainScreen].bounds;
     CGFloat scale = [UIScreen mainScreen].scale;
@@ -32,28 +34,38 @@ static void rotatePosition(CGFloat *x, CGFloat *y) {
         {
             CGFloat tempX = *x;
             *x = *y;
-            *y = height - tempX;
+            *y = height - tempX - 1;
             break;
         }
             break;
         case -90:
         {
             CGFloat tempX = *x;
-            *x = width - *y;
+            *x = width - (*y) - 1;
             *y = tempX;
             break;
         }
-            
+        
         case 180:
         {
-            *x = width - *x;
-            *y = height - *y;
+            *x = width - (*x) - 1;
+            *y = height - (*y) - 1;
             break;
         }
             break;
         case 0:
         default:
             break;
+    }
+}
+
+static UIImage *getScreenUIImage() {
+    @autoreleasepool {
+        static UIImage *image = nil;
+        if (!image || !keepScreen) {
+            image = [UIImage screenshot];
+        }
+        return image;
     }
 }
 
@@ -159,7 +171,8 @@ static int l_touchDown(lua_State *L) {
         CGFloat y = lua_tonumber(L, 3);
         rotatePosition(&x, &y);
         
-        CGPoint point = CGPointMake(x, y);
+        CGFloat scale = [UIScreen mainScreen].scale;
+        CGPoint point = CGPointMake(x/scale, y/scale);
         int r = [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchDown];
         lua_pushinteger(L, r);
     }
@@ -184,8 +197,10 @@ static int l_touchUp(lua_State *L) {
         NSInteger ID = lua_tointeger(L, 1);
         CGFloat x = lua_tonumber(L, 2);
         CGFloat y = lua_tonumber(L, 3);
+        rotatePosition(&x, &y);
         
-        CGPoint point = CGPointMake(x, y);
+        CGFloat scale = [UIScreen mainScreen].scale;
+        CGPoint point = CGPointMake(x/scale, y/scale);
         [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchUp];
     }
     return 0;
@@ -222,7 +237,7 @@ static int l_getColor(lua_State *L) {
         CGFloat y = lua_tonumber(L, 2);
         rotatePosition(&x, &y);
         
-        UIImage *image = [UIImage screenshot];
+        UIImage *image = getScreenUIImage();
         
         UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
         unsigned char components[4];
@@ -243,21 +258,17 @@ static int l_getColorRGB(lua_State *L) {
         CGFloat y = lua_tonumber(L, 2);
         rotatePosition(&x, &y);
         
-        UIImage *image = [UIImage screenshot];
-        
-        NSLog(@"------------image == %@", image);
+        UIImage *image = getScreenUIImage();
         
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-
         
         UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
-        CGFloat r, g, b;
-        //    [color getRGBComponents:components];
-        [color getRed:&r green:&g blue:&b alpha:NULL];
+        unsigned char components[4];
+        [color getRGBComponents:components];
         
-        lua_pushinteger(L, (NSInteger)round(r*255));
-        lua_pushinteger(L, (NSInteger)round(g*255));
-        lua_pushinteger(L, (NSInteger)round(b*255));
+        lua_pushinteger(L, components[0]);
+        lua_pushinteger(L, components[1]);
+        lua_pushinteger(L, components[2]);
     }
     return 3;
 }
@@ -266,7 +277,7 @@ static int l_findColor(lua_State *L) {
     @autoreleasepool {
         NSInteger color = lua_tointeger(L, 1);
         
-        UIImage *image = [UIImage screenshot];
+        UIImage *image = getScreenUIImage();
         CGPoint point = [image findColor:[UIColor colorWithRed:(color&0xFF0000)/255.0 green:(color&0x00FF00)/255.0 blue:(color&0x0000FF)/255.0 alpha:1]];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             rotatePosition(&point.x, &point.y);
@@ -291,7 +302,7 @@ static int l_findColorFuzzy(lua_State *L) {
         unsigned char g = color & 0x00FF00 >> 8;
         unsigned char b = color & 0x0000FF;
         
-        UIImage *image = [UIImage screenshot];
+        UIImage *image = getScreenUIImage();
         CGPoint point = [image findColor:[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1] fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             rotatePosition(&point.x, &point.y);
@@ -320,7 +331,7 @@ static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloa
         unsigned char g = color & 0x00FF00 >> 8;
         unsigned char b = color & 0x0000FF;
         
-        UIImage *image = [UIImage screenshot];
+        UIImage *image = getScreenUIImage();
         image = [image imageWithCrop:CGRectMake(x1, y1, x2 - x1, y2 - y1)];
         CGPoint point =  [image findColor:[UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1] fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
@@ -422,13 +433,12 @@ static int l_snapshotRegion(lua_State *L) {
 
 static int l_localOcrText(lua_State *L) {
     
-    
-    return 0;
+    lua_pushstring(L, "Unsupport");
+    return 1;
 }
 
 static int l_keepScreen(lua_State *L) {
-    
-    
+    keepScreen = lua_toboolean(L, 1);
     return 0;
 }
 
@@ -468,7 +478,6 @@ static int l_appRun(lua_State *L) {
         const char *s = lua_tostring(L, 1);
         if (s) {
             NSString *appID = [NSString stringWithUTF8String:s];
-            NSError *error = nil;
             [AppUtil launchAppWithIdentifier:appID];
         }
     }
@@ -572,6 +581,9 @@ static int l_getVersion(lua_State *L) {
 
 void registerLUAFunctions(void) {
     @autoreleasepool {
+        
+        rotateDegree = 0;
+        keepScreen = NO;
         
         LuaManager *m = [LuaManager shareInstance];
         
