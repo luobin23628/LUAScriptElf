@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "LUAScripSupport.h"
 #import "LuaManager.h"
-#import "UIFakeTouch.h"
 #import "HIDManager.h"
 
 @interface ViewController ()
@@ -24,17 +23,17 @@
 
     registerLUAFunctions();
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"fifa15NoobPackage" ofType:@"lua"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"lua"];
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    imageView.image = [UIImage imageNamed:@"Screenshot 2014.09.27 23.50.09.png"];
+    imageView.image = [UIImage imageNamed:@"Screenshot 2014.09.28 14.11.30.png"];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:imageView];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"run" forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     btn.frame = CGRectMake(100, 100, 100, 30);
     [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];

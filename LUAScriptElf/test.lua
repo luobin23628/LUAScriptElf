@@ -3,6 +3,19 @@ function click(x, y)
 	touchUp(r, x, y);
 end
 
+function checkColor(x2,y2,r,g,b,wc)
+	wc = wc or 5;        
+	local r1, g1, b1 = getColorRGB(x2,y2);
+	logDebug("x2, y2, r, g, b = "..x2..","..y2..","..r..","..g..","..b);
+	logDebug("r1, g1, b1 = "..r1..","..g1..","..b1);
+	
+	if (r<=r1+wc and r>=r1-wc) and (g<=g1+wc and g>=g1-wc) and (b<=b1+wc and b>=b1-wc) then
+        return true
+	else
+		return false
+	end
+end
+
 function main()
 --[[
     logDebug("hello word");
@@ -35,8 +48,12 @@ function main()
 
     local w, h = getScreenResolution();
     logDebug(string.format("%d, %d", w, h));
-]]--
+
 
 appRun("com.ea.fifa15.bv");
+]]--
+    notifyMessage("testtesttest", 3000);
+
+
 
 end
