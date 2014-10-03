@@ -18,6 +18,8 @@
 #import "UIColorAddition.h"
 #import "HIDManager.h"
 #import <SimulateTouch.h>
+#import "MemoryUtil.h"
+#import "AppUtil.h"
 
 static NSInteger rotateDegree;
 static void rotatePosition(CGFloat *x, CGFloat *y) {
@@ -28,7 +30,7 @@ static void rotatePosition(CGFloat *x, CGFloat *y) {
     NSInteger height = (NSInteger)ceil(bounds.size.height * scale);
 
     switch (rotateDegree) {
-        case 90:
+        case -90:
         {
             CGFloat tempX = *x;
             *x = *y;
@@ -36,7 +38,7 @@ static void rotatePosition(CGFloat *x, CGFloat *y) {
             break;
         }
             break;
-        case -90:
+        case 90:
         {
             CGFloat tempX = *x;
             *x = width - *y;
@@ -244,12 +246,6 @@ static int l_getColorRGB(lua_State *L) {
         rotatePosition(&x, &y);
         
         UIImage *image = [UIImage screenshot];
-        
-        NSLog(@"------------image == %@", image);
-        
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-
-        
         UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
         CGFloat r, g, b;
         //    [color getRGBComponents:components];
@@ -468,7 +464,6 @@ static int l_appRun(lua_State *L) {
         const char *s = lua_tostring(L, 1);
         if (s) {
             NSString *appID = [NSString stringWithUTF8String:s];
-            NSError *error = nil;
             [AppUtil launchAppWithIdentifier:appID];
         }
     }
@@ -526,12 +521,194 @@ static int l_ftpPut(lua_State *L) {
 
 static int l_memoryRead(lua_State *L) {
     
-    return 0;
+    /*
+     I8: 有符号的8位整数
+     I16: 有符号的16位整数
+     I32: 有符号的32位整数
+     I64: 有符号的64位整数
+     U8: 无符号的8位整数
+     U16: 无符号的16位整数
+     U32: 无符号的32位整数
+     U64: 无符号的64位整数
+     F32: 有符号的32位浮点数
+     F64: 有符号的64位浮点数
+     */
+    
+    const char *a = lua_tostring(L, 1);
+    const char *b = lua_tostring(L, 2);
+    const char *c = lua_tostring(L, 3);
+
+    if (a && b) {
+        NSString *appID = [NSString stringWithUTF8String:a];
+        NSString *address = [NSString stringWithUTF8String:b];
+        NSString *type = [NSString stringWithUTF8String:c];
+
+        pid_t pid = [AppUtil pidForDisplayIdentifier:appID];
+        if (pid) {
+            if ([[type uppercaseString] isEqualToString:@"I8"]) {
+                int8_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+                
+            } else if ([[type uppercaseString] isEqualToString:@"I16"]) {
+                int16_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"I64"]) {
+                int64_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U16"]) {
+                uint16_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U32"]) {
+                uint32_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U64"]) {
+                uint64_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"F32"]) {
+                Float32 value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"F64"]) {
+                Float64 value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            } else {
+                int32_t value;
+                BOOL ok = [MemoryUtil memoryReadFromPid:pid address:address buffer:&value bufferSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    lua_pushnumber(L, value);
+                    return 2;
+                }
+            }
+        }
+    }
+    lua_pushboolean(L, NO);
+
+    return 1;
 }
 
 static int l_memoryWrite(lua_State *L) {
+    const char *a = lua_tostring(L, 1);
+    const char *b = lua_tostring(L, 2);
+    const char *c = lua_tostring(L, 4);
     
-    return 0;
+    if (a && b) {
+        NSString *appID = [NSString stringWithUTF8String:a];
+        NSString *address = [NSString stringWithUTF8String:b];
+        NSString *type = [NSString stringWithUTF8String:c];
+        
+        pid_t pid = [AppUtil pidForDisplayIdentifier:appID];
+        if (pid) {
+            
+            if ([[type uppercaseString] isEqualToString:@"I8"]) {
+                int8_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+                
+            } else if ([[type uppercaseString] isEqualToString:@"I16"]) {
+                int16_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"I64"]) {
+                int64_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U16"]) {
+                uint16_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U32"]) {
+                uint32_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"U64"]) {
+                uint64_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"F32"]) {
+                Float32 value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else if ([[type uppercaseString] isEqualToString:@"F64"]) {
+                Float64 value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            } else {
+                int32_t value = lua_tonumber(L, 3);
+                BOOL ok = [MemoryUtil memoryWriteFromPid:pid address:address data:&value dataSize:sizeof(value)];
+                if (ok) {
+                    lua_pushboolean(L, YES);
+                    return 1;
+                }
+            }
+        }
+    }
+    lua_pushboolean(L, NO);
+    
+    return 1;
 }
 
 static int l_getScreenResolution(lua_State *L) {

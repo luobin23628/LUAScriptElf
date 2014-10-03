@@ -12,10 +12,13 @@
 		A81E432419D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A81E432319D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png */; };
 		A833FF0119D6C5BE00CF9F7E /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */; };
 		A833FF0219D6CD0A00CF9F7E /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */; };
-		A89BFC0619D650EF00DDC568 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BFC0519D650EF00DDC568 /* AppUtil.m */; };
 		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
-		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
+		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
+		A8F1A77619DEE2DC00B09A8A /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77519DEE2DC00B09A8A /* AppUtil.m */; };
+		A8F1A77719DEE2DC00B09A8A /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77519DEE2DC00B09A8A /* AppUtil.m */; };
+		A8F1A77A19DEE30D00B09A8A /* MemoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */; };
+		A8F1A77B19DEE30D00B09A8A /* MemoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */; };
 		A8F6D75619D6795F00B549D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
 		A8F6D75719D6795F00B549D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7865719D677A8003D7645 /* CoreGraphics.framework */; };
 		A8F6D75819D6795F00B549D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
@@ -27,7 +30,6 @@
 		A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76C19D6796000B549D0 /* ViewController.m */; };
 		A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76E19D6796000B549D0 /* Images.xcassets */; };
 		A8FD460319D67D2100EF2C6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
-		A8FD460419D67D6400EF2C6D /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A89BFC0519D650EF00DDC568 /* AppUtil.m */; };
 		A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
 		A8FD460619D67D6900EF2C6D /* UIFakeTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82719D584A600F3A18A /* UIFakeTouch.m */; };
 		A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
@@ -55,8 +57,6 @@
 		A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15NoobPackage.lua; sourceTree = "<group>"; };
 		A81E432319D71442005C7758 /* Screenshot 2014.09.27 23.50.09@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Screenshot 2014.09.27 23.50.09@2x.png"; path = "../LUAScriptElf/Private Frameworks/Screenshot 2014.09.27 23.50.09@2x.png"; sourceTree = "<group>"; };
 		A833FF0019D6C5BE00CF9F7E /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../opt/theos/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
-		A89BFC0419D650EF00DDC568 /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
-		A89BFC0519D650EF00DDC568 /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
 		A89BFC0719D6710500DDC568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A89D202619D59E1D0049153D /* UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAddition.h; sourceTree = "<group>"; };
 		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
@@ -65,6 +65,10 @@
 		A8D7865019D675EE003D7645 /* test.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
 		A8D7865719D677A8003D7645 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A8D7867619D677A8003D7645 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		A8F1A77419DEE2DC00B09A8A /* AppUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUtil.h; sourceTree = "<group>"; };
+		A8F1A77519DEE2DC00B09A8A /* AppUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtil.m; sourceTree = "<group>"; };
+		A8F1A77819DEE30D00B09A8A /* MemoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryUtil.h; sourceTree = "<group>"; };
+		A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryUtil.m; sourceTree = "<group>"; };
 		A8F6D75519D6795F00B549D0 /* TestLUA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestLUA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8F6D75B19D6795F00B549D0 /* TestLUA-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestLUA-Info.plist"; sourceTree = "<group>"; };
 		A8F6D75D19D6796000B549D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -244,8 +248,6 @@
 				A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */,
 				A8D7865019D675EE003D7645 /* test.lua */,
 				AB4EA31619D53C7C005F1AF5 /* main.m */,
-				A89BFC0419D650EF00DDC568 /* AppUtil.h */,
-				A89BFC0519D650EF00DDC568 /* AppUtil.m */,
 				AB0ED82419D584A600F3A18A /* UIFakeKeypress.h */,
 				AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */,
 				AB0ED82619D584A600F3A18A /* UIFakeTouch.h */,
@@ -256,6 +258,10 @@
 				A89D202719D59E1D0049153D /* UIImageAddition.m */,
 				A89D202919D5B3020049153D /* UIColorAddition.h */,
 				A89D202A19D5B3020049153D /* UIColorAddition.m */,
+				A8F1A77419DEE2DC00B09A8A /* AppUtil.h */,
+				A8F1A77519DEE2DC00B09A8A /* AppUtil.m */,
+				A8F1A77819DEE30D00B09A8A /* MemoryUtil.h */,
+				A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */,
 				AB0ED80B19D56FAB00F3A18A /* LuaManager.h */,
 				AB0ED80C19D56FAB00F3A18A /* LuaManager.m */,
 				AB0ED81119D582A700F3A18A /* Private Frameworks */,
@@ -457,9 +463,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8F1A77B19DEE30D00B09A8A /* MemoryUtil.m in Sources */,
 				A8FD460619D67D6900EF2C6D /* UIFakeTouch.m in Sources */,
 				A8FD460819D67D6D00EF2C6D /* UIImageAddition.m in Sources */,
 				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
+				A8F1A77719DEE2DC00B09A8A /* AppUtil.m in Sources */,
 				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
 				A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */,
 				A8FD461019D6984300EF2C6D /* HIDManager.m in Sources */,
@@ -467,7 +475,6 @@
 				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
 				A8F6D76019D6796000B549D0 /* main.m in Sources */,
 				A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */,
-				A8FD460419D67D6400EF2C6D /* AppUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,12 +485,13 @@
 				AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */,
 				A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */,
 				AB0ED82919D584A600F3A18A /* UIFakeTouch.m in Sources */,
-				A89BFC0619D650EF00DDC568 /* AppUtil.m in Sources */,
 				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
 				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
 				A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */,
+				A8F1A77A19DEE30D00B09A8A /* MemoryUtil.m in Sources */,
 				A8FD460F19D6984300EF2C6D /* HIDManager.m in Sources */,
 				AB4EA31719D53C7C005F1AF5 /* main.m in Sources */,
+				A8F1A77619DEE2DC00B09A8A /* AppUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,7 +732,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevDevice = 192.168.1.100;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;
@@ -758,7 +766,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevDevice = 192.168.1.100;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;

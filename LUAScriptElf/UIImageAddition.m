@@ -15,23 +15,9 @@ extern UIImage* _UICreateScreenUIImage();
 
 @implementation UIImage (Addition)
 
-static __strong UIImage *image = nil;
-static NSTimeInterval lastTime = 0;
-
 + (UIImage *)screenshot
 {
-    mach_timebase_info_data_t info;
-     if (mach_timebase_info(&info) != KERN_SUCCESS) return nil;
-    
-    uint64_t t = mach_absolute_time();
-    uint64_t nanos = (t - lastTime) * info.numer / info.denom;
-    NSLog(@"info.numer:%d, info.denom:%d", info.numer, info.denom);
-    if (!image || nanos/NSEC_PER_MSEC > 1000) {
-        NSLog(@"_UICreateScreenUIImage %lld", nanos/NSEC_PER_MSEC);
-        lastTime = t;
-        image = _UICreateScreenUIImage();
-    }
-    return image;
+    return [_UICreateScreenUIImage() autorelease];
 }
 
 - (UIImage *)imageWithCrop:(CGRect)rect
