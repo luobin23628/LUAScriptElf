@@ -248,9 +248,11 @@ static int l_getColor(lua_State *L) {
         CGFloat y = lua_tonumber(L, 2);
         rotatePosition(&x, &y);
         
-        UIImage *image = getScreenUIImage();
+//        UIImage *image = getScreenUIImage();
+//        
+//        UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
         
-        UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
+        UIColor *color = [UIImage getColorAtLocation:CGPointMake(x, y)];
         unsigned char components[4];
         [color getRGBComponents:components];
         
@@ -259,6 +261,7 @@ static int l_getColor(lua_State *L) {
         NSUInteger b = components[2];
         
         lua_pushinteger(L, r + g + b);
+//        lua_pushinteger(L, 0);
     }
     return 1;
 }

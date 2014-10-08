@@ -54,7 +54,7 @@ appRun("com.ea.fifa15.bv");
 ]]--
 rotateScreen(90);
 local c = getColor(520, 473);
-notifyMessage(string.format("0x%x", c), 10000);
+logDebug(string.format("0x%x", c), 10000);
 
 --checkColor(140, 172, 82, 164, 212)
 
