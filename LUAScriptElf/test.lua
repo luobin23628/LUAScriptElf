@@ -52,7 +52,9 @@ function main()
 
 appRun("com.ea.fifa15.bv");
 ]]--
-    notifyMessage("testtesttest", 3000);
+rotateScreen(90);
+local c = getColor(100, 10);
+logDebug(string.format("0x%x", c));
 
 
 

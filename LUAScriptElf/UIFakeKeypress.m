@@ -1,5 +1,5 @@
 #import "UIFakeKeypress.h"
-#import "GraphicsServices.h"
+#import "GraphicsServices/GraphicsServices.h"
 #import <dlfcn.h>
 #define SBSERVPATH  "/System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices"
 

@@ -9,14 +9,95 @@
 #import "UIImageAddition.h"
 #import "UIColorAddition.h"
 #import <mach/mach.h>
+#import "IOSurface/IOSurface.h"
 
 extern CGImageRef UIGetScreenImage(void);
 extern UIImage* _UICreateScreenUIImage();
 
+static IOSurfaceRef surface;
+
 @implementation UIImage (Addition)
 
-+ (UIImage *)screenshot
++(IOSurfaceRef) createScreenSurface
 {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    float scale = [UIScreen mainScreen].scale;
+    
+    NSInteger width, height;
+    // setup the width and height of the framebuffer for the device
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // iPhone frame buffer is Portrait
+        width = screenSize.width * scale;
+        height = screenSize.height * scale;
+    } else {
+        // iPad frame buffer is Landscape
+        width = screenSize.height * scale;
+        height = screenSize.width * scale;
+    }
+    
+    
+    // Pixel format for Alpha Red Green Blue
+    unsigned pixelFormat = 0x42475241;//'ARGB';
+    
+    // 4 Bytes per pixel
+    int bytesPerElement = 4;
+    
+    // Bytes per row
+    int bytesPerRow = (bytesPerElement * width);
+    
+    // Properties include: SurfaceIsGlobal, BytesPerElement, BytesPerRow, SurfaceWidth, SurfaceHeight, PixelFormat, SurfaceAllocSize (space for the entire surface)
+    NSDictionary *properties = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [NSNumber numberWithBool:YES], kIOSurfaceIsGlobal,
+                                [NSNumber numberWithInt:bytesPerElement], kIOSurfaceBytesPerElement,
+                                [NSNumber numberWithInt:bytesPerRow], kIOSurfaceBytesPerRow,
+                                [NSNumber numberWithInt:width], kIOSurfaceWidth,
+                                [NSNumber numberWithInt:height], kIOSurfaceHeight,
+                                [NSNumber numberWithUnsignedInt:pixelFormat], kIOSurfacePixelFormat,
+                                [NSNumber numberWithInt:bytesPerRow * height], kIOSurfaceAllocSize,
+                                nil];
+    
+    // This is the current surface
+    return IOSurfaceCreate((__bridge CFDictionaryRef)properties);
+    
+}
+
++(NSMutableData*) captureShot
+{
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    float scale = [UIScreen mainScreen].scale;
+    
+    NSInteger width, height;
+    // setup the width and height of the framebuffer for the device
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // iPhone frame buffer is Portrait
+        width = screenSize.width * scale;
+        height = screenSize.height * scale;
+    } else {
+        // iPad frame buffer is Landscape
+        width = screenSize.height * scale;
+        height = screenSize.width * scale;
+    }
+    
+    NSInteger bytesPerElement = 4;
+    NSInteger bytesPerRow = bytesPerElement * width;
+    
+    
+    surface = [self createScreenSurface];
+    CARenderServerRenderDisplay(0, CFSTR("LCD"), surface, 0, 0);
+    
+    // Make a raw memory copy of the surface
+    void *baseAddr = IOSurfaceGetBaseAddress(surface);
+    int totalBytes = bytesPerRow * height;
+    
+    //void *rawData = malloc(totalBytes);
+    //memcpy(rawData, baseAddr, totalBytes);
+    NSMutableData * rawDataObj = nil;
+    rawDataObj = [NSMutableData dataWithBytes:baseAddr length:totalBytes];
+    
+    return rawDataObj;
+}
+
++ (UIImage *)screenshot {
     return [_UICreateScreenUIImage() autorelease];
 }
 

@@ -11,7 +11,7 @@
 #import "LuaManager.h"
 #import <UIKit/UIKit.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "GraphicsServices.h"
+#import "GraphicsServices/GraphicsServices.h"
 #import "UIImageAddition.h"
 #import "UIFakeKeypress.h"
 #import "AppUtil.h"
@@ -20,6 +20,9 @@
 #import <SimulateTouch.h>
 #import "MemoryUtil.h"
 #import "AppUtil.h"
+#import <libactivator/libactivator.h>
+#import "LightMessaging.h"
+#import "Global.h"
 
 static BOOL keepScreen;
 static NSInteger rotateDegree;
@@ -65,7 +68,32 @@ static UIImage *getScreenUIImage() {
     @autoreleasepool {
         static UIImage *image = nil;
         if (!image || !keepScreen) {
-            image = [UIImage screenshot];
+//            image = [UIImage screenshot];
+            
+            
+            LMResponseBuffer buffer;
+            kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdGetScreenUIImage, NULL, 0, &buffer);
+
+            if (ret == KERN_SUCCESS) {
+                
+                uint32_t length = LMMessageGetDataLength(&buffer.message);
+                if (length) {
+                    CFDataRef data = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, LMMessageGetData(&buffer.message), length, kCFAllocatorNull);
+                    NSString *s = [[NSString alloc] initWithBytesNoCopy:LMMessageGetData(&buffer.message) length:length encoding:NSUTF8StringEncoding freeWhenDone:NO];
+                    NSData *data1 = [[NSData alloc]initWithBase64EncodedString:s options:NSDataBase64DecodingIgnoreUnknownCharacters];
+
+                    image = [UIImage imageWithData:data1];
+//                    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//                    [(__bridge NSData *)data writeToFile:[document stringByAppendingPathComponent:@"/1.png"] atomically:YES];
+//                    image = [UIImage imageWithData:(__bridge NSData *)data];
+                    CFRelease(data);
+                }
+            }
+            LMResponseBufferFree(&buffer);
+            
+
+
+//            image = [UIImage screenshot];
         }
         return image;
     }
