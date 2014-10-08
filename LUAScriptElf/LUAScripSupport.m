@@ -68,32 +68,7 @@ static UIImage *getScreenUIImage() {
     @autoreleasepool {
         static UIImage *image = nil;
         if (!image || !keepScreen) {
-//            image = [UIImage screenshot];
-            
-            
-            LMResponseBuffer buffer;
-            kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdGetScreenUIImage, NULL, 0, &buffer);
-
-            if (ret == KERN_SUCCESS) {
-                
-                uint32_t length = LMMessageGetDataLength(&buffer.message);
-                if (length) {
-                    CFDataRef data = CFDataCreateWithBytesNoCopy(kCFAllocatorDefault, LMMessageGetData(&buffer.message), length, kCFAllocatorNull);
-                    NSString *s = [[NSString alloc] initWithBytesNoCopy:LMMessageGetData(&buffer.message) length:length encoding:NSUTF8StringEncoding freeWhenDone:NO];
-                    NSData *data1 = [[NSData alloc]initWithBase64EncodedString:s options:NSDataBase64DecodingIgnoreUnknownCharacters];
-
-                    image = [UIImage imageWithData:data1];
-//                    NSString *document = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-//                    [(__bridge NSData *)data writeToFile:[document stringByAppendingPathComponent:@"/1.png"] atomically:YES];
-//                    image = [UIImage imageWithData:(__bridge NSData *)data];
-                    CFRelease(data);
-                }
-            }
-            LMResponseBufferFree(&buffer);
-            
-
-
-//            image = [UIImage screenshot];
+            image = [UIImage screenshot];
         }
         return image;
     }
@@ -131,11 +106,17 @@ static int l_notifyMessage(lua_State *L) {
                 interval = 1000.f;
             }
             
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:nil];
-            [alertView show];
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [alertView dismissWithClickedButtonIndex:0 animated:NO];
-            });
+            NSMutableData *data = [NSMutableData data];
+            [data appendBytes:&interval length:sizeof(interval)];
+            [data appendData:[message dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            LMResponseBuffer buffer;
+            
+            kern_return_t ret = LMConnectionSendTwoWayData(&connection, GMMessageIdAlertView, (__bridge CFDataRef)data, &buffer);
+            
+            if (ret == KERN_SUCCESS) {
+                NSLog(@"KERN_SUCCESS");
+            }
         }
     }
     return 0;

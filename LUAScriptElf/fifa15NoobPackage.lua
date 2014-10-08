@@ -603,7 +603,7 @@ UI = {
 
 -- 主入口函数
 function main()
-    rotateScreen(-90);
+    rotateScreen(90);
 
     local  minRatting = tonumber(minRattingStr);
     local  minMoney = tonumber(minMoneyStr);

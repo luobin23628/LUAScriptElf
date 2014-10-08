@@ -16,8 +16,7 @@ static LMConnection connection = {
 	"LUAScriptElf.datasource"
 };
 
-#define GMMessageIdGetScreenUIImage       1
-#define GMMessageIdSetPid       2
+#define GMMessageIdAlertView       1
 #define GMMessageIdSearch       3
 #define GMMessageIdGetMemoryAccessObject    4
 #define GMMessageIdModify       5

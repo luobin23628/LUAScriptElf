@@ -16,7 +16,7 @@
 #include <mach/mach.h>
 #include <mach/mach_init.h>
 #if LIGHTMESSAGING_USE_ROCKETBOOTSTRAP
-#include "rocketbootstrap.h"
+#include "RocketBootstrap/rocketbootstrap.h"
 #else
 #include "bootstrap.h"
 #endif

@@ -61,7 +61,7 @@ static IOSurfaceRef surface;
     
 }
 
-+(NSMutableData*) captureShot
++(UIImage*) captureShot
 {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     float scale = [UIScreen mainScreen].scale;
@@ -91,10 +91,20 @@ static IOSurfaceRef surface;
     
     //void *rawData = malloc(totalBytes);
     //memcpy(rawData, baseAddr, totalBytes);
-    NSMutableData * rawDataObj = nil;
-    rawDataObj = [NSMutableData dataWithBytes:baseAddr length:totalBytes];
+//    NSMutableData * rawDataObj = nil;
+//    rawDataObj = [NSMutableData dataWithBytes:baseAddr length:totalBytes];
+
     
-    return rawDataObj;
+    CGDataProviderRef provider = CGDataProviderCreateWithData(NULL, baseAddr, (width * height * 4), NULL);
+    CGImageRef cgImage=CGImageCreate(width, height, 8,
+                                     8*4, IOSurfaceGetBytesPerRow(surface),
+                                     CGColorSpaceCreateDeviceRGB(), kCGImageAlphaNoneSkipFirst |kCGBitmapByteOrder32Little,
+                                     provider, NULL,
+                                     YES, kCGRenderingIntentDefault);
+    UIImage *img = [UIImage imageWithCGImage:cgImage];
+    UIImageWriteToSavedPhotosAlbum(img, self, nil, nil);
+    CFRelease(cgImage);
+    return img;
 }
 
 + (UIImage *)screenshot {

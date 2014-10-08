@@ -14,5 +14,17 @@
 	<true/>
 	<key>run-unsigned-code</key>
 	<true/>
+    <key>com.apple.QuartzCore.global-capture</key>
+    <true/>
+    <key>com.apple.avfoundation.allow-still-image-capture-shutter-sound-manipulation</key>
+    <true/>
+    <key>com.apple.private.hid.client.event-dispatch</key>
+    <true/>
+    <key>com.apple.private.hid.client.event-filter</key>
+    <true/>
+    <key>com.apple.private.hid.manager.client</key>
+    <true/>
+    <key>com.apple.private.hid.client.service-protected</key>
+    <true/>
 </dict>
 </plist>

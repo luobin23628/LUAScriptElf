@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>LUAScriptTweak.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>TestLUA.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +22,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A85EC1E019DFD70A00376678</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A8F6D75419D6795F00B549D0</key>
 		<dict>
 			<key>primary</key>

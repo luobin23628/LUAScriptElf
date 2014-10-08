@@ -10,6 +10,8 @@
 #import "LUAScripSupport.h"
 #import "LuaManager.h"
 #import "HIDManager.h"
+#import "LightMessaging.h"
+#import "Global.h"
 
 @interface ViewController ()
 
@@ -26,8 +28,8 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"lua"];
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-    imageView.image = [UIImage imageNamed:@"Screenshot 2014.09.28 14.11.30.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageView.image = [UIImage imageNamed:@"1.png"];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:imageView];
     
@@ -42,19 +44,21 @@
     UITextField *text = [[UITextField alloc] initWithFrame:CGRectMake(1, 20, 100, 30)];
     text.text = @"ttt";
     [self.view addSubview:text];
-    
-    
 }
 
 - (void)test {
     [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
     
+    /*
+    LMResponseBuffer buffer;
+    kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdGetScreenUIImage, NULL, 0, &buffer);
+    
+    if (ret == KERN_SUCCESS) {
+        
+        NSLog(@"KERN_SUCCESS");
+    }
+     */
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

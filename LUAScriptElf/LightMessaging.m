@@ -1,9 +1,9 @@
 #ifndef __APPLE_API_PRIVATE
 #define __APPLE_API_PRIVATE
-#include "sandbox.h"
+#include "RocketBootstrap/sandbox.h"
 #undef __APPLE_API_PRIVATE
 #else
-#include "sandbox.h"
+#include "RocketBootstrap/sandbox.h"
 #endif
 
 #import "LightMessaging.h"
@@ -17,7 +17,7 @@
 #include <mach/mach.h>
 #include <mach/mach_init.h>
 #if LIGHTMESSAGING_USE_ROCKETBOOTSTRAP
-#include "rocketbootstrap.h"
+#include "RocketBootstrap/rocketbootstrap.h"
 #else
 #include "bootstrap.h"
 #endif
