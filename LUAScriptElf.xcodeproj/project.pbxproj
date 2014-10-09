@@ -78,6 +78,7 @@
 		AB56F07219D7B864008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB56F07319D7B871008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB5881B019D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */; };
+		ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */ = {isa = PBXBuildFile; fileRef = ABAC3D6E19E65E850053DB5F /* fifa15_.lua */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../../opt/iOSOpenDev/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
 		AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.09.28 14.11.30@2x.png"; sourceTree = "<group>"; };
+		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */,
+				ABAC3D6E19E65E850053DB5F /* fifa15_.lua */,
 				A8D7865019D675EE003D7645 /* test.lua */,
 				AB4EA31619D53C7C005F1AF5 /* main.m */,
 				A8F1A78019DEF6E600B09A8A /* AppUtil.h */,
@@ -515,6 +518,7 @@
 				A8FD460C19D6836A00EF2C6D /* test.lua in Resources */,
 				A8F6D76A19D6796000B549D0 /* Main_iPad.storyboard in Resources */,
 				A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */,
+				ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */,
 				A8F6D76719D6796000B549D0 /* Main_iPhone.storyboard in Resources */,
 				A8F6D75E19D6796000B549D0 /* InfoPlist.strings in Resources */,
 				A81E432219D6FC26005C7758 /* fifa15NoobPackage.lua in Resources */,
