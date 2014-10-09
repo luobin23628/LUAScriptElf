@@ -1008,7 +1008,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 192.168.1.104;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;
@@ -1054,7 +1054,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 192.168.1.104;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;

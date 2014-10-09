@@ -293,4 +293,45 @@ static IOSurfaceRef surface;
     return CGPointMake(NSNotFound, NSNotFound);
 }
 
++ (UIColor*) getColorAtLocation:(CGPoint)point {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    float scale = [UIScreen mainScreen].scale;
+    
+    NSInteger width, height;
+    // setup the width and height of the framebuffer for the device
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        // iPhone frame buffer is Portrait
+        width = screenSize.width * scale;
+        height = screenSize.height * scale;
+    } else {
+        // iPad frame buffer is Landscape
+        width = screenSize.height * scale;
+        height = screenSize.width * scale;
+    }
+    
+    NSInteger bytesPerElement = 4;
+    NSInteger bytesPerRow = bytesPerElement * width;
+    
+    if (!surface) {
+        surface = [self createScreenSurface];
+    }
+    CARenderServerRenderDisplay(0, CFSTR("LCD"), surface, 0, 0);
+    
+    // Make a raw memory copy of the surface
+    unsigned char *data = IOSurfaceGetBaseAddress(surface);
+    int totalBytes = bytesPerRow * height;
+    
+    if (data != NULL) {
+		//offset locates the pixel in the data from x,y.
+		//4 for 4 bytes of data per pixel, w is width of one row of data.
+		int offset = 4*((width*round(point.y))+round(point.x));
+		unsigned char blue =  data[offset];
+		unsigned char green = data[offset+1];
+		unsigned char red = data[offset+2];
+		unsigned char alpha = data[offset+3];
+		return [UIColor colorWithRed:(red/255.0f) green:(green/255.0f) blue:(blue/255.0f) alpha:(alpha/255.0f)];
+	}
+    return nil;
+}
+
 @end

@@ -21,4 +21,6 @@
 - (CGPoint)findColor:(UIColor *)color fuzzyOffset:(CGFloat)offset;
 - (CGPoint)findColor:(UIColor *)color;
 
++ (UIColor*) getColorAtLocation:(CGPoint)point;
+
 @end

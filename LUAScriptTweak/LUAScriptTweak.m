@@ -18,10 +18,6 @@
 #import "LuaManager.h"
 #import "LUAScripSupport.h"
 
-static NSString *encodeToBase64String(UIImage *image) {
-    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-}
-
 static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef dataRef) {
     
     NSLog(@"LUAScriptTweak processMessage messageId:%d", (int)messageId);

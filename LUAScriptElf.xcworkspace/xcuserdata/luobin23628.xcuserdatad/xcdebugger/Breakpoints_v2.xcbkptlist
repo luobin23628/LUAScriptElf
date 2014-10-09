@@ -19,14 +19,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LUAScriptElf/LUAScripSupport.m"
-            timestampString = "434121530.496961"
+            filePath = "LUAScriptElf/UIImageAddition.m"
+            timestampString = "434477924.476643"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
-            landmarkName = "l_getColorRGB()"
-            landmarkType = "7">
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "+getColorAtLocation:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
