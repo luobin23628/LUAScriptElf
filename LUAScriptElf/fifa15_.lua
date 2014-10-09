@@ -1553,15 +1553,52 @@ function fileExits(filePath)
 	end
 end
 
-function editMemory()
+function getGoalAddress()
 	--score
-	if memoryWrite then
-		for i=0x062debb8,0x062dec18,16 do
-			memoryWrite("com.ea.fifa15.bv", i, 10, "U32");  
+    if memoryRead then
+		for i=0x061bb7a8,0x061bb808,16 do
+            local ok1, ret1 = memoryRead("com.ea.fifa15.bv", i, "U32");
+            if ok1 and ret1 == 0 then
+                local ok2, ret2 = memoryRead("com.ea.fifa15.bv", i+4, "U32");
+                if ok2 and ret2 == 0 then
+                    
+                    local ok3, ret3 = memoryRead("com.ea.fifa15.bv", i-12, "U32");
+                    local ok4, ret4 = memoryRead("com.ea.fifa15.bv", i-8, "U32");
+                    local ok5, ret5 = memoryRead("com.ea.fifa15.bv", i-4, "U32");
+                    if ok3 and ret3 > 0 and ret3 <= 90
+                        and ok4 and ret4 > 0 and ret4 < 1000
+                        and ok5 and ret5 > 0 and ret5 < 1000 then
+                        return i;
+                    end
+                end
+            end
+		end
+        
+        for i=0x061397a8,0x06139808,16 do
+            local ok1, ret1 = memoryRead("com.ea.fifa15.bv", i, "U32");
+            if ok1 and ret1 == 0 then
+                local ok2, ret2 = memoryRead("com.ea.fifa15.bv", i+4, "U32");
+                if ok2 and ret2 == 0 then
+                    
+                    local ok3, ret3 = memoryRead("com.ea.fifa15.bv", i-12, "U32");
+                    local ok4, ret4 = memoryRead("com.ea.fifa15.bv", i-8, "U32");
+                    local ok5, ret5 = memoryRead("com.ea.fifa15.bv", i-4, "U32");
+                    if ok3 and ret3 >= 0 and ret3 <= 90
+                        and ok4 and ret4 > 0
+                        and ok5 and ret5 > 0 then
+                        return i;
+                    end
+                end
+            end
 		end
 	end
+    return nil;
 end
 
+function modifyGoal(address)
+    memoryWrite("com.ea.fifa15.bv", address, 10, "U32");
+    memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
+end
 
 UI = {
         { 'TextView{-登录账号-}'                   },
@@ -1586,11 +1623,12 @@ function main()
 	w, h = getScreenResolution(); 
 	local noError = false;
 	local shouldGotoMainPage = false;
-	
+    local address = 0;
+    
 	if isPausePage() then
 		goto inGame;
 	end
-	
+    
 	::restart::		
 
 	appKill("com.ea.fifa15.bv");
@@ -1851,7 +1889,7 @@ function main()
 
 	setWaitLoopCount(2 * 60 * 60*24*356);
 
-	editMemory();
+    local runLoopCount = 0;
 
 	noError = waitUtilMeetCondition3(isSkillDetailPage, function ()
 			mSleep(1000);
@@ -1870,7 +1908,13 @@ function main()
 			click(33, 39);
 			mSleep(500);
 			return false;
-		end);
+		end, function()
+            runLoopCount = runLoopCount + 1;
+            if address == 0 and runLoopCount > 2*10 then
+                address = getGoalAddress();
+            end
+            modifyGoal(address);
+        end);
 
 	setWaitLoopCount(2 * 60 * 1);
 

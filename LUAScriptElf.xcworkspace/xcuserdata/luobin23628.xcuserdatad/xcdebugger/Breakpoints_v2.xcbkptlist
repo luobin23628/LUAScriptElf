@@ -24,9 +24,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "332"
-            endingLineNumber = "332"
-            landmarkName = "+getColorAtLocation:"
-            landmarkType = "5">
+            endingLineNumber = "332">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
