@@ -79,6 +79,9 @@
 		AB56F07319D7B871008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB5881B019D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */; };
 		ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */ = {isa = PBXBuildFile; fileRef = ABAC3D6E19E65E850053DB5F /* fifa15_.lua */; };
+		ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,7 +147,9 @@
 		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../../opt/iOSOpenDev/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
 		AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.09.28 14.11.30@2x.png"; sourceTree = "<group>"; };
-		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; };
+		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
+		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -351,6 +356,8 @@
 				AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */,
 				A89D202619D59E1D0049153D /* UIImageAddition.h */,
 				A89D202719D59E1D0049153D /* UIImageAddition.m */,
+				ABAC3D7019E680100053DB5F /* ScreenUtil.h */,
+				ABAC3D7119E680100053DB5F /* ScreenUtil.m */,
 				A89D202919D5B3020049153D /* UIColorAddition.h */,
 				A89D202A19D5B3020049153D /* UIColorAddition.m */,
 				A8F1A77819DEE30D00B09A8A /* MemoryUtil.h */,
@@ -610,6 +617,7 @@
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
 				AB03988319E5422600431826 /* UIImageAddition.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
+				ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */,
 				A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */,
 				AB03988419E5422800431826 /* UIColorAddition.m in Sources */,
 				A85EC20919DFF16B00376678 /* LightMessaging.m in Sources */,
@@ -626,6 +634,7 @@
 				A8F1A78319DEF6E600B09A8A /* AppUtil.m in Sources */,
 				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
 				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
+				ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */,
 				A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */,
 				A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */,
 				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
@@ -646,6 +655,7 @@
 				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
 				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
 				A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */,
+				ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */,
 				A8F1A77A19DEE30D00B09A8A /* MemoryUtil.m in Sources */,
 				AB4EA31719D53C7C005F1AF5 /* main.m in Sources */,
 			);
@@ -717,7 +727,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 10.2.154.97;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -758,7 +768,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 10.2.154.97;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1008,7 +1018,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.104;
+				iOSOpenDevDevice = 10.2.10.25;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;
@@ -1054,7 +1064,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.104;
+				iOSOpenDevDevice = 10.2.10.25;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevRespringOnInstall = NO;

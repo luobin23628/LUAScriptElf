@@ -3,6 +3,8 @@
 -- 点击函数封装
 function click(x, y)
 	local r = touchDown(0, x, y)
+    logDebug(string.format("==============================================%d", r));
+    notifyMessage(string.format("%d", r));
 	mSleep(100)
 	touchUp(r, x, y)
 end

@@ -13,6 +13,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "GraphicsServices/GraphicsServices.h"
 #import "UIImageAddition.h"
+#import "ScreenUtil.h"
 #import "UIFakeKeypress.h"
 #import "AppUtil.h"
 #import "UIColorAddition.h"
@@ -247,21 +248,15 @@ static int l_getColor(lua_State *L) {
         CGFloat x = lua_tonumber(L, 1);
         CGFloat y = lua_tonumber(L, 2);
         rotatePosition(&x, &y);
+
+        TKColor color;
+        [ScreenUtil getColorAtLocation:CGPointMake(x, y) color:&color];
         
-//        UIImage *image = getScreenUIImage();
-//        
-//        UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
-        
-        UIColor *color = [UIImage getColorAtLocation:CGPointMake(x, y)];
-        unsigned char components[4];
-        [color getRGBComponents:components];
-        
-        NSUInteger r = components[0]<<16;
-        NSUInteger g = components[1]<<8;
-        NSUInteger b = components[2];
+        NSUInteger r = color.red<<16;
+        NSUInteger g = color.green<<8;
+        NSUInteger b = color.blue;
         
         lua_pushinteger(L, r + g + b);
-//        lua_pushinteger(L, 0);
     }
     return 1;
 }
@@ -272,15 +267,11 @@ static int l_getColorRGB(lua_State *L) {
         CGFloat y = lua_tonumber(L, 2);
         rotatePosition(&x, &y);
         
-        UIImage *image = getScreenUIImage();
-        
-        UIColor *color = [image getPixelColorAtLocation:CGPointMake(x, y)];
-        unsigned char components[4];
-        [color getRGBComponents:components];
-        
-        lua_pushinteger(L, components[0]);
-        lua_pushinteger(L, components[1]);
-        lua_pushinteger(L, components[2]);
+        TKColor color;
+        [ScreenUtil getColorAtLocation:CGPointMake(x, y) color:&color];
+        lua_pushinteger(L, color.red);
+        lua_pushinteger(L, color.green);
+        lua_pushinteger(L, color.blue);
     }
     return 3;
 }
@@ -289,8 +280,13 @@ static int l_findColor(lua_State *L) {
     @autoreleasepool {
         NSInteger color = lua_tointeger(L, 1);
         
-        UIImage *image = getScreenUIImage();
-        CGPoint point = [image findColor:[UIColor colorWithRed:(color&0xFF0000)/255.0 green:(color&0x00FF00)/255.0 blue:(color&0x0000FF)/255.0 alpha:1]];
+        TKColor tColor = {
+            .red = color&0xFF0000,
+            .green = color&0x00FF00,
+            .blue = color&0x0000FF
+        };
+        
+        CGPoint point = [ScreenUtil findColor:tColor];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             rotatePosition(&point.x, &point.y);
             
@@ -310,12 +306,13 @@ static int l_findColorFuzzy(lua_State *L) {
         
         CGFloat offset = lua_tonumber(L, 4);
         
-        unsigned char r = color & 0xFF0000 >> 16;
-        unsigned char g = color & 0x00FF00 >> 8;
-        unsigned char b = color & 0x0000FF;
+        TKColor tColor = {
+            .red = color&0xFF0000,
+            .green = color&0x00FF00,
+            .blue = color&0x0000FF
+        };
         
-        UIImage *image = getScreenUIImage();
-        CGPoint point = [image findColor:[UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1] fuzzyOffset:offset];
+        CGPoint point = [ScreenUtil findColor:tColor fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             rotatePosition(&point.x, &point.y);
             
@@ -324,7 +321,6 @@ static int l_findColorFuzzy(lua_State *L) {
         } else {
             lua_pushnumber(L, -1);
             lua_pushnumber(L, -1);
-            
         }
     }
     return 2;
