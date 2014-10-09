@@ -54,7 +54,18 @@ appRun("com.ea.fifa15.bv");
 ]]--
 rotateScreen(90);
 local c = getColor(520, 473);
-logDebug(string.format("0x%x", c), 10000);
+
+
+memoryWrite("com.luobin.TestLUA.TestLUA", 0x4000000, 1, "U32");
+local t ,a = memoryRead("com.luobin.TestLUA.TestLUA", 0x4000000, "U8");
+
+if t then
+    logDebug(string.format("%d", a), 3000);
+else
+logDebug("failed", 3000);
+
+    end
+    
 
 --checkColor(140, 172, 82, 164, 212)
 

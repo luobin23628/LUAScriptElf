@@ -335,13 +335,13 @@ static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloa
             return CGPointMake(NSNotFound, NSNotFound);
         }
         
-        unsigned char r = color & 0xFF0000 >> 16;
-        unsigned char g = color & 0x00FF00 >> 8;
-        unsigned char b = color & 0x0000FF;
+        TKColor tColor = {
+            .red = color&0xFF0000,
+            .green = color&0x00FF00,
+            .blue = color&0x0000FF
+        };
         
-        UIImage *image = getScreenUIImage();
-        image = [image imageWithCrop:CGRectMake(x1, y1, x2 - x1, y2 - y1)];
-        CGPoint point =  [image findColor:[UIColor colorWithRed:r/255 green:g/255 blue:b/255 alpha:1] fuzzyOffset:offset];
+        CGPoint point =  [ScreenUtil findColor:tColor inRegion:CGRectMake(x1, y1, x2 - x1, y2 - y1) fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             point.x += x1;
             point.y += y1;
@@ -557,12 +557,11 @@ static int l_memoryRead(lua_State *L) {
      */
     
     const char *a = lua_tostring(L, 1);
-    const char *b = lua_tostring(L, 2);
+    vm_address_t address = lua_tointeger(L, 2);
     const char *c = lua_tostring(L, 3);
 
-    if (a && b) {
+    if (a && address) {
         NSString *appID = [NSString stringWithUTF8String:a];
-        NSString *address = [NSString stringWithUTF8String:b];
         NSString *type = [NSString stringWithUTF8String:c];
 
         pid_t pid = [AppUtil pidForDisplayIdentifier:appID];
@@ -655,7 +654,7 @@ static int l_memoryWrite(lua_State *L) {
     
     if (a && b) {
         NSString *appID = [NSString stringWithUTF8String:a];
-        NSString *address = [NSString stringWithUTF8String:b];
+        vm_address_t address = lua_tointeger(L, 2);
         NSString *type = [NSString stringWithUTF8String:c];
         
         pid_t pid = [AppUtil pidForDisplayIdentifier:appID];

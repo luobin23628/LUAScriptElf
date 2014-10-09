@@ -29,7 +29,7 @@
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"1.png"];
+//    imageView.image = [UIImage imageNamed:@"1.png"];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:imageView];
     

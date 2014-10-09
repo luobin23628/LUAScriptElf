@@ -15,6 +15,11 @@ typedef struct {
     unsigned char blue;
 } TKColor;
 
+typedef struct {
+    CGPoint p1;
+    CGPoint p2;
+} TKRegion;
+
 @interface ScreenUtil : NSObject
 
 + (void) getColorAtLocation:(CGPoint)point color:(TKColor *)color;
@@ -22,5 +27,8 @@ typedef struct {
 + (CGPoint)findColor:(TKColor)color;
 
 + (CGPoint)findColor:(TKColor)color fuzzyOffset:(CGFloat)fuzzyOffset;
+
++ (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region fuzzyOffset:(CGFloat)fuzzyOffset;
+
 
 @end

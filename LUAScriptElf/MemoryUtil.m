@@ -16,18 +16,14 @@
     task_t task;
     kret = task_for_pid(mach_task_self(), pid, &task);
     if (kret != KERN_SUCCESS) {
-        fprintf(stderr,"Unable to read process %d - kernel return code 0x%x", pid, kret);
+        fprintf(stderr,"Unable to read process %d - kernel return code 0x%x.\n %s\n", pid, kret, mach_error_string(kret));
         return NO;
     }
     mach_msg_type_number_t bufferSize = size;
-    if ((kret = vm_read_overwrite(task, (mach_vm_address_t)address, size, buffer, &bufferSize)) == KERN_SUCCESS) {
+    if ((kret = vm_read_overwrite(task, (vm_address_t)address, size, (vm_address_t)buffer, &bufferSize)) == KERN_SUCCESS) {
         
     }
-    if (buffer != nil) {
-        free(buffer);
-        buffer = nil;
-    }
-    
+
     if (kret != KERN_SUCCESS) {
         fprintf(stderr,"Unable to read memory at @%u - kernel return code 0x%x", address, kret);
         return NO;
@@ -75,7 +71,7 @@
     }
     
     /* Actually perform the write */
-    if ((kret = vm_write(task, address, data, dataSize)) != KERN_SUCCESS) {
+    if ((kret = vm_write(task, address, (vm_offset_t)data, dataSize)) != KERN_SUCCESS) {
         NSLog(@"mach_vm_write failed, error %d: %s\n", kret, mach_error_string(kret));
         return NO;
     }
