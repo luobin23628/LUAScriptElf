@@ -18,8 +18,8 @@ static LMConnection connection = {
 
 #define GMMessageIdAlertView       1
 #define GMMessageIdSearch       3
-#define GMMessageIdGetMemoryAccessObject    4
-#define GMMessageIdModify       5
+#define GMMessageIdRun    4
+#define GMMessageIdStop       5
 #define GMMessageIdClearSearchData 6
 #define GMMessageIdReset        7
 #define GMMessageIdCheckValid   8

@@ -142,7 +142,7 @@ static IOSurfaceRef surface;
 	if (data != NULL) {
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                int offset = 4*((width*i)+j);
+                int offset = 4*((width*round(j))+round(i));
                 unsigned char blue =  data[offset];
                 unsigned char green = data[offset+1];
                 unsigned char red = data[offset+2];
@@ -160,12 +160,8 @@ static IOSurfaceRef surface;
 
 + (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region fuzzyOffset:(CGFloat)fuzzyOffset {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    float scale = [UIScreen mainScreen].scale;
-    
-    region = CGRectIntersection([UIScreen mainScreen].bounds, region);
-    if (CGRectIsNull(region)) {
-        return CGPointMake(NSNotFound, NSNotFound);
-    }
+    CGFloat scale = [UIScreen mainScreen].scale;
+
     
     NSInteger width, height;
     // setup the width and height of the framebuffer for the device
@@ -177,6 +173,11 @@ static IOSurfaceRef surface;
         // iPad frame buffer is Landscape
         width = screenSize.height * scale;
         height = screenSize.width * scale;
+    }
+    
+    region = CGRectIntersection(CGRectMake(0, 0, width, height), region);
+    if (CGRectIsNull(region)) {
+        return CGPointMake(NSNotFound, NSNotFound);
     }
     
     //    NSInteger bytesPerElement = 4;
@@ -194,11 +195,10 @@ static IOSurfaceRef surface;
 	if (data != NULL) {
         for (int i = region.origin.x; i <= CGRectGetMaxX(region); i++) {
             for (int j = region.origin.y; j < CGRectGetMaxY(region); j++) {
-                int offset = 4*((width*i)+j);
+                int offset = 4*((width*round(j))+round(i));
                 unsigned char blue =  data[offset];
                 unsigned char green = data[offset+1];
                 unsigned char red = data[offset+2];
-                
                 if (round(fabs(red - color.red)) <= ceil(fuzzyOffset)
                     &&round(fabs(green - color.green)) <= ceil(fuzzyOffset)
                     &&round(fabs(blue - color.blue)) <= ceil(fuzzyOffset)) {

@@ -28,7 +28,44 @@
 static BOOL keepScreen;
 static NSInteger rotateDegree;
 
-static void rotatePosition(CGFloat *x, CGFloat *y) {
+static void screenToWindowPosition(CGFloat *x, CGFloat *y) {
+    CGRect bounds = [UIScreen mainScreen].bounds;
+    CGFloat scale = [UIScreen mainScreen].scale;
+    
+    NSInteger width = (NSInteger)ceil(bounds.size.width * scale);
+    NSInteger height = (NSInteger)ceil(bounds.size.height * scale);
+    
+    switch (rotateDegree) {
+        case -90:
+        {
+            CGFloat tempX = *x;
+            *x = height - (*y) - 1;
+            *y = tempX;
+            break;
+        }
+            break;
+        case 90:
+        {
+            CGFloat tempX = *x;
+            *x = *y;
+            *y = width - tempX - 1;
+            break;
+        }
+            
+        case 180:
+        {
+            *x = width - (*x) - 1;
+            *y = height - (*y) - 1;
+            break;
+        }
+            break;
+        case 0:
+        default:
+            break;
+    }
+}
+
+static void windowToScreenPosition(CGFloat *x, CGFloat *y) {
     CGRect bounds = [UIScreen mainScreen].bounds;
     CGFloat scale = [UIScreen mainScreen].scale;
     
@@ -181,7 +218,7 @@ static int l_touchDown(lua_State *L) {
         NSInteger ID = lua_tointeger(L, 1);
         CGFloat x = lua_tonumber(L, 2);
         CGFloat y = lua_tonumber(L, 3);
-        rotatePosition(&x, &y);
+        windowToScreenPosition(&x, &y);
         
         CGFloat scale = [UIScreen mainScreen].scale;
         CGPoint point = CGPointMake(x/scale, y/scale);
@@ -196,9 +233,9 @@ static int l_touchMove(lua_State *L) {
         NSInteger ID = lua_tointeger(L, 1);
         CGFloat x = lua_tonumber(L, 2);
         CGFloat y = lua_tonumber(L, 3);
-        rotatePosition(&x, &y);
-        
-        CGPoint point = CGPointMake(x, y);
+        windowToScreenPosition(&x, &y);
+        CGFloat scale = [UIScreen mainScreen].scale;
+        CGPoint point = CGPointMake(x/scale, y/scale);
         [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchMove];
     }
     return 0;
@@ -209,7 +246,7 @@ static int l_touchUp(lua_State *L) {
         NSInteger ID = lua_tointeger(L, 1);
         CGFloat x = lua_tonumber(L, 2);
         CGFloat y = lua_tonumber(L, 3);
-        rotatePosition(&x, &y);
+        windowToScreenPosition(&x, &y);
         
         CGFloat scale = [UIScreen mainScreen].scale;
         CGPoint point = CGPointMake(x/scale, y/scale);
@@ -247,7 +284,7 @@ static int l_getColor(lua_State *L) {
     @autoreleasepool {
         CGFloat x = lua_tonumber(L, 1);
         CGFloat y = lua_tonumber(L, 2);
-        rotatePosition(&x, &y);
+        windowToScreenPosition(&x, &y);
 
         TKColor color;
         [ScreenUtil getColorAtLocation:CGPointMake(x, y) color:&color];
@@ -265,7 +302,7 @@ static int l_getColorRGB(lua_State *L) {
     @autoreleasepool {
         CGFloat x = lua_tonumber(L, 1);
         CGFloat y = lua_tonumber(L, 2);
-        rotatePosition(&x, &y);
+        windowToScreenPosition(&x, &y);
         
         TKColor color;
         [ScreenUtil getColorAtLocation:CGPointMake(x, y) color:&color];
@@ -281,14 +318,14 @@ static int l_findColor(lua_State *L) {
         NSInteger color = lua_tointeger(L, 1);
         
         TKColor tColor = {
-            .red = color&0xFF0000,
-            .green = color&0x00FF00,
+            .red = color&0xFF0000>>16,
+            .green = color&0x00FF00>>8,
             .blue = color&0x0000FF
         };
         
         CGPoint point = [ScreenUtil findColor:tColor];
         if (point.x != NSNotFound && point.y != NSNotFound) {
-            rotatePosition(&point.x, &point.y);
+            windowToScreenPosition(&point.x, &point.y);
             
             lua_pushnumber(L, point.x);
             lua_pushnumber(L, point.y);
@@ -307,14 +344,14 @@ static int l_findColorFuzzy(lua_State *L) {
         CGFloat offset = lua_tonumber(L, 4);
         
         TKColor tColor = {
-            .red = color&0xFF0000,
-            .green = color&0x00FF00,
+            .red = color&0xFF0000>>16,
+            .green = color&0x00FF00>>8,
             .blue = color&0x0000FF
         };
         
         CGPoint point = [ScreenUtil findColor:tColor fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
-            rotatePosition(&point.x, &point.y);
+            screenToWindowPosition(&point.x, &point.y);
             
             lua_pushnumber(L, point.x);
             lua_pushnumber(L, point.y);
@@ -328,24 +365,22 @@ static int l_findColorFuzzy(lua_State *L) {
 
 static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2, NSInteger offset) {
     @autoreleasepool {
-        rotatePosition(&x1, &y2);
-        rotatePosition(&x2, &y2);
-        
-        if (x1 >= x2 || y1 >= y2) {
+        if (x1 > x2 || y1 > y2) {
             return CGPointMake(NSNotFound, NSNotFound);
         }
         
+        windowToScreenPosition(&x1, &y1);
+        windowToScreenPosition(&x2, &y2);
+        
         TKColor tColor = {
-            .red = color&0xFF0000,
-            .green = color&0x00FF00,
+            .red = color&0xFF0000>>16,
+            .green = color&0x00FF00>>8,
             .blue = color&0x0000FF
         };
         
-        CGPoint point =  [ScreenUtil findColor:tColor inRegion:CGRectMake(x1, y1, x2 - x1, y2 - y1) fuzzyOffset:offset];
+        CGPoint point =  [ScreenUtil findColor:tColor inRegion:CGRectMake(MIN(x1, x2), MIN(y1, y2), fabs(x2 - x1), fabs(y2 - y1)) fuzzyOffset:offset];
         if (point.x != NSNotFound && point.y != NSNotFound) {
-            point.x += x1;
-            point.y += y1;
-            rotatePosition(&point.x, &point.y);
+            screenToWindowPosition(&point.x, &point.y);
             return point;
         } else {
             return point;

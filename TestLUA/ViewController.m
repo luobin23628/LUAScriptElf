@@ -29,7 +29,7 @@
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-//    imageView.image = [UIImage imageNamed:@"1.png"];
+//    imageView.image = [UIImage imageNamed:@"Screenshot 2014.10.10 22.22.39.png"];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:imageView];
     
@@ -47,17 +47,14 @@
 }
 
 - (void)test {
-    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
+//    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
     
-    /*
     LMResponseBuffer buffer;
-    kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdGetScreenUIImage, NULL, 0, &buffer);
+    kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdRun, NULL, 0, &buffer);
     
     if (ret == KERN_SUCCESS) {
-        
         NSLog(@"KERN_SUCCESS");
     }
-     */
 }
 
 

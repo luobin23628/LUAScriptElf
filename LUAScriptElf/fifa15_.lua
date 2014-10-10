@@ -505,11 +505,10 @@ function adjustPlayer()
 
 end	
 
-
 function movePlayerTo(srcX, srcY, dstX, dstY)
-	local id = touchDown(0, srcX, srcY);
+	local id = touchDown(1, srcX, srcY);
 	mSleep(10);			
-	
+
 	__moveTo(id, srcX, srcY, 568, 120);
 	__moveTo(id, 568, 120, dstX, dstY);
 
@@ -1287,6 +1286,18 @@ function buyBronzePackage()
 	return true;
 end
 
+function isInSimulateMatchPage()
+	if w == 960 then
+		return	checkColor(1098, 41, 248, 204, 49)	
+		and checkColor(298, 45,  234, 180, 33)
+		and checkColor(662, 42, 230, 230, 230);
+	else 
+		return	checkColor(1098, 41, 248, 204, 49)	
+		and checkColor(298, 45,  234, 180, 33)
+		and checkColor(662, 42, 230, 230, 230);
+	end
+end
+
 function isRegularPacksPage()
 	if w == 960 then
 		return	checkColor(41, 124, 248, 204, 49)	
@@ -1553,51 +1564,48 @@ function fileExits(filePath)
 	end
 end
 
-function getGoalAddress()
-	--score
-    if memoryRead then
-		for i=0x061bb7a8,0x061bb808,16 do
-            local ok1, ret1 = memoryRead("com.ea.fifa15.bv", i, "U32");
-            if ok1 and ret1 == 0 then
-                local ok2, ret2 = memoryRead("com.ea.fifa15.bv", i+4, "U32");
-                if ok2 and ret2 == 0 then
-                    
-                    local ok3, ret3 = memoryRead("com.ea.fifa15.bv", i-12, "U32");
-                    local ok4, ret4 = memoryRead("com.ea.fifa15.bv", i-8, "U32");
-                    local ok5, ret5 = memoryRead("com.ea.fifa15.bv", i-4, "U32");
-                    if ok3 and ret3 > 0 and ret3 <= 90
-                        and ok4 and ret4 > 0 and ret4 < 1000
-                        and ok5 and ret5 > 0 and ret5 < 1000 then
-                        return i;
-                    end
+function checkAddress(startAddress, endAddress)
+    for i=startAddress,endAddress,16 do
+        local ok1, ret1 = memoryRead("com.ea.fifa15.bv", i, "U32");
+        if ok1 and ret1 == 0 then
+            local ok2, ret2 = memoryRead("com.ea.fifa15.bv", i+4, "U32");
+            if ok2 and ret2 == 0 then
+                
+                local ok3, ret3 = memoryRead("com.ea.fifa15.bv", i-12, "U32");
+                local ok4, ret4 = memoryRead("com.ea.fifa15.bv", i-8, "U32");
+                local ok5, ret5 = memoryRead("com.ea.fifa15.bv", i-4, "U32");
+                if ok3 and ret3 > 0 and ret3 <= 90
+                    and ok4 and ret4 > 0 and ret4 < 1000
+                    and ok5 and ret5 > 0 and ret5 < 1000 then
+                    return i;
                 end
             end
-		end
-        
-        for i=0x061397a8,0x06139808,16 do
-            local ok1, ret1 = memoryRead("com.ea.fifa15.bv", i, "U32");
-            if ok1 and ret1 == 0 then
-                local ok2, ret2 = memoryRead("com.ea.fifa15.bv", i+4, "U32");
-                if ok2 and ret2 == 0 then
-                    
-                    local ok3, ret3 = memoryRead("com.ea.fifa15.bv", i-12, "U32");
-                    local ok4, ret4 = memoryRead("com.ea.fifa15.bv", i-8, "U32");
-                    local ok5, ret5 = memoryRead("com.ea.fifa15.bv", i-4, "U32");
-                    if ok3 and ret3 >= 0 and ret3 <= 90
-                        and ok4 and ret4 > 0
-                        and ok5 and ret5 > 0 then
-                        return i;
-                    end
-                end
-            end
-		end
-	end
+        end
+    end
     return nil;
 end
 
+function getGoalAddress()
+    local ret = nil;
+	--score
+    if memoryRead then
+        if w == 960 then
+            ret = checkAddress(0x061bb7a8, 0x061bb808);
+            if ret == nil then
+                ret = checkAddress(0x061397a8, 0x06139808);
+            end
+        else
+            ret = checkAddress(0x060fc798, 0x060fc808);
+        end
+	end
+    return ret;
+end
+
 function modifyGoal(address)
-    memoryWrite("com.ea.fifa15.bv", address, 10, "U32");
-    memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
+	if memoryWrite then
+   	 	memoryWrite("com.ea.fifa15.bv", address, 10, "U32");
+   	 	memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
+	end
 end
 
 UI = {
@@ -1617,8 +1625,8 @@ function main()
 ]]--
     rotateScreen(90);
 
-    mSleep(2000);	
-
+    mSleep(2000);
+    
 	-- 将屏幕宽度和高度分别保存在变量w、h中				
 	w, h = getScreenResolution(); 
 	local noError = false;
@@ -1628,6 +1636,12 @@ function main()
 	if isPausePage() then
 		goto inGame;
 	end
+
+
+adjustPlayer();
+	do
+return;
+end
     
 	::restart::		
 
@@ -1797,8 +1811,11 @@ function main()
 		end, 
 		isSeasonSelectionPage, function ()
 			mSleep(500);
+
+			moveto(width(800 + 176), 319, 50, 319);
+			
 			--选择Ultimate League
-			click(886, 319);
+			click(width(886 + 176), 319);
 			mSleep(800);
 			click(width(1076), 128);
 			mSleep(1000);
@@ -1834,9 +1851,11 @@ function main()
 			else
 				noError = waitUtilMeetCondition(function ()
 					if w == 960 then
-						return checkColor(467, 173, 110, 80, 64);
+                        local x, y = findColorInRegion(0xffffff, 432, 140, 518, 170)
+						return (x ~= -1 and y~= -1) or checkColor(467, 173, 110, 80, 64);
 					else
-						return checkColor(554, 171, 110, 80, 64);
+                        local x, y = findColorInRegion(0xffffff, 519, 140, 600, 170)
+						return (x ~= -1 and y~= -1) or checkColor(554, 171, 110, 80, 64);
 					end
 				end);
 				mSleep(500);
@@ -1891,7 +1910,7 @@ function main()
 
     local runLoopCount = 0;
 
-	noError = waitUtilMeetCondition3(isSkillDetailPage, function ()
+	noError = waitUtilMeetCondition4(isSkillDetailPage, function()
 			mSleep(1000);
 			click(width(1088), 44);
 			mSleep(500);
@@ -1908,13 +1927,21 @@ function main()
 			click(33, 39);
 			mSleep(500);
 			return false;
-		end, function()
+		end,
+		isInSimulateMatchPage, function ()
             runLoopCount = runLoopCount + 1;
-            if address == 0 and runLoopCount > 2*10 then
+                                     
+            if address == 0 and runLoopCount > 2*5 then
                 address = getGoalAddress();
             end
-            modifyGoal(address);
-        end);
+            if address and address > 0 then
+                if runLoopCount %5 == 0 then
+                	logDebug(string.format("address === %x", address));
+              		 modifyGoal(address);
+              	end
+            end
+            return false;
+		end);
 
 	setWaitLoopCount(2 * 60 * 1);
 

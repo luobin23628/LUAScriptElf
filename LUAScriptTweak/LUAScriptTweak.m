@@ -21,8 +21,6 @@
 static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef dataRef) {
     
     NSLog(@"LUAScriptTweak processMessage messageId:%d", (int)messageId);
-
-//    system("LUAScriptElf /var/touchelf/scripts/fifa15.lua YES&");
     
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     switch (messageId) {
@@ -39,6 +37,11 @@ static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef da
                 [alertView release];
                 LMSendReply(replyPort, NULL, 0);
             });
+            break;
+        }
+        case GMMessageIdRun: {
+            system("LUAScriptElf /var/touchelf/scripts/fifa15_.lua");
+            LMSendReply(replyPort, NULL, 0);
             break;
         }
         default:
@@ -66,11 +69,26 @@ static void machPortCallback(CFMachPortRef port, void *bytes, CFIndex size, void
 	LMResponseBufferFree(bytes);
 }
 
+@interface Thread : NSThread
+
+@end
+
+@implementation Thread
+
+- (void)main {
+    @autoreleasepool {
+        kern_return_t err = LMStartService(connection.serverName, CFRunLoopGetCurrent(), machPortCallback);
+        NSLog(@"StartService err:%d", err);
+        CFRunLoopRun();
+    }
+}
+
+@end
 
 static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
     
     @autoreleasepool {
-        kern_return_t err = LMStartService(connection.serverName, CFRunLoopGetCurrent(), machPortCallback);
-        NSLog(@"StartService err:%d", err);
+        Thread *t = [[Thread alloc] init];
+        [t start];
     }
 }
