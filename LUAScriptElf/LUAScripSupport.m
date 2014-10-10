@@ -768,6 +768,37 @@ static int l_getVersion(lua_State *L) {
     return 1;
 }
 
+static int l_setInterval(lua_State *L) {
+    double interval = lua_tonumber(L, 1);
+    const void *luaFun = lua_topointer(L, 2);
+    
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), interval, 0);
+    
+    //设置回调
+    dispatch_source_set_event_handler(timer, ^(){
+        // prepare for "function()"
+        lua_getglobal(L, luaFun);
+        
+        // run
+        int error = lua_pcall(L, 1, 0, 0);
+        if (error) {
+            luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
+        }
+    });
+    return 0;
+}
+
+static int l_clearInterval(lua_State *L) {
+    lua_pushstring(L, "1.0");
+    return 1;
+}
+
+static int l_dispatchAfter(lua_State *L) {
+    lua_pushstring(L, "1.0");
+    return 1;
+}
+
 void registerLUAFunctions(void) {
     @autoreleasepool {
         
@@ -825,5 +856,8 @@ void registerLUAFunctions(void) {
         [m registerFunction:l_getNetTime withName:@"getNetTime"];
         [m registerFunction:l_getVersion withName:@"getVersion"];
         
+        [m registerFunction:l_setInterval withName:@"setInterval"];
+        [m registerFunction:l_clearInterval withName:@"clearInterval"];
+        [m registerFunction:l_dispatchAfter withName:@"dispatchAfter"];
     }
 }

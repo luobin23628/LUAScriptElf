@@ -123,7 +123,7 @@ function waitUtilMeetCondition4 (condition1, callback1, condition2, callback2, c
 end
 
 
-function __moveTo(srcX, srcY, dstX, dstY, step)
+function __moveTo(id, srcX, srcY, dstX, dstY, step)
 	if not step or step == 0 then
 		step = 20;
 	end
@@ -139,7 +139,7 @@ function __moveTo(srcX, srcY, dstX, dstY, step)
 				break;
 			else
 				y0 = a * x0 + b;
-				touchMove(1, x0, y0);
+				touchMove(id, x0, y0);
 				mSleep(step);	
 			end
 		else
@@ -148,25 +148,25 @@ function __moveTo(srcX, srcY, dstX, dstY, step)
 				break;
 			else
 				y0 = a * x0 + b;
-				touchMove(1, x0, y0);
+				touchMove(id, x0, y0);
 				mSleep(step);	
 			end
 		end
 
 	until false	
-	touchMove(1, dstX, dstY);		
+	touchMove(id, dstX, dstY);
 end
 
 function moveTo(srcX, srcY, dstX, dstY)
-	touchDown(1, srcX, srcY);
+	local id = touchDown(0, srcX, srcY);
 	mSleep(10);			
 	
-	__moveTo(srcX, srcY, dstX, dstY);
+	__moveTo(id, srcX, srcY, dstX, dstY);
 
-	touchMove(1, dstX, dstY);
+	touchMove(id, dstX, dstY);
 
 	mSleep(20);	
-	touchUp(1);
+	touchUp(id, dstX, dstY);
 		
 	mSleep(1000);	
 end
@@ -507,16 +507,16 @@ end
 
 
 function movePlayerTo(srcX, srcY, dstX, dstY)
-	touchDown(1, srcX, srcY);
+	local id = touchDown(0, srcX, srcY);
 	mSleep(10);			
 	
-	__moveTo(srcX, srcY, 568, 120);
-	__moveTo(568, 120, dstX, dstY);	
+	__moveTo(id, srcX, srcY, 568, 120);
+	__moveTo(id, 568, 120, dstX, dstY);
 
-	touchMove(1, dstX - 30, dstY + 50);
+	touchMove(id, dstX - 30, dstY + 50);
 
 	mSleep(20);	
-	touchUp(1);
+	touchUp(id, dstX - 30, dstY + 50);
 		
 	mSleep(1000);	
 end
@@ -662,10 +662,10 @@ function enumateClubPlayerForExchange(pageCallback)
 	end
 
 	while hasMorePlayer do
-		touchDown(1, srcX, srcY);
+		local id = touchDown(0, srcX, srcY);
 		mSleep(10);			
-		__moveTo(srcX, srcY, dstX, dstY, 20);
-		touchMove(1, dstX, dstY);
+		__moveTo(id, srcX, srcY, dstX, dstY, 20);
+		touchMove(id, dstX, dstY);
 
 		mSleep(500);	
 
@@ -681,7 +681,7 @@ function enumateClubPlayerForExchange(pageCallback)
 		end
 
 		mSleep(100);	
-		touchUp(1);
+		touchUp(id, dstX, dstY);
 		mSleep(500);	
 
 		if pageCallback then
@@ -954,10 +954,10 @@ function enumateClubPlayer(pageCallback)
 	end
 
 	while hasMorePlayer do
-		touchDown(1, srcX, srcY);
+		local id = touchDown(0, srcX, srcY);
 		mSleep(10);			
-		__moveTo(srcX, srcY, dstX, dstY, 20);
-		touchMove(1, dstX, dstY);
+		__moveTo(id, srcX, srcY, dstX, dstY, 20);
+		touchMove(id, dstX, dstY);
 
 		mSleep(500);	
 
@@ -968,7 +968,7 @@ function enumateClubPlayer(pageCallback)
 		end
 
 		mSleep(100);	
-		touchUp(1);
+		touchUp(id, dstX, dstY);
 		mSleep(500);	
 
 		if pageCallback then

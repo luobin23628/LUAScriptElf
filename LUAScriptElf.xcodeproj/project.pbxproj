@@ -111,7 +111,7 @@
 		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
 		A89D202919D5B3020049153D /* UIColorAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorAddition.h; sourceTree = "<group>"; };
 		A89D202A19D5B3020049153D /* UIColorAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorAddition.m; sourceTree = "<group>"; };
-		A8D7865019D675EE003D7645 /* test.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		A8D7865019D675EE003D7645 /* test.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.lua; sourceTree = "<group>"; };
 		A8D7865719D677A8003D7645 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A8D7867619D677A8003D7645 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		A8F1A77819DEE30D00B09A8A /* MemoryUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryUtil.h; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../../opt/iOSOpenDev/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
 		AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.09.28 14.11.30@2x.png"; sourceTree = "<group>"; };
-		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };

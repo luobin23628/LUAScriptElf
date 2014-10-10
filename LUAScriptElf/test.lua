@@ -51,7 +51,7 @@ function main()
 
 
 appRun("com.ea.fifa15.bv");
-]]--
+
 rotateScreen(90);
 local c = getColor(520, 473);
 
@@ -65,8 +65,12 @@ else
 logDebug("failed", 3000);
 
     end
-    
+    ]]--
 
 --checkColor(140, 172, 82, 164, 212)
+
+setInterval(1000, function()
+    logDebug("failed");
+end);
 
 end
