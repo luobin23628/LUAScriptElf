@@ -17,7 +17,6 @@
 #import "UIFakeKeypress.h"
 #import "AppUtil.h"
 #import "UIColorAddition.h"
-#import "HIDManager.h"
 #import <SimulateTouch.h>
 #import "MemoryUtil.h"
 #import "AppUtil.h"
@@ -150,7 +149,7 @@ static int l_notifyMessage(lua_State *L) {
             
             LMResponseBuffer buffer;
             
-            kern_return_t ret = LMConnectionSendTwoWayData(&connection, GMMessageIdAlertView, (__bridge CFDataRef)data, &buffer);
+            kern_return_t ret = LMConnectionSendTwoWayData(&tweakConnection, TweakMessageIdAlertView, (__bridge CFDataRef)data, &buffer);
             
             if (ret == KERN_SUCCESS) {
                 NSLog(@"KERN_SUCCESS");

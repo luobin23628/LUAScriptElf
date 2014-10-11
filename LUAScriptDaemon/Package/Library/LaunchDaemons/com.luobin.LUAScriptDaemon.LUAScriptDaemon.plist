@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.luobin.LUAScriptDaemon.LUAScriptDaemon</string>
+	<key>MachServices</key>
+	<dict>
+		<key>com.luobin.LUAScriptDaemon.LUAScriptDaemon</key>
+		<true/>
+	</dict>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/LUAScriptDaemon</string>
+	</array>
+	<key>UserName</key>
+	<string>mobile</string>
+	<key>KeepAlive</key>
+	<true/>
+</dict>
+</plist>

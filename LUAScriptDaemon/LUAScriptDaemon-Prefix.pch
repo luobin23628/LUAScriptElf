@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'LUAScriptDaemon' target in the 'LUAScriptDaemon' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

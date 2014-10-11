@@ -10,8 +10,6 @@
 
 @interface UIImage (Addition)
 
-+ (UIImage*) captureShot;
-
 + (UIImage *)screenshot;
 
 - (UIImage *)imageWithCrop:(CGRect)rect;

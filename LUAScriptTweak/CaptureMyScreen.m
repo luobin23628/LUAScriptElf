@@ -51,7 +51,7 @@ static int _height = 0;
                                     [NSNumber numberWithInt:_bytesPerRow * _height], kIOSurfaceAllocSize,
                                     nil];
         // This is the current surface
-        _surface = IOSurfaceCreate((CFDictionaryRef)properties);
+        _surface = IOSurfaceCreate((__bridge CFDictionaryRef)properties);
     }
 
     IOSurfaceLock(_surface, 0, nil);

@@ -49,8 +49,7 @@
 - (void)test {
 //    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
     
-    LMResponseBuffer buffer;
-    kern_return_t ret = LMConnectionSendTwoWay(&connection, GMMessageIdRun, NULL, 0, &buffer);
+    kern_return_t ret = LMConnectionSendEmptyOneWay(&connection, GMMessageIdRun);
     
     if (ret == KERN_SUCCESS) {
         NSLog(@"KERN_SUCCESS");

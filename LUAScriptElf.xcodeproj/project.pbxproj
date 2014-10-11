@@ -56,7 +56,6 @@
 		A8FD460319D67D2100EF2C6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
 		A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
 		A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
-		A8FD460819D67D6D00EF2C6D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
 		A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
 		A8FD460C19D6836A00EF2C6D /* test.lua in Resources */ = {isa = PBXBuildFile; fileRef = A8D7865019D675EE003D7645 /* test.lua */; };
@@ -65,7 +64,6 @@
 		AB03988019E5421E00431826 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A78119DEF6E600B09A8A /* AppUtil.m */; };
 		AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
 		AB03988219E5422300431826 /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
-		AB03988319E5422600431826 /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
 		AB03988419E5422800431826 /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
 		AB03988519E5422B00431826 /* MemoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */; };
 		AB03988619E5422D00431826 /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
@@ -75,15 +73,38 @@
 		AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
 		AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
 		AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
+		AB424C6719E8EFFC00256160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
+		AB424C7119E8EFFC00256160 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB424C7019E8EFFC00256160 /* main.m */; };
 		AB4EA30B19D53C7C005F1AF5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */; };
 		AB4EA31719D53C7C005F1AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4EA31619D53C7C005F1AF5 /* main.m */; };
 		AB56F07219D7B864008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB56F07319D7B871008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB5881B019D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */; };
+		AB80255A19E916DC00F2F85F /* LightMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = A85EC20519DFF13F00376678 /* LightMessaging.m */; };
+		AB80255B19E9174F00F2F85F /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
+		AB80255D19E9176300F2F85F /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80255C19E9176300F2F85F /* librocketbootstrap.dylib */; };
+		AB80255E19E9177700F2F85F /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
+		AB80255F19E9178700F2F85F /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
+		AB80256019E9179200F2F85F /* MemoryUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */; };
+		AB80256119E917A000F2F85F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		AB80256419E917BB00F2F85F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80256219E917BB00F2F85F /* IOKit.framework */; };
+		AB80256519E917BB00F2F85F /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80256319E917BB00F2F85F /* IOSurface.framework */; };
+		AB80258919E91C7600F2F85F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80258819E91C7600F2F85F /* AVFoundation.framework */; };
+		AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
+		AB80259919E92EBB00F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
+		AB80259D19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
+		AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
+		AB80259F19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
+		AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
+		AB8025A119E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
 		ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */ = {isa = PBXBuildFile; fileRef = ABAC3D6E19E65E850053DB5F /* fifa15_.lua */; };
 		ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		ABC9CE4919E9169C008C09C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
+		ABC9CE4A19E916BA008C09C9 /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
+		ABC9CE4B19E916BE008C09C9 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A78119DEF6E600B09A8A /* AppUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +163,14 @@
 		AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUAScripSupport.m; sourceTree = "<group>"; };
 		AB0ED82419D584A600F3A18A /* UIFakeKeypress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIFakeKeypress.h; sourceTree = "<group>"; };
 		AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIFakeKeypress.m; sourceTree = "<group>"; };
+		AB424C6B19E8EFFC00256160 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		AB424C6C19E8EFFC00256160 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		AB424C6E19E8EFFC00256160 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		AB424C6F19E8EFFC00256160 /* LUAScriptDaemon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LUAScriptDaemon-Prefix.pch"; sourceTree = "<group>"; };
+		AB424C7019E8EFFC00256160 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB424C7419E8EFFC00256160 /* com.luobin.LUAScriptDaemon.LUAScriptDaemon.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = com.luobin.LUAScriptDaemon.LUAScriptDaemon.plist; path = Package/Library/LaunchDaemons/com.luobin.LUAScriptDaemon.LUAScriptDaemon.plist; sourceTree = "<group>"; };
+		AB424C7519E8EFFC00256160 /* postinst */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = postinst; path = Package/DEBIAN/postinst; sourceTree = "<group>"; };
+		AB424C7619E8EFFC00256160 /* prerm */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = prerm; path = Package/DEBIAN/prerm; sourceTree = "<group>"; };
 		AB4EA30719D53C7C005F1AF5 /* LUAScriptElf */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LUAScriptElf; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		AB4EA30F19D53C7C005F1AF5 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
@@ -151,6 +180,12 @@
 		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../../opt/iOSOpenDev/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
 		AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.09.28 14.11.30@2x.png"; sourceTree = "<group>"; };
+		AB80255C19E9176300F2F85F /* librocketbootstrap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librocketbootstrap.dylib; path = ../../../../../../opt/iOSOpenDev/lib/librocketbootstrap.dylib; sourceTree = "<group>"; };
+		AB80256219E917BB00F2F85F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../../../opt/iOSOpenDev/frameworks/IOKit.framework; sourceTree = "<group>"; };
+		AB80256319E917BB00F2F85F /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = ../../../../../../opt/iOSOpenDev/frameworks/IOSurface.framework; sourceTree = "<group>"; };
+		AB80258819E91C7600F2F85F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AB80259A19E9511100F2F85F /* ProcessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessHelper.h; sourceTree = "<group>"; };
+		AB80259B19E9511100F2F85F /* ProcessHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessHelper.m; sourceTree = "<group>"; };
 		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
@@ -189,6 +224,20 @@
 				A8F6D75719D6795F00B549D0 /* CoreGraphics.framework in Frameworks */,
 				A8F6D75819D6795F00B549D0 /* UIKit.framework in Frameworks */,
 				A8F6D75619D6795F00B549D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB424C6319E8EFFC00256160 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB80258919E91C7600F2F85F /* AVFoundation.framework in Frameworks */,
+				AB80256419E917BB00F2F85F /* IOKit.framework in Frameworks */,
+				AB80256519E917BB00F2F85F /* IOSurface.framework in Frameworks */,
+				AB80255F19E9178700F2F85F /* libsimulatetouch.dylib in Frameworks */,
+				AB80255D19E9176300F2F85F /* librocketbootstrap.dylib in Frameworks */,
+				AB424C6719E8EFFC00256160 /* Foundation.framework in Frameworks */,
+				ABC9CE4919E9169C008C09C9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,12 +352,68 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		AB424C6819E8EFFC00256160 /* LUAScriptDaemon */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C7019E8EFFC00256160 /* main.m */,
+				AB424C6919E8EFFC00256160 /* Package */,
+				AB424C6D19E8EFFC00256160 /* Supporting Files */,
+			);
+			path = LUAScriptDaemon;
+			sourceTree = "<group>";
+		};
+		AB424C6919E8EFFC00256160 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C6A19E8EFFC00256160 /* DEBIAN */,
+				AB424C7219E8EFFC00256160 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		AB424C6A19E8EFFC00256160 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C6B19E8EFFC00256160 /* control.txt */,
+				AB424C6C19E8EFFC00256160 /* control */,
+				AB424C7519E8EFFC00256160 /* postinst */,
+				AB424C7619E8EFFC00256160 /* prerm */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		AB424C6D19E8EFFC00256160 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C6E19E8EFFC00256160 /* PackageVersion.plist */,
+				AB424C6F19E8EFFC00256160 /* LUAScriptDaemon-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AB424C7219E8EFFC00256160 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C7319E8EFFC00256160 /* LaunchDaemons */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		AB424C7319E8EFFC00256160 /* LaunchDaemons */ = {
+			isa = PBXGroup;
+			children = (
+				AB424C7419E8EFFC00256160 /* com.luobin.LUAScriptDaemon.LUAScriptDaemon.plist */,
+			);
+			name = LaunchDaemons;
+			sourceTree = "<group>";
+		};
 		AB4EA2FE19D53C7C005F1AF5 = {
 			isa = PBXGroup;
 			children = (
 				AB4EA30C19D53C7C005F1AF5 /* LUAScriptElf */,
 				A8F6D75919D6795F00B549D0 /* TestLUA */,
 				A85EC1E419DFD70A00376678 /* LUAScriptTweak */,
+				AB424C6819E8EFFC00256160 /* LUAScriptDaemon */,
 				AB4EA30919D53C7C005F1AF5 /* Frameworks */,
 				AB4EA30819D53C7C005F1AF5 /* Products */,
 				76CBE73ACC174A8987D20574 /* Pods.xcconfig */,
@@ -328,6 +433,10 @@
 		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB80258819E91C7600F2F85F /* AVFoundation.framework */,
+				AB80256219E917BB00F2F85F /* IOKit.framework */,
+				AB80256319E917BB00F2F85F /* IOSurface.framework */,
+				AB80255C19E9176300F2F85F /* librocketbootstrap.dylib */,
 				A8F71B9E19E842580009CF62 /* libsimulatetouch.dylib */,
 				A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */,
 				A85EC1FE19DFDC3000376678 /* libactivator.dylib */,
@@ -369,6 +478,8 @@
 				A89D202A19D5B3020049153D /* UIColorAddition.m */,
 				A8F1A77819DEE30D00B09A8A /* MemoryUtil.h */,
 				A8F1A77919DEE30D00B09A8A /* MemoryUtil.m */,
+				AB80259A19E9511100F2F85F /* ProcessHelper.h */,
+				AB80259B19E9511100F2F85F /* ProcessHelper.m */,
 				AB0ED80B19D56FAB00F3A18A /* LuaManager.h */,
 				AB0ED80C19D56FAB00F3A18A /* LuaManager.m */,
 				A85EC20719DFF16100376678 /* Global.h */,
@@ -432,6 +543,15 @@
 			files = (
 				A85EC1FC19DFDB6600376678 /* CaptureMyScreen.h in Headers */,
 				A85EC20819DFF16100376678 /* Global.h in Headers */,
+				AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB424C6419E8EFFC00256160 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB80259D19E9511100F2F85F /* ProcessHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +593,23 @@
 			productReference = A8F6D75519D6795F00B549D0 /* TestLUA.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AB424C6619E8EFFC00256160 /* LUAScriptDaemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB424C7919E8EFFC00256160 /* Build configuration list for PBXNativeTarget "LUAScriptDaemon" */;
+			buildPhases = (
+				AB424C6219E8EFFC00256160 /* Sources */,
+				AB424C6319E8EFFC00256160 /* Frameworks */,
+				AB424C6419E8EFFC00256160 /* Headers */,
+				AB424C6519E8EFFC00256160 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LUAScriptDaemon;
+			productName = LUAScriptDaemon;
+			productType = "com.apple.product-type.tool";
+		};
 		AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB4EA31A19D53C7C005F1AF5 /* Build configuration list for PBXNativeTarget "LUAScriptElf" */;
@@ -500,6 +637,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					AB424C6619E8EFFC00256160 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
 			};
 			buildConfigurationList = AB4EA30219D53C7C005F1AF5 /* Build configuration list for PBXProject "LUAScriptElf" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -517,6 +659,7 @@
 				AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */,
 				A8F6D75419D6795F00B549D0 /* TestLUA */,
 				A85EC1E019DFD70A00376678 /* LUAScriptTweak */,
+				AB424C6619E8EFFC00256160 /* LUAScriptDaemon */,
 			);
 		};
 /* End PBXProject section */
@@ -599,6 +742,19 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
 		};
+		AB424C6519E8EFFC00256160 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
 		AB4EA30519D53C7C005F1AF5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,8 +778,8 @@
 				AB03988519E5422B00431826 /* MemoryUtil.m in Sources */,
 				A85EC1FD19DFDB6600376678 /* CaptureMyScreen.m in Sources */,
 				AB03988619E5422D00431826 /* LuaManager.m in Sources */,
+				AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */,
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
-				AB03988319E5422600431826 /* UIImageAddition.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
 				ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */,
 				A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */,
@@ -638,17 +794,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8F1A77B19DEE30D00B09A8A /* MemoryUtil.m in Sources */,
-				A8FD460819D67D6D00EF2C6D /* UIImageAddition.m in Sources */,
+				AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */,
 				A8F1A78319DEF6E600B09A8A /* AppUtil.m in Sources */,
 				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
 				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
 				ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */,
 				A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */,
 				A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */,
+				AB80259F19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
 				A8F6D76019D6796000B549D0 /* main.m in Sources */,
 				A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */,
 				A820CF9719E01B0B0075DC26 /* LightMessaging.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB424C6219E8EFFC00256160 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB80255E19E9177700F2F85F /* UIFakeKeypress.m in Sources */,
+				ABC9CE4B19E916BE008C09C9 /* AppUtil.m in Sources */,
+				AB80255A19E916DC00F2F85F /* LightMessaging.m in Sources */,
+				ABC9CE4A19E916BA008C09C9 /* LuaManager.m in Sources */,
+				AB80255B19E9174F00F2F85F /* LUAScripSupport.m in Sources */,
+				AB8025A119E9511100F2F85F /* ProcessHelper.m in Sources */,
+				AB80256119E917A000F2F85F /* ScreenUtil.m in Sources */,
+				AB424C7119E8EFFC00256160 /* main.m in Sources */,
+				AB80259919E92EBB00F2F85F /* UIImageAddition.m in Sources */,
+				AB80256019E9179200F2F85F /* MemoryUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,6 +833,7 @@
 				A8F1A78219DEF6E600B09A8A /* AppUtil.m in Sources */,
 				AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */,
 				A85EC20619DFF13F00376678 /* LightMessaging.m in Sources */,
+				AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */,
 				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
 				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
@@ -706,6 +881,7 @@
 					armv7,
 					armv7s,
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -736,7 +912,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 10.2.10.15;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -752,6 +928,7 @@
 					armv7,
 					armv7s,
 				);
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -778,7 +955,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 10.2.10.15;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -921,6 +1098,92 @@
 				PODS_ROOT = "${SRCROOT}/Pods";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AB424C7719E8EFFC00256160 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+					/opt/iOSOpenDev/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LUAScriptDaemon/LUAScriptDaemon-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					"\"${PODS_ROOT}/Headers\"",
+				);
+				INSTALL_PATH = /usr/bin;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/lib/**",
+					/opt/iOSOpenDev/lib,
+				);
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		AB424C7819E8EFFC00256160 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv7s,
+					armv7,
+				);
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+					/opt/iOSOpenDev/frameworks,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LUAScriptDaemon/LUAScriptDaemon-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/include/**",
+					"\"${PODS_ROOT}/Headers/lua\"",
+					"\"${PODS_ROOT}/Headers\"",
+				);
+				INSTALL_PATH = /usr/bin;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/lib/**",
+					/opt/iOSOpenDev/lib,
+				);
+				PODS_ROOT = "${SRCROOT}/Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
 			};
 			name = Release;
 		};
@@ -1105,6 +1368,15 @@
 			buildConfigurations = (
 				A8F6D78319D6796000B549D0 /* Debug */,
 				A8F6D78419D6796000B549D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AB424C7919E8EFFC00256160 /* Build configuration list for PBXNativeTarget "LUAScriptDaemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB424C7719E8EFFC00256160 /* Debug */,
+				AB424C7819E8EFFC00256160 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -16,19 +16,24 @@ static LMConnection connection = {
 	"LUAScriptElf.datasource"
 };
 
-#define GMMessageIdAlertView       1
-#define GMMessageIdSearch       3
-#define GMMessageIdRun    4
-#define GMMessageIdStop       5
-#define GMMessageIdClearSearchData 6
-#define GMMessageIdReset        7
-#define GMMessageIdCheckValid   8
-#define GMMessageIdGetLockedList  9
-#define GMMessageIdGetStoredList  10
-#define GMMessageIdRemoveLockedOrStoredObjects  11
 
-#define GMMessageIdAddAppIdentifier  20
-#define GMMessageIdRemoveAppIdentifier  21
-#define GMMessageIdGetAppIdentifiers  22
+static LMConnection tweakConnection = {
+	MACH_PORT_NULL,
+	"LUAScriptTweak.datasource"
+};
+
+#define TweakMessageIdAlertView       1
+
+static LMConnection daemonConnection = {
+    MACH_PORT_NULL,
+    "LUAScriptDaemon.datasource"
+};
+
+#define DaemonConnectionMessageIdRun    10001
+#define DaemonConnectionMessageIdStop    10002
+#define DaemonConnectionMessageIdRunStatus    10003
+
+
+
 
 #endif

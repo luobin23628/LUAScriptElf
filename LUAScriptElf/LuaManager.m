@@ -98,14 +98,30 @@ skip:
     lua_register(self.state, to_cString(name), function);
 }
 
+
+static jmp_buf place;
+static bool stop;
+
+static void hook(lua_State* L, lua_Debug *ar) {
+    if (stop) {
+        longjmp(place, 1);
+    }
+}
+
+- (void)stop {
+    stop = YES;
+}
+
 - (void)callFunctionNamed:(NSString *)name withObject:(NSObject *)object {
     // get state
     lua_State *L = self.state;
-
+    
     // prepare for "function(object)"
     lua_getglobal(L, to_cString(name));
     lua_pushlightuserdata(L, (__bridge void *)(object));
-
+    
+    lua_sethook(L, hook, LUA_MASKCOUNT, 100);
+    setjmp(place);
     // run
     int error = lua_pcall(L, 1, 0, 0);
     if (error) {
