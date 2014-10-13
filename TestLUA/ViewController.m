@@ -12,6 +12,7 @@
 #import "HIDManager.h"
 #import "LightMessaging.h"
 #import "Global.h"
+#import "ProcessHelper.h"
 
 @interface ViewController ()
 
@@ -29,14 +30,14 @@
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-//    imageView.image = [UIImage imageNamed:@"Screenshot 2014.10.10 22.22.39.png"];
+    imageView.image = [UIImage imageNamed:@"Screenshot 2014.10.12 01.07.40@2x.png"];
     imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:imageView];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setTitle:@"run" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-    btn.frame = CGRectMake(100, 100, 100, 30);
+    btn.frame = CGRectMake(100, 50, 100, 30);
     [btn addTarget:self action:@selector(test) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
@@ -47,13 +48,13 @@
 }
 
 - (void)test {
-//    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
-    
-    kern_return_t ret = LMConnectionSendEmptyOneWay(&connection, GMMessageIdRun);
-    
-    if (ret == KERN_SUCCESS) {
-        NSLog(@"KERN_SUCCESS");
-    }
+    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
+//
+//    kern_return_t ret = LMConnectionSendEmptyOneWay(&connection, GMMessageIdRun);
+//    
+//    if (ret == KERN_SUCCESS) {
+//        NSLog(@"KERN_SUCCESS");
+//    }
 }
 
 

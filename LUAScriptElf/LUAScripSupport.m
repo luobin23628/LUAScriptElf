@@ -116,10 +116,24 @@ extern void AudioServicesStopSystemSound(SystemSoundID inSystemSoundID);
 
 static int l_logDebug(lua_State *L) {
     @autoreleasepool {
-        const char *s = lua_tostring(L, 1);
-        if (s) {
-            NSString *message = [NSString stringWithUTF8String:s];
-            NSLog(@"%@", message);
+        const char *message = lua_tostring(L, 1);
+        if (message) {
+            static FILE *logFile = nil;
+            static NSDateFormatter *dateFormatter = nil;
+            if (!logFile){
+                NSError *error = nil;
+                BOOL ok = [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/luascriptself/" withIntermediateDirectories:YES attributes:nil error:&error];
+                if (!ok) {
+                    NSLog(@"%@", error);
+                }
+                logFile = fopen("/var/mobile/luascriptself/log.txt", "w");
+                
+                dateFormatter = [[NSDateFormatter alloc] init];
+                [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+            }
+            
+            if(logFile != NULL)
+                fprintf(logFile, "%s: %s\n", [[dateFormatter stringFromDate:[NSDate date]] UTF8String], message);
         }
     }
     return 0;
@@ -317,8 +331,8 @@ static int l_findColor(lua_State *L) {
         NSInteger color = lua_tointeger(L, 1);
         
         TKColor tColor = {
-            .red = color&0xFF0000>>16,
-            .green = color&0x00FF00>>8,
+            .red = (color&0xFF0000)>>16,
+            .green = (color&0x00FF00)>>8,
             .blue = color&0x0000FF
         };
         
@@ -343,8 +357,8 @@ static int l_findColorFuzzy(lua_State *L) {
         CGFloat offset = lua_tonumber(L, 4);
         
         TKColor tColor = {
-            .red = color&0xFF0000>>16,
-            .green = color&0x00FF00>>8,
+            .red = (color&0xFF0000)>>16,
+            .green = (color&0x00FF00)>>8,
             .blue = color&0x0000FF
         };
         
@@ -362,7 +376,7 @@ static int l_findColorFuzzy(lua_State *L) {
     return 2;
 }
 
-static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2, NSInteger offset) {
+static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloat x2, CGFloat y2, NSInteger accuracy) {
     @autoreleasepool {
         if (x1 > x2 || y1 > y2) {
             return CGPointMake(NSNotFound, NSNotFound);
@@ -372,12 +386,12 @@ static CGPoint findColorInRegion(NSInteger color, CGFloat x1, CGFloat y1, CGFloa
         windowToScreenPosition(&x2, &y2);
         
         TKColor tColor = {
-            .red = color&0xFF0000>>16,
-            .green = color&0x00FF00>>8,
+            .red = (color&0xFF0000)>>16,
+            .green = (color&0x00FF00)>>8,
             .blue = color&0x0000FF
         };
         
-        CGPoint point =  [ScreenUtil findColor:tColor inRegion:CGRectMake(MIN(x1, x2), MIN(y1, y2), fabs(x2 - x1), fabs(y2 - y1)) fuzzyOffset:offset];
+        CGPoint point =  [ScreenUtil findColor:tColor inRegion:CGRectMake(MIN(x1, x2), MIN(y1, y2), fabs(x2 - x1), fabs(y2 - y1)) accuracy:accuracy];
         if (point.x != NSNotFound && point.y != NSNotFound) {
             screenToWindowPosition(&point.x, &point.y);
             return point;
@@ -415,15 +429,15 @@ static int l_findColorInRegionFuzzy(lua_State *L) {
     @autoreleasepool {
         NSInteger color = lua_tointeger(L, 1);
         
-        unsigned char x1 = lua_tonumber(L, 2);
-        unsigned char y1 = lua_tonumber(L, 3);
+        NSInteger accuracy = lua_tointeger(L, 2);
         
-        unsigned char x2 = lua_tonumber(L, 4);
-        unsigned char y2 = lua_tonumber(L, 5);
+        int x1 = lua_tonumber(L, 3);
+        int y1 = lua_tonumber(L, 4);
         
-        NSInteger offset = lua_tointeger(L, 6);
+        int x2 = lua_tonumber(L, 5);
+        int y2 = lua_tonumber(L, 6);
         
-        CGPoint point = findColorInRegion(color, x1, y1, x2, y2, offset);
+        CGPoint point = findColorInRegion(color, x1, y1, x2, y2, accuracy);
         
         if (point.x != NSNotFound && point.y != NSNotFound) {
             lua_pushnumber(L, point.x);

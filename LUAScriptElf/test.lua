@@ -74,10 +74,10 @@ setInterval(1000, function()
 end);
   ]]--
   rotateScreen(90);
-    local x121, y121 = findColorInRegion(0xffffff, 519, 140, 600, 170);
+local x, y = findColorInRegionFuzzy(0xbc9985, 95, 23, 241, 702, 241)
+
     
-    
-    notifyMessage(string.format("%d , %d", x121, y121));
+    notifyMessage(string.format("%d , %d", x, y));
 
 
 end

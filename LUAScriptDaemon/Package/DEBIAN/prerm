@@ -1,5 +1,0 @@
-#!/bin/sh
-
-/bin/launchctl unload /Library/LaunchDaemons/com.luobin.LUAScriptDaemon.LUAScriptDaemon.plist
-
-exit 0

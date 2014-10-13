@@ -110,8 +110,25 @@ typedef struct kinfo_proc kinfo_proc;
 	free(allProcs);
 }
 
-- (BOOL)findProcessWithName:(NSString *)procNameToSearch {
-	return ([_processList indexOfObject:procNameToSearch] != NSNotFound);
+- (pid_t)findProcessWithName:(NSString *)procNameToSearch {
+	kinfo_proc * allProcs = 0;
+	size_t numProcs;
+	NSString * procName = nil;
+	NSInteger err = [self getBSDProcessList:&allProcs withNumberOfProcesses:&numProcs];
+	if (err) {
+		return 0;
+	}
+    pid_t pid = 0;
+	for (NSInteger i = 0 ; i < (NSInteger)numProcs; ++i) {
+		procName = [NSString stringWithCString:allProcs[i].kp_proc.p_comm
+                                      encoding:NSASCIIStringEncoding];
+        if ([procName isEqualToString:procNameToSearch]) {
+            pid = allProcs[i].kp_proc.p_pid;
+            break;
+        }
+	}
+	free(allProcs);
+    return pid;
 }
 
 @end

@@ -19,6 +19,6 @@
 + (instancetype)shareInstance;
 
 - (void)obtainFreshProcessList;
-- (BOOL)findProcessWithName:(NSString *)procNameToSearch;
+- (pid_t)findProcessWithName:(NSString *)procNameToSearch;
 
 @end

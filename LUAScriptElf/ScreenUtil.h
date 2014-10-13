@@ -28,7 +28,7 @@ typedef struct {
 
 + (CGPoint)findColor:(TKColor)color fuzzyOffset:(CGFloat)fuzzyOffset;
 
-+ (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region fuzzyOffset:(CGFloat)fuzzyOffset;
++ (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region accuracy:(CGFloat)accuracy;
 
 
 @end

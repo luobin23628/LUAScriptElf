@@ -11,8 +11,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <libactivator/libactivator.h>
-#import "CaptureMyScreen.h"
 #import "LightMessaging.h"
 #import "Global.h"
 #import "LuaManager.h"
@@ -64,7 +62,8 @@ static void machPortCallback(CFMachPortRef port, void *bytes, CFIndex size, void
 }
 
 
-static UIAlertView *alertView = nil;
+static UIAlertView *runAlertView = nil;
+static UIAlertView *cancelAlertView = nil;
 
 @interface AlertViewDeletege : NSObject <UIAlertViewDelegate>
 
@@ -73,72 +72,62 @@ static UIAlertView *alertView = nil;
 @implementation AlertViewDeletege
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"buttonIndex == %d", buttonIndex);
+
     if (buttonIndex == 0) {
         
     } else if (buttonIndex == 1) {
-//        LMResponseBuffer buffer;
-//        kern_return_t ret = LMConnectionSendTwoWayData(&daemonConnection, DaemonConnectionMessageIdRun, NULL, &buffer);
-//        if (ret == KERN_SUCCESS) {
-//            NSLog(@"run lua success");
-//        }
-//        LMResponseBufferFree(&buffer);
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-            system("killall -9 LUAScriptElf;LUAScriptElf /var/touchelf/scripts/fifa15_.lua");
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            system("LUAScriptElf /var/touchelf/scripts/fifa15_.lua");
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                cancelAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"播放结束" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [cancelAlertView show];
+            });
         });
     }
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    
+    cancelAlertView = nil;
+    runAlertView = nil;
 }
 
 @end
 
 static AlertViewDeletege *delegate = nil;
 
-
 static void systemVolumeDidChangeNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+    if (cancelAlertView || runAlertView) {
+        return;
+    }
+    
+    NSString *reason = [(__bridge NSDictionary *)userInfo objectForKey:@"AVSystemController_AudioVolumeChangeReasonNotificationParameter"];
+    
+    if (![reason isEqualToString:@"ExplicitVolumeChange"]) {
+        return;
+    }
+    
+    NSLog(@"systemVolumeDidChangeNotification volume = %@", userInfo);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @autoreleasepool {
-//            LMResponseBuffer buffer;
-//            kern_return_t kert = LMConnectionSendTwoWayData(&daemonConnection, DaemonConnectionMessageIdRunStatus, NULL, &buffer);
-//            
-//            uint32_t length = LMMessageGetDataLength(&buffer.message);
-//            
-//            
-//            NSLog(@"kert === %d, length==== %d", kert, length);
-//
-//            
-//            if (length && kert == KERN_SUCCESS) {
             
-            BOOL isRunning = [[ProcessHelper shareInstance] findProcessWithName:@"LUAScriptElf"];
+            pid_t pid = [[ProcessHelper shareInstance] findProcessWithName:@"LUAScriptElf"];
             
-                NSLog(@"isRunning === %d", isRunning);
-                
-                if (isRunning) {
-                    
-                    
-//                    LMResponseBuffer buffer2;
-//                    kern_return_t ret = LMConnectionSendTwoWayData(&daemonConnection, DaemonConnectionMessageIdStop, NULL, &buffer2);
-//                    if (ret == KERN_SUCCESS) {
-//                        NSLog(@"stop lua success");
-//                    }
-//                    LMResponseBufferFree(&buffer2);
-                    
-                    system("killall -9 LUAScriptElf;");
-                } else {
-                    dispatch_sync(dispatch_get_main_queue(), ^{
-                        NSString *message = @"是否运行lua脚本";
-                        delegate = [[AlertViewDeletege alloc] init];
-                        alertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:delegate cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                        [alertView show];
-                    });
-                }
+            NSLog(@"pid === %d", pid);
+            
+            if (pid > 0) {
+                kill(pid, SIGKILL);
+            } else {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    NSString *message = @"是否运行lua脚本";
+                    delegate = [[AlertViewDeletege alloc] init];
+                    runAlertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:delegate cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                    [runAlertView show];
+                });
             }
-//            LMResponseBufferFree(&buffer);
-//            
-//        }
+        }
     });
 }
 
@@ -147,9 +136,9 @@ static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
     @autoreleasepool {
         CFNotificationCenterRef center = CFNotificationCenterGetLocalCenter();
 		CFNotificationCenterAddObserver(center, NULL, systemVolumeDidChangeNotification, CFSTR("AVSystemController_SystemVolumeDidChangeNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
-
+        
         kern_return_t err = LMStartService(tweakConnection.serverName, CFRunLoopGetCurrent(), machPortCallback);
         NSLog(@"StartService err:%d", err);
-
+        
     }
 }

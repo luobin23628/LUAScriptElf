@@ -28,6 +28,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A84C3FD619E9925D0015B635"
+               BuildableName = "LUAScriptElfUITests.xctest"
+               BlueprintName = "LUAScriptElfUITests"
+               ReferencedContainer = "container:LUAScriptElf.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

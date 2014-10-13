@@ -158,7 +158,7 @@ static IOSurfaceRef surface;
     return CGPointMake(NSNotFound, NSNotFound);
 }
 
-+ (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region fuzzyOffset:(CGFloat)fuzzyOffset {
++ (CGPoint)findColor:(TKColor)color inRegion:(CGRect)region accuracy:(CGFloat)accuracy {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat scale = [UIScreen mainScreen].scale;
 
@@ -192,6 +192,15 @@ static IOSurfaceRef surface;
     unsigned char *data = IOSurfaceGetBaseAddress(surface);
     //    int totalBytes = bytesPerRow * height;
     
+    if (accuracy < 0 || accuracy > 100) {
+        accuracy = 100;
+    }
+    accuracy = 100 - accuracy;
+
+    double redAccuracy = 1.0*color.red*accuracy/100;
+    double greenAccuracy = 1.0*color.green*accuracy/100;
+    double blueAccuracy = 1.0*color.blue*accuracy/100;
+
 	if (data != NULL) {
         for (int i = region.origin.x; i <= CGRectGetMaxX(region); i++) {
             for (int j = region.origin.y; j < CGRectGetMaxY(region); j++) {
@@ -199,9 +208,10 @@ static IOSurfaceRef surface;
                 unsigned char blue =  data[offset];
                 unsigned char green = data[offset+1];
                 unsigned char red = data[offset+2];
-                if (round(fabs(red - color.red)) <= ceil(fuzzyOffset)
-                    &&round(fabs(green - color.green)) <= ceil(fuzzyOffset)
-                    &&round(fabs(blue - color.blue)) <= ceil(fuzzyOffset)) {
+                
+                if (round(fabs(red - color.red)) <= ceil(redAccuracy)
+                    &&round(fabs(green - color.green)) <= ceil(greenAccuracy)
+                    &&round(fabs(blue - color.blue)) <= ceil(blueAccuracy)) {
                     return CGPointMake(i, j);
                 }
             }
