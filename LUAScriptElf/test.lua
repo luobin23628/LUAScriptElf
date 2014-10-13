@@ -65,19 +65,14 @@ else
 logDebug("failed", 3000);
 
     end
-
-
 --checkColor(140, 172, 82, 164, 212)
-
-setInterval(1000, function()
-    logDebug("failed");
-end);
   ]]--
-  rotateScreen(90);
-    local x121, y121 = findColorInRegion(0xffffff, 519, 140, 600, 170);
-    
-    
-    notifyMessage(string.format("%d , %d", x121, y121));
+
+setInterval(1000, f2);
+
+end
+
+function f2 ()
 
 
 end

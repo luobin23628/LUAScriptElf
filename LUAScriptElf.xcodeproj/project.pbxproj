@@ -90,7 +90,7 @@
 		AB80256419E917BB00F2F85F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80256219E917BB00F2F85F /* IOKit.framework */; };
 		AB80256519E917BB00F2F85F /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80256319E917BB00F2F85F /* IOSurface.framework */; };
 		AB80258919E91C7600F2F85F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80258819E91C7600F2F85F /* AVFoundation.framework */; };
-		AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; };
+		AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB80259919E92EBB00F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
 		AB80259D19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
@@ -912,7 +912,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 10.2.10.30;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -955,7 +955,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 10.2.10.15;
+				iOSOpenDevDevice = 10.2.10.30;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;

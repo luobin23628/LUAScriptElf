@@ -18,6 +18,4 @@
 - (void)registerFunction:(lua_CFunction)function withName:(NSString *)name;
 - (void)callFunctionNamed:(NSString *)name withObject:(NSObject *)object;
 
-- (void)stop;
-
 @end

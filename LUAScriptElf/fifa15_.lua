@@ -111,7 +111,7 @@ function waitUtilMeetCondition4 (condition1, callback1, condition2, callback2, c
 			--长时间无响应  0.5 * 2 * 60 * 2 (2分钟)
 			runLoopCount = runLoopCount + 1;
 			if runLoopCount > loopCount then
-				logDebug("runLoopCount > loopCount %d > %d", runLoopCount, loopCount);
+				logDebug(string.format("runLoopCount > loopCount %d > %d", runLoopCount, loopCount));
 				return false;
 			end
 			if repeatFunctiion then 
@@ -174,6 +174,7 @@ end
 function isErrorAlert()
 	if w == 960 then
 		return checkColor(437, 105, 230, 230, 230)	
+		and checkColor(339, 307, 230, 230, 230)
 		and checkColor(510, 106, 230, 230, 230)
 		and checkColor(486, 532, 164, 171, 184)
 		and checkColor(175, 524, 28, 31, 35)
@@ -336,10 +337,10 @@ end
 --暂停页
 function isPausePage()
 	if w == 960 then
-		return	checkColor(72, 192, 230, 230, 230)	
-		and checkColor(89, 472, 230, 230, 230)
-		and checkColor(499, 473, 230, 230, 230)
-		and checkColor(565, 193, 230, 230, 230);
+		return	checkColor(273, 191, 210, 210, 211)	
+		and checkColor(587, 193, 230, 230, 230)
+		and checkColor(500, 347, 230, 230, 230)
+		and checkColor(535, 503, 230, 230, 230);
 	else 
 		return checkColor(317, 191, 210, 210, 211)
 		and checkColor(587, 345, 230, 230, 230)
@@ -416,15 +417,26 @@ end
 
 function isEndSeasonEarlyAlert()
 	if w == 960 then
-		return checkColor(437, 177, 230, 230, 230)	
-		and checkColor(618, 177, 230, 230, 230)
-		and checkColor(538, 312, 229, 229, 229)
-		and checkColor(571, 464, 165, 172, 185);	
+		return checkColor(348, 176, 230, 230, 230)	
+		and checkColor(530, 175, 230, 230, 230)
+		and checkColor(415, 463, 28, 31, 35);	
 	else 
 		return checkColor(437, 177, 230, 230, 230)	
 		and checkColor(618, 177, 230, 230, 230)
 		and checkColor(538, 312, 229, 229, 229)
 		and checkColor(571, 464, 165, 172, 185);	
+	end
+end	
+
+function isEndSeasonEndAlert()
+	if w == 960 then
+		return checkColor(394, 173, 230, 230, 230)	
+		and checkColor(476, 462, 165, 172, 185)
+		and checkColor(353, 320, 230, 230, 230);
+	else 
+		return checkColor(483, 175, 230, 230, 230)	
+		and checkColor(421, 462, 165, 172, 185)
+		and checkColor(633, 459, 255, 255, 255);	
 	end
 end	
 
@@ -481,6 +493,115 @@ function isFinalScorePage()
 	end
 end
 
+function moveSubstifutionPlayerTo(srcX, srcY, dstX, dstY)
+	local id = touchDown(1, srcX, srcY);
+	mSleep(10);			
+
+	__moveTo(id, srcX, srcY, dstX - 30, dstY - 30);
+
+	touchMove(id, dstX - 30, dstY + 50);
+
+	mSleep(20);	
+	touchUp(id, dstX - 30, dstY + 50);
+
+	mSleep(1000);	
+end
+
+function exchangeSubstifutionPlayerIfNeed(x, y) 
+		local offset;
+		
+		if w == 1136 then
+			offset = 176;
+		else
+			offset = 0;
+		end	
+
+		--预备队员最后一个开始		
+		if not checkColor(731 + offset, 525, 155, 3, 0, 10) 
+			and  not checkColor(731 + offset, 525, 79, 79, 79, 10) 
+			and  not checkColor(731 + offset, 525, 201, 191, 191, 20) then 
+			moveSubstifutionPlayerTo(731 + offset, 525, x, y);			
+		elseif not checkColor(635 + offset, 525, 155, 3, 0, 10) 
+			and  not checkColor(635 + offset, 525, 79, 79, 79, 10) 
+			and  not checkColor(635 + offset, 525, 201, 191, 191, 20) then
+			moveSubstifutionPlayerTo(635 + offset, 525, x, y);			
+		elseif not checkColor(539 + offset, 525, 155, 3, 0, 10) 
+			and  not checkColor(539 + offset, 525, 79, 79, 79, 10)
+			and  not checkColor(539 + offset, 525, 201, 191, 191, 20) then		
+			moveSubstifutionPlayerTo(539 + offset, 525, x, y);	
+		elseif not checkColor(443 + offset, 525, 155, 3, 0, 10) 
+			and  not checkColor(443 + offset, 525, 79, 79, 79, 10)
+			and  not checkColor(443 + offset, 525, 201, 191, 191, 20) then
+			moveSubstifutionPlayerTo(443 + offset, 525, x, y);	
+		elseif not checkColor(347 + offset, 525, 155, 3, 0, 10) 
+			and  not checkColor(347 + offset, 525, 79, 79, 79, 10)
+			and  not checkColor(347 + offset, 525, 201, 191, 191, 20) then
+			moveSubstifutionPlayerTo(347 + offset, 525, x, y);
+		end	
+end
+
+
+function adjustSubstifutionPlayer()
+
+		mSleep(1000);
+		click(width(830 + 176), 602);		
+		mSleep(1500);
+
+		local offset;
+		
+		if w == 1136 then
+			offset = 176;
+		else
+			offset = 0;
+		end		
+
+		if checkColor(923 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(923 + offset, 387, 79, 79, 79, 10) 
+			or checkColor(923 + offset, 387, 201, 191, 191, 20) then
+			exchangeSubstifutionPlayerIfNeed(923 + offset, 387);	
+		end
+
+		if checkColor(827 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(827 + offset, 387, 79, 79, 79, 10) 
+			or checkColor(827 + offset, 387, 201, 191, 191, 20) then
+			exchangeSubstifutionPlayerIfNeed(827 + offset, 387);	
+		end
+
+		if checkColor(731 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(731 + offset, 387, 79, 79, 79, 10)
+			or checkColor(731 + offset, 387, 201, 191, 191, 20)  then 
+			exchangeSubstifutionPlayerIfNeed(731 + offset, 387);			
+		end
+
+		if checkColor(635 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(635 + offset, 387, 79, 79, 79, 10)
+			or checkColor(635 + offset, 387, 201, 191, 191, 20) then
+			exchangeSubstifutionPlayerIfNeed(635 + offset, 387);			
+		end
+
+		if checkColor(539 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(539 + offset, 387, 79, 79, 79, 10) 
+			or checkColor(539 + offset, 387, 201, 191, 191, 20) then		
+			exchangeSubstifutionPlayerIfNeed(539 + offset, 387);	
+		end
+
+		if checkColor(443 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(443 + offset, 387, 79, 79, 79, 10) 
+			or checkColor(443 + offset, 387, 201, 191, 191, 20) then
+			exchangeSubstifutionPlayerIfNeed(443 + offset, 387);	
+		end
+
+		if checkColor(347 + offset, 387, 155, 3, 0, 10) 
+			or checkColor(347 + offset, 387, 79, 79, 79, 10) 
+			or checkColor(347 + offset, 387, 201, 191, 191, 20) then
+			exchangeSubstifutionPlayerIfNeed(347 + offset, 387);	
+		end	
+
+		mSleep(500);
+		click(width(808 + 176), 192);
+		mSleep(1000);
+end
+
 
 function adjustPlayer()
 	mSleep(500);
@@ -516,8 +637,8 @@ function movePlayerTo(srcX, srcY, dstX, dstY)
 
 	mSleep(20);	
 	touchUp(id, dstX - 30, dstY + 50);
-		
-	mSleep(1000);	
+	
+	mSleep(2000);	
 end
 
 function exchangeSpecifyPlayerIfNeed(x, y) 
@@ -572,7 +693,17 @@ end
 
 
 function isLineupErrorAlert()
-	return  isLineupNoEnoughPlayerAlert() or isOutOfContractsAlert();
+	return  isLineupNoEnoughPlayerAlert() or isOutOfContractsAlert() or isLineupInjuredOrBannedAlert();
+end
+
+function isLineupInjuredOrBannedAlert()
+	if w == 960 then
+		return false;
+	else 
+		return checkColor(525, 181, 230, 230, 230)
+		and checkColor(398, 459, 165, 172, 185)
+		and checkColor(726, 458, 165, 172, 185);
+	end
 end
 
 function isLineupNoEnoughPlayerAlert()
@@ -694,7 +825,6 @@ end
 
 -- 0 成功， 1 球员不足， 2 错误
 function exchangePlayerFromClub()
-
 	local offset;
 	if w == 1136 then
 		offset = 176;
@@ -768,7 +898,7 @@ function exchangePlayerFromClub()
 					local hasReplace = false;
 
 					noError = waitUtilMeetCondition(isClubExchagePlayerPage, function ()
-						x, y = findColorInRegionFuzzy(0xc38461, 100, offsetX, 241, 702, 241)
+						x, y = findColorInRegionFuzzy(0xc38461, 100, offsetX, 241, width(702 + 176 - 145), 241)
 						if x ~= -1 and y ~= -1 then
 							logDebug(string.format("findColorInRegionFuzzy 0xc38461 %d %d", x, y));
 							offsetX = x + 100;
@@ -798,13 +928,16 @@ function exchangePlayerFromClub()
 
 					offsetX = 23;
 					noError = waitUtilMeetCondition(isClubExchagePlayerPage, function ()
-						x, y = findColorInRegionFuzzy(0xbc9985, 95, offsetX, 241, 702, 241)
+						x, y = findColorInRegionFuzzy(0xbc9985, 95, offsetX, 241, width(702 + 176 - 145), 241)
 						if x ~= -1 and y ~= -1 then
 							logDebug(string.format("findColorInRegionFuzzy 0xbc9985 %d %d", x, y));
 							offsetX = x + 100;
 							if not checkColor(x + 97, 239, 155, 3, 0) and not checkColor(x + 96, 239, 155, 3, 0) then	
+
 								click(x + 97, 239);	
-								mSleep(500);	
+								mSleep(500);
+
+								logDebug("exchange  player from club");
 
 								click(x + 33, 556);	
 								mSleep(500);
@@ -999,7 +1132,7 @@ function quickSellAllBronzePlayer ()
 		if w == 960 then
 			click(580, 125);
 		else
-			click(757, 125);
+			click(681, 125);
 		end	
 		mSleep(500);
 		return true;
@@ -1288,9 +1421,9 @@ end
 
 function isInSimulateMatchPage()
 	if w == 960 then
-		return	checkColor(1098, 41, 248, 204, 49)	
-		and checkColor(298, 45,  234, 180, 33)
-		and checkColor(662, 42, 230, 230, 230);
+		return	checkColor(932, 40, 248, 204, 49)	
+		and checkColor(239, 45,  234, 180, 33)
+		and checkColor(584, 44, 230, 230, 230);
 	else 
 		return	checkColor(1098, 41, 248, 204, 49)	
 		and checkColor(298, 45,  234, 180, 33)
@@ -1636,12 +1769,6 @@ function main()
 	if isPausePage() then
 		goto inGame;
 	end
-
-
-adjustPlayer();
-	do
-return;
-end
     
 	::restart::		
 
@@ -1800,6 +1927,7 @@ end
 	::seasonPage::
 
 	noError = waitUtilMeetCondition3(isSeasonPage, function ()
+			mSleep(500);
 			click(width(1087), 119)
 			mSleep(500);
 			return true;
@@ -1811,8 +1939,8 @@ end
 		end, 
 		isSeasonSelectionPage, function ()
 			mSleep(500);
-
-			moveto(width(800 + 176), 319, 50, 319);
+			moveTo(width(800 + 176), 319, 50, 319);
+			mSleep(500);
 			
 			--选择Ultimate League
 			click(width(886 + 176), 319);
@@ -1829,6 +1957,11 @@ end
 
 	shouldGotoMainPage = false;
 	noError = waitUtilMeetCondition4(isMySquadPage, function ()
+			mSleep(1000);
+			if w == 960 then
+				mSleep(500);
+			end
+
 			click(width(808 + 176), 192);
 			mSleep(1000);
 
@@ -1846,10 +1979,13 @@ end
 		end, 
 		isLineupErrorAlert, function ()
 			mSleep(500);
-			if isLineupNoEnoughPlayerAlert() then
+			if isLineupNoEnoughPlayerAlert() or isLineupInjuredOrBannedAlert() then
 				click(274, 457);
 			else
-				noError = waitUtilMeetCondition(function ()
+				noError = waitUtilMeetCondition2(
+				isMySquadPage, function ()
+					return true;
+				end, function ()
 					if w == 960 then
                         local x, y = findColorInRegion(0xffffff, 432, 140, 518, 170)
 						return (x ~= -1 and y~= -1) or checkColor(467, 173, 110, 80, 64);
@@ -1857,15 +1993,24 @@ end
                         local x, y = findColorInRegion(0xffffff, 519, 140, 600, 170)
 						return (x ~= -1 and y~= -1) or checkColor(554, 171, 110, 80, 64);
 					end
+				end,  function ()
+					mSleep(1000);
+					click(278, 505);
+					mSleep(1000);
+					return false;
 				end);
-				mSleep(500);
-				logDebug(string.format("click %d %d", 278, 505));
-				click(278, 505);
+
 			end
 
 			mSleep(500);
 
 			noError = waitUtilMeetCondition(isMySquadPage);
+
+			logDebug("exchangePlayerFromClub");
+
+			if not noError then
+				return true;
+			end
 
 			local ret = exchangePlayerFromClub();
 			click(808, 192);
@@ -1892,6 +2037,9 @@ end
 				noError = false;
 				return true;
 			else
+				mSleep(500);
+				adjustSubstifutionPlayer();
+				mSleep(500);
 				return false;
 			end
 
@@ -1935,7 +2083,7 @@ end
                 address = getGoalAddress();
             end
             if address and address > 0 then
-                if runLoopCount %5 == 0 then
+                if runLoopCount %20 == 0 then
                 	logDebug(string.format("address === %x", address));
               		 modifyGoal(address);
               	end
@@ -1957,13 +2105,20 @@ end
 			return true;
 		end);
 
-	noError = waitUtilMeetCondition2(isEndSeasonEarlyAlert, function ()
+	noError = waitUtilMeetCondition4(isEndSeasonEarlyAlert, function ()
 			mSleep(500);
 			click(w/2, 463);
 			mSleep(500);
 
 			return false;
-		end, isSeasonPage, function ()
+		end, isEndSeasonEndAlert, function ()
+			mSleep(500);
+			click(w/2 - 50, 463);
+			mSleep(500);
+
+			return false;
+		end,
+		isSeasonPage, function ()
 			-- body
 			return true;
 		end, isSeasonSelectionPage, function ()

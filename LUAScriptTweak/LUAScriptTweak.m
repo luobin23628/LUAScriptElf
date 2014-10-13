@@ -38,6 +38,15 @@ static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef da
                 });
                 break;
             }
+            case TweakMessageIdReportError: {
+                NSData *data = (__bridge NSData *)dataRef;
+                NSString *message = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alertView show];
+                LMSendReply(replyPort, NULL, 0);
+                
+                break;
+            }
             default:
                 LMSendReply(replyPort, NULL, 0);
                 break;

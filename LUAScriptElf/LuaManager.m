@@ -4,6 +4,7 @@
 //
 
 #import "LuaManager.h"
+#import "Global.h"
 
 #define to_cString(s) ([s cStringUsingEncoding:[NSString defaultCStringEncoding]])
 
@@ -43,33 +44,27 @@
     // compile
     int error = luaL_loadstring(L, to_cString(code));
     if (error) {
-        luaL_error(L, "cannot compile Lua code: %s", lua_tostring(L, -1));
+        const char *errorMsg = lua_tostring(L, -1);
+        if (errorMsg) {
+            [self reportError:[NSString stringWithUTF8String:errorMsg]];
+        }
+        luaL_error(L, "cannot compile Lua code: %s", errorMsg);
         return;
     }
 
     // run
     error = lua_pcall(L, 0, 0, 0);
     if (error) {
-        luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
+        const char *errorMsg = lua_tostring(L, -1);
+        if (errorMsg) {
+            [self reportError:[NSString stringWithUTF8String:errorMsg]];
+        }
+        luaL_error(L, "cannot run Lua code: %s", errorMsg);
         return;
     }
 }
 
-static NSUncaughtExceptionHandler * orig_exception_handler = NULL;
-static NSString *exception_handler_error = NULL;
-
-static void lua_exception_handler(NSException *exception)
-{
-    NSLog(@"Lua exception:%@", exception_handler_error);
-    if (orig_exception_handler) {
-        orig_exception_handler(exception);
-    }
-}
-
 - (void)runCodeFromFileWithPath:(NSString *)path {
-    
-    orig_exception_handler = NSGetUncaughtExceptionHandler();
-    NSSetUncaughtExceptionHandler(lua_exception_handler);
     
     // get state
     lua_State *L = self.state;
@@ -77,39 +72,26 @@ static void lua_exception_handler(NSException *exception)
     // compile
     int error = luaL_loadfile(L, to_cString(path));
     if (error) {
-        luaL_error(L, "cannot compile Lua file: %s", lua_tostring(L, -1));
-        goto skip;
+        const char *errorMsg = lua_tostring(L, -1);
+        if (errorMsg) {
+            [self reportError:[NSString stringWithUTF8String:errorMsg]];
+        }
+        luaL_error(L, "cannot compile Lua file: %s", errorMsg);
     }
     
     // run
     error = lua_pcall(L, 0, 0, 0);
     if (error) {
-        luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
-        goto skip;
+        const char *errorMsg = lua_tostring(L, -1);
+        if (errorMsg) {
+            [self reportError:[NSString stringWithUTF8String:errorMsg]];
+        }
+        luaL_error(L, "cannot run Lua code: %s", errorMsg);
     }
-skip:
-    
-    NSSetUncaughtExceptionHandler(orig_exception_handler);
-    orig_exception_handler = NULL;
-    exception_handler_error = NULL;
 }
 
 - (void)registerFunction:(lua_CFunction)function withName:(NSString *)name {
     lua_register(self.state, to_cString(name), function);
-}
-
-
-static jmp_buf place;
-static bool stop;
-
-static void hook(lua_State* L, lua_Debug *ar) {
-    if (stop) {
-        longjmp(place, 1);
-    }
-}
-
-- (void)stop {
-    stop = YES;
 }
 
 - (void)callFunctionNamed:(NSString *)name withObject:(NSObject *)object {
@@ -120,13 +102,26 @@ static void hook(lua_State* L, lua_Debug *ar) {
     lua_getglobal(L, to_cString(name));
     lua_pushlightuserdata(L, (__bridge void *)(object));
     
-    lua_sethook(L, hook, LUA_MASKCOUNT, 100);
-    setjmp(place);
     // run
     int error = lua_pcall(L, 1, 0, 0);
+    
     if (error) {
-        luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
+        const char *errorMsg = lua_tostring(L, -1);
+        if (errorMsg) {
+            [self reportError:[NSString stringWithUTF8String:errorMsg]];
+        }
+        luaL_error(L, "cannot run Lua code: %s", errorMsg);
         return;
+    }
+}
+
+- (void)reportError:(NSString *)errorMsg {
+    NSData *data = [errorMsg dataUsingEncoding:NSUTF8StringEncoding];
+    LMResponseBuffer buffer;
+    kern_return_t ret = LMConnectionSendTwoWayData(&tweakConnection, TweakMessageIdReportError, (__bridge CFDataRef)data, &buffer);
+    
+    if (ret == KERN_SUCCESS) {
+        NSLog(@"KERN_SUCCESS");
     }
 }
 

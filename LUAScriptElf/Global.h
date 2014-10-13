@@ -23,6 +23,7 @@ static LMConnection tweakConnection = {
 };
 
 #define TweakMessageIdAlertView       1
+#define TweakMessageIdReportError     2
 
 static LMConnection daemonConnection = {
     MACH_PORT_NULL,
