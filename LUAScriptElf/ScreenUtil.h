@@ -15,11 +15,6 @@ typedef struct {
     unsigned char blue;
 } TKColor;
 
-typedef struct {
-    CGPoint p1;
-    CGPoint p2;
-} TKRegion;
-
 @interface ScreenUtil : NSObject
 
 + (void) getColorAtLocation:(CGPoint)point color:(TKColor *)color;

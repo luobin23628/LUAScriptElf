@@ -65,9 +65,12 @@ else
 logDebug("failed", 3000);
 
     end
-
-
 --checkColor(140, 172, 82, 164, 212)
+  ]]--
+
+setInterval(1000, f2);
+
+end
 
 setInterval(1000, function()
     logDebug("failed");
@@ -78,6 +81,5 @@ local x, y = findColorInRegionFuzzy(0xbc9985, 95, 23, 241, 702, 241)
 
     
     notifyMessage(string.format("%d , %d", x, y));
-
 
 end

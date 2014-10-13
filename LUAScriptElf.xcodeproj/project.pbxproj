@@ -41,6 +41,7 @@
 		A85EC20919DFF16B00376678 /* LightMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = A85EC20519DFF13F00376678 /* LightMessaging.m */; };
 		A85EC20B19DFF47600376678 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */; };
 		A85EC20C19DFF48700376678 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */; };
+		A88A79C119EC09A1007D01EA /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A88A79C019EC09A1007D01EA /* libsubstrate.dylib */; };
 		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
 		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
@@ -94,6 +95,7 @@
 		ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,7 @@
 		A85EC20519DFF13F00376678 /* LightMessaging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LightMessaging.m; sourceTree = "<group>"; };
 		A85EC20719DFF16100376678 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librocketbootstrap.dylib; path = ../../../../../opt/iOSOpenDev/lib/librocketbootstrap.dylib; sourceTree = "<group>"; };
+		A88A79C019EC09A1007D01EA /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
 		A89BFC0719D6710500DDC568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A89D202619D59E1D0049153D /* UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAddition.h; sourceTree = "<group>"; };
 		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
+		ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VolumeTweak.mm; sourceTree = "<group>"; };
+		ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VolumeTweak.xm; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88A79C119EC09A1007D01EA /* libsubstrate.dylib in Frameworks */,
 				A8F71B9F19E842580009CF62 /* libsimulatetouch.dylib in Frameworks */,
 				AB03988719E5424700431826 /* libsimulatetouch.dylib in Frameworks */,
 				A85EC20B19DFF47600376678 /* librocketbootstrap.dylib in Frameworks */,
@@ -319,6 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				A85EC1EB19DFD70A00376678 /* LUAScriptTweak.m */,
+				ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */,
+				ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */,
 				A85EC1E519DFD70A00376678 /* Package */,
 				A85EC1E919DFD70A00376678 /* Supporting Files */,
 			);
@@ -430,6 +438,7 @@
 		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A88A79C019EC09A1007D01EA /* libsubstrate.dylib */,
 				AB80258819E91C7600F2F85F /* AVFoundation.framework */,
 				AB80256219E917BB00F2F85F /* IOKit.framework */,
 				AB80256319E917BB00F2F85F /* IOSurface.framework */,
@@ -801,6 +810,7 @@
 				AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */,
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
+				ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */,
 				ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */,
 				A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */,
 				AB03988419E5422800431826 /* UIColorAddition.m in Sources */,

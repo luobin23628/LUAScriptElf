@@ -26,8 +26,6 @@
 
     registerLUAFunctions();
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"lua"];
-    [[LuaManager shareInstance] runCodeFromFileWithPath:path];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.image = [UIImage imageNamed:@"Screenshot 2014.10.12 01.07.40@2x.png"];
@@ -48,7 +46,9 @@
 }
 
 - (void)test {
-    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"lua"];
+    [[LuaManager shareInstance] runCodeFromFileWithPath:path];
+    
 //
 //    kern_return_t ret = LMConnectionSendEmptyOneWay(&connection, GMMessageIdRun);
 //    

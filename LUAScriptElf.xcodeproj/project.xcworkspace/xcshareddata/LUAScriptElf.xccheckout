@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C7415ACA-5BC0-40F8-A5E1-AEBAB91BBE2A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LUAScriptElf</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>06829E3C-057E-4993-81BE-5B801B52DC83</key>
+		<string>https://github.com/luobin23628/LUAScriptElf.git</string>
+		<key>A16B5E15-B7F7-4BB2-A218-1DC8DC9B6486</key>
+		<string>https://github.com/DHowett/theos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LUAScriptElf.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>06829E3C-057E-4993-81BE-5B801B52DC83</key>
+		<string>../..</string>
+		<key>A16B5E15-B7F7-4BB2-A218-1DC8DC9B6486</key>
+		<string>../../../../../../../opt/theos</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/luobin23628/LUAScriptElf.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>06829E3C-057E-4993-81BE-5B801B52DC83</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>06829E3C-057E-4993-81BE-5B801B52DC83</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LUAScriptElf</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A16B5E15-B7F7-4BB2-A218-1DC8DC9B6486</string>
+			<key>IDESourceControlWCCName</key>
+			<string>theos</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -16,6 +16,7 @@
 #import "LuaManager.h"
 #import "LUAScripSupport.h"
 #import "ProcessHelper.h"
+#include <substrate.h>
 
 static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef dataRef) {
     
@@ -34,6 +35,15 @@ static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef da
                     [alertView dismissWithClickedButtonIndex:0 animated:NO];
                     LMSendReply(replyPort, NULL, 0);
                 });
+                break;
+            }
+            case TweakMessageIdReportError: {
+                NSData *data = (__bridge NSData *)dataRef;
+                NSString *message = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alertView show];
+                LMSendReply(replyPort, NULL, 0);
+                
                 break;
             }
             default:
@@ -131,6 +141,21 @@ static void systemVolumeDidChangeNotification(CFNotificationCenterRef center, vo
     });
 }
 
+@class ClassName;
+
+static void (*_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$)(ClassName*, SEL, id);
+
+static void _logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(ClassName*, SEL, id);
+
+
+static void _logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(ClassName* self, SEL _cmd, id originalArgument) {
+	NSLog(@"-[<ClassName: %p> messageWithNoReturnAndOneArgument:%@]", self, originalArgument);
+    
+	_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(self, _cmd, originalArgument);
+	
+	
+}
+
 static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
     
     @autoreleasepool {
@@ -140,5 +165,8 @@ static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
         kern_return_t err = LMStartService(tweakConnection.serverName, CFRunLoopGetCurrent(), machPortCallback);
         NSLog(@"StartService err:%d", err);
         
+        Class _logos_class$_ungrouped$ClassName = objc_getClass("ClassName");
+        
+        MSHookMessageEx(_logos_class$_ungrouped$ClassName, @selector(messageWithNoReturnAndOneArgument:), (IMP)&_logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$, (IMP*)&_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$);
     }
 }

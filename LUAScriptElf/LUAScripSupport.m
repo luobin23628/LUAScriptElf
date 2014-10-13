@@ -23,6 +23,8 @@
 #import <libactivator/libactivator.h>
 #import "LightMessaging.h"
 #import "Global.h"
+#import "lua.h"
+#import "lua/lobject.h"
 
 static BOOL keepScreen;
 static NSInteger rotateDegree;
@@ -820,8 +822,18 @@ static int l_setInterval(lua_State *L) {
     double interval = lua_tonumber(L, 1);
     const void *luaFun = lua_topointer(L, 2);
     
+    if (luaFun) {
+        lua_getglobal(L, luaFun);
+        
+        // run
+        int error = lua_pcall(L, 1, 0, 0);
+        if (error) {
+            luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
+        }
+    }
+    
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
-    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), interval, 0);
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), interval*NSEC_PER_MSEC, 0);
     
     //设置回调
     dispatch_source_set_event_handler(timer, ^(){
@@ -834,6 +846,9 @@ static int l_setInterval(lua_State *L) {
             luaL_error(L, "cannot run Lua code: %s", lua_tostring(L, -1));
         }
     });
+    
+    dispatch_resume(timer);
+    
     return 0;
 }
 
