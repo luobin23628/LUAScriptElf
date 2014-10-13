@@ -42,6 +42,12 @@
 		A85EC20B19DFF47600376678 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */; };
 		A85EC20C19DFF48700376678 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */; };
 		A88A79C119EC09A1007D01EA /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A88A79C019EC09A1007D01EA /* libsubstrate.dylib */; };
+		A88A79C319EC0E7B007D01EA /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A88A79C219EC0E7B007D01EA /* GraphicsServices.framework */; };
+		A88A7A0C19EC276C007D01EA /* NSTimer+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = A88A7A0A19EC276C007D01EA /* NSTimer+Blocks.h */; };
+		A88A7A0D19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
+		A88A7A0E19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
+		A88A7A0F19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
+		A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
 		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
 		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
@@ -152,6 +158,9 @@
 		A85EC20719DFF16100376678 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
 		A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librocketbootstrap.dylib; path = ../../../../../opt/iOSOpenDev/lib/librocketbootstrap.dylib; sourceTree = "<group>"; };
 		A88A79C019EC09A1007D01EA /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+		A88A79C219EC0E7B007D01EA /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = ../../../../../opt/theos/frameworks/GraphicsServices.framework; sourceTree = "<group>"; };
+		A88A7A0A19EC276C007D01EA /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
 		A89BFC0719D6710500DDC568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A89D202619D59E1D0049153D /* UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAddition.h; sourceTree = "<group>"; };
 		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
@@ -224,6 +233,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88A79C319EC0E7B007D01EA /* GraphicsServices.framework in Frameworks */,
+				A85EC20319DFDD1000376678 /* IOSurface.framework in Frameworks */,
 				A88A79C119EC09A1007D01EA /* libsubstrate.dylib in Frameworks */,
 				A8F71B9F19E842580009CF62 /* libsimulatetouch.dylib in Frameworks */,
 				AB03988719E5424700431826 /* libsimulatetouch.dylib in Frameworks */,
@@ -231,7 +242,6 @@
 				A85EC20119DFDD1000376678 /* IOKit.framework in Frameworks */,
 				A85EC20219DFDD1000376678 /* IOMobileFramebuffer.framework in Frameworks */,
 				AB03987F19E541BE00431826 /* libPods.a in Frameworks */,
-				A85EC20319DFDD1000376678 /* IOSurface.framework in Frameworks */,
 				A85EC20019DFDC4500376678 /* libactivator.dylib in Frameworks */,
 				A85EC1E219DFD70A00376678 /* Foundation.framework in Frameworks */,
 				A85EC1E319DFD70A00376678 /* UIKit.framework in Frameworks */,
@@ -438,6 +448,7 @@
 		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A88A79C219EC0E7B007D01EA /* GraphicsServices.framework */,
 				A88A79C019EC09A1007D01EA /* libsubstrate.dylib */,
 				AB80258819E91C7600F2F85F /* AVFoundation.framework */,
 				AB80256219E917BB00F2F85F /* IOKit.framework */,
@@ -489,6 +500,8 @@
 				AB80259B19E9511100F2F85F /* ProcessHelper.m */,
 				AB0ED80B19D56FAB00F3A18A /* LuaManager.h */,
 				AB0ED80C19D56FAB00F3A18A /* LuaManager.m */,
+				A88A7A0A19EC276C007D01EA /* NSTimer+Blocks.h */,
+				A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */,
 				A85EC20719DFF16100376678 /* Global.h */,
 				A85EC20419DFF13F00376678 /* LightMessaging.h */,
 				A85EC20519DFF13F00376678 /* LightMessaging.m */,
@@ -549,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A85EC20819DFF16100376678 /* Global.h in Headers */,
+				A88A7A0C19EC276C007D01EA /* NSTimer+Blocks.h in Headers */,
 				AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,6 +811,7 @@
 			files = (
 				A84C3FD019E9925D0015B635 /* ViewController.m in Sources */,
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
+				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				A84C3FC219E9925D0015B635 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -811,6 +826,7 @@
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
 				ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */,
+				A88A7A0F19EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */,
 				A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */,
 				AB03988419E5422800431826 /* UIColorAddition.m in Sources */,
@@ -826,6 +842,7 @@
 				A8F1A77B19DEE30D00B09A8A /* MemoryUtil.m in Sources */,
 				AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */,
 				A8F1A78319DEF6E600B09A8A /* AppUtil.m in Sources */,
+				A88A7A0E19EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
 				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
 				ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */,
@@ -849,6 +866,7 @@
 				AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */,
 				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
+				A88A7A0D19EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */,
 				A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */,
 				ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */,
@@ -1043,7 +1061,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 192.168.1.104;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1086,7 +1104,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 192.168.1.104;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;

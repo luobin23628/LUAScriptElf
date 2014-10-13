@@ -17,6 +17,9 @@
 #import "LUAScripSupport.h"
 #import "ProcessHelper.h"
 #include <substrate.h>
+#import <GraphicsServices/GraphicsServices.h>
+#import "NSTimer+Blocks.h"
+#import <IOKit/hid/IOHIDEvent.h>
 
 static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef dataRef) {
     
@@ -83,7 +86,7 @@ static UIAlertView *cancelAlertView = nil;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSLog(@"buttonIndex == %d", buttonIndex);
-
+    
     if (buttonIndex == 0) {
         
     } else if (buttonIndex == 1) {
@@ -107,25 +110,16 @@ static UIAlertView *cancelAlertView = nil;
 
 static AlertViewDeletege *delegate = nil;
 
-static void systemVolumeDidChangeNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo)
+static void handleVolumeDownButtonLongPress()
 {
     if (cancelAlertView || runAlertView) {
         return;
     }
     
-    NSString *reason = [(__bridge NSDictionary *)userInfo objectForKey:@"AVSystemController_AudioVolumeChangeReasonNotificationParameter"];
-    
-    if (![reason isEqualToString:@"ExplicitVolumeChange"]) {
-        return;
-    }
-    
-    NSLog(@"systemVolumeDidChangeNotification volume = %@", userInfo);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         @autoreleasepool {
             
             pid_t pid = [[ProcessHelper shareInstance] findProcessWithName:@"LUAScriptElf"];
-            
-            NSLog(@"pid === %d", pid);
             
             if (pid > 0) {
                 kill(pid, SIGKILL);
@@ -141,32 +135,85 @@ static void systemVolumeDidChangeNotification(CFNotificationCenterRef center, vo
     });
 }
 
-@class ClassName;
+@class SpringBoard;
 
-static void (*_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$)(ClassName*, SEL, id);
+static void (*origVolumeChanged)(SpringBoard*, SEL, GSEventRef);
 
-static void _logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(ClassName*, SEL, id);
-
-
-static void _logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(ClassName* self, SEL _cmd, id originalArgument) {
-	NSLog(@"-[<ClassName: %p> messageWithNoReturnAndOneArgument:%@]", self, originalArgument);
+static NSTimer *timer = nil;
+static void volumeChanged(SpringBoard* self, SEL _cmd, GSEventRef gsEvent) {
+    NSLog(@"volumeChanged:%d", GSEventGetType(gsEvent));
     
-	_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$(self, _cmd, originalArgument);
-	
-	
+    switch (GSEventGetType(gsEvent)) {
+		case kGSEventVolumeUpButtonDown: {
+            
+			break;
+		}
+		case kGSEventVolumeUpButtonUp: {
+            
+			break;
+		}
+		case kGSEventVolumeDownButtonDown: {
+            [timer invalidate];
+            timer = [NSTimer scheduledTimerWithTimeInterval:0.8 block:^{
+                handleVolumeDownButtonLongPress();
+            }
+                                                    repeats:NO];
+			break;
+		}
+		case kGSEventVolumeDownButtonUp: {
+            if (timer) {
+                [timer invalidate];
+                timer = nil;
+            }
+			break;
+		}
+		default:
+			break;
+	}
+	origVolumeChanged(self, _cmd, gsEvent);
 }
 
-static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
+
+static BOOL (*origin_volumeChanged)(SpringBoard*, SEL, IOHIDEventRef);
+
+static BOOL _volumeChanged(SpringBoard* self, SEL _cmd, IOHIDEventRef event) {
+    NSLog(@"-[<SpringBoard: %p> _volumeChanged:%@]", self, event);
     
+    if(IOHIDEventGetType(event) == kIOHIDEventTypeKeyboard) {
+        int usage = IOHIDEventGetIntegerValue(event, kIOHIDEventFieldKeyboardUsage);
+        //音量-
+        if (usage == 0xea) {
+            int isDown = IOHIDEventGetIntegerValue(event, kIOHIDEventFieldKeyboardDown);
+            if (isDown) {
+                [timer invalidate];
+                timer = [NSTimer scheduledTimerWithTimeInterval:0.8
+                                                          block:^{
+                                                              handleVolumeDownButtonLongPress();
+                                                          }
+                                                        repeats:NO];
+            } else {
+                if (timer) {
+                    [timer invalidate];
+                    timer = nil;
+                }
+            }
+        }
+    }
+    
+    return origin_volumeChanged(self, _cmd, event);
+}
+
+
+static __attribute__((constructor)) void _LUAScriptTweakLocalInit() {
     @autoreleasepool {
-        CFNotificationCenterRef center = CFNotificationCenterGetLocalCenter();
-		CFNotificationCenterAddObserver(center, NULL, systemVolumeDidChangeNotification, CFSTR("AVSystemController_SystemVolumeDidChangeNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+        //for ios 6
+        MSHookMessageEx(objc_getClass("SpringBoard"), @selector(volumeChanged:), (IMP)&volumeChanged, (IMP*)&origVolumeChanged);
+        
+        //for ios 7 +
+        MSHookMessageEx(objc_getClass("SpringBoard"), @selector(_volumeChanged:), (IMP)&_volumeChanged, (IMP*)&origin_volumeChanged);
+        
         
         kern_return_t err = LMStartService(tweakConnection.serverName, CFRunLoopGetCurrent(), machPortCallback);
         NSLog(@"StartService err:%d", err);
-        
-        Class _logos_class$_ungrouped$ClassName = objc_getClass("ClassName");
-        
-        MSHookMessageEx(_logos_class$_ungrouped$ClassName, @selector(messageWithNoReturnAndOneArgument:), (IMP)&_logos_method$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$, (IMP*)&_logos_orig$_ungrouped$ClassName$messageWithNoReturnAndOneArgument$);
     }
 }

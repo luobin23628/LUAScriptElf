@@ -2079,7 +2079,7 @@ function main()
 		isInSimulateMatchPage, function ()
             runLoopCount = runLoopCount + 1;
                                      
-            if address == 0 and runLoopCount > 2*5 then
+            if address == 0 and runLoopCount >= 4 then
                 address = getGoalAddress();
             end
             if address and address > 0 then
