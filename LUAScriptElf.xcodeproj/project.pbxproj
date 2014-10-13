@@ -105,6 +105,7 @@
 		ABC9CE4919E9169C008C09C9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BBA5C5340ABE4C539214A501 /* libPods.a */; };
 		ABC9CE4A19E916BA008C09C9 /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
 		ABC9CE4B19E916BE008C09C9 /* AppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F1A78119DEF6E600B09A8A /* AppUtil.m */; };
+		ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,6 +190,8 @@
 		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
+		ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VolumeTweak.mm; sourceTree = "<group>"; };
+		ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VolumeTweak.xm; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -266,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				A85EC1EB19DFD70A00376678 /* LUAScriptTweak.m */,
+				ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */,
+				ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */,
 				A85EC1FA19DFDB6600376678 /* CaptureMyScreen.h */,
 				A85EC1FB19DFDB6600376678 /* CaptureMyScreen.m */,
 				A85EC1E519DFD70A00376678 /* Package */,
@@ -781,6 +786,7 @@
 				AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */,
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
+				ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */,
 				ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */,
 				A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */,
 				AB03988419E5422800431826 /* UIColorAddition.m in Sources */,
