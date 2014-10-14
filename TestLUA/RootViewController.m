@@ -6,7 +6,7 @@
 //
 //
 
-#import "ViewController.h"
+#import "RootViewController.h"
 #import "LUAScripSupport.h"
 #import "LuaManager.h"
 #import "HIDManager.h"
@@ -14,11 +14,11 @@
 #import "Global.h"
 #import "ProcessHelper.h"
 
-@interface ViewController ()
+@interface RootViewController ()
 
 @end
 
-@implementation ViewController
+@implementation RootViewController
 
 - (void)viewDidLoad
 {

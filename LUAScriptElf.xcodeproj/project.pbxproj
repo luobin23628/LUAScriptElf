@@ -17,7 +17,7 @@
 		A84C3FC019E9925D0015B635 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A84C3FBE19E9925D0015B635 /* InfoPlist.strings */; };
 		A84C3FC219E9925D0015B635 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C3FC119E9925D0015B635 /* main.m */; };
 		A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C3FC519E9925D0015B635 /* AppDelegate.m */; };
-		A84C3FD019E9925D0015B635 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C3FCF19E9925D0015B635 /* ViewController.m */; };
+		A84C3FD019E9925D0015B635 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A84C3FCF19E9925D0015B635 /* RootViewController.m */; };
 		A84C3FD219E9925D0015B635 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A84C3FD119E9925D0015B635 /* Images.xcassets */; };
 		A84C3FF219E99B6D0015B635 /* Screenshot 2014.10.12 01.07.40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A84C3FF119E99B6D0015B635 /* Screenshot 2014.10.12 01.07.40@2x.png */; };
 		A85EC1CF19DF072F00376678 /* GraphicsServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1CD19DF072F00376678 /* GraphicsServices.framework */; };
@@ -63,7 +63,7 @@
 		A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76319D6796000B549D0 /* AppDelegate.m */; };
 		A8F6D76719D6796000B549D0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */; };
 		A8F6D76A19D6796000B549D0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76819D6796000B549D0 /* Main_iPad.storyboard */; };
-		A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76C19D6796000B549D0 /* ViewController.m */; };
+		A8F6D76D19D6796000B549D0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8F6D76C19D6796000B549D0 /* RootViewController.m */; };
 		A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8F6D76E19D6796000B549D0 /* Images.xcassets */; };
 		A8F71B9D19E8256C0009CF62 /* Screenshot 2014.10.10 22.22.39@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A8F71B9C19E8256C0009CF62 /* Screenshot 2014.10.10 22.22.39@2x.png */; };
 		A8F71B9F19E842580009CF62 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F71B9E19E842580009CF62 /* libsimulatetouch.dylib */; };
@@ -137,8 +137,8 @@
 		A84C3FCB19E9925D0015B635 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
 		A84C3FCC19E9925D0015B635 /* postinst */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = postinst; path = Package/DEBIAN/postinst; sourceTree = "<group>"; };
 		A84C3FCD19E9925D0015B635 /* prerm */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = prerm; path = Package/DEBIAN/prerm; sourceTree = "<group>"; };
-		A84C3FCE19E9925D0015B635 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A84C3FCF19E9925D0015B635 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A84C3FCE19E9925D0015B635 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A84C3FCF19E9925D0015B635 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		A84C3FD119E9925D0015B635 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A84C3FF119E99B6D0015B635 /* Screenshot 2014.10.12 01.07.40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.10.12 01.07.40@2x.png"; sourceTree = "<group>"; };
 		A85EC1CD19DF072F00376678 /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = PrivateFrameworks/GraphicsServices.framework; sourceTree = "<group>"; };
@@ -182,8 +182,8 @@
 		A8F6D76319D6796000B549D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A8F6D76619D6796000B549D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		A8F6D76919D6796000B549D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		A8F6D76B19D6796000B549D0 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A8F6D76C19D6796000B549D0 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A8F6D76B19D6796000B549D0 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A8F6D76C19D6796000B549D0 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		A8F6D76E19D6796000B549D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A8F71B9C19E8256C0009CF62 /* Screenshot 2014.10.10 22.22.39@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.10.10 22.22.39@2x.png"; sourceTree = "<group>"; };
 		A8F71B9E19E842580009CF62 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../opt/theos/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
@@ -291,8 +291,8 @@
 			children = (
 				A84C3FC419E9925D0015B635 /* AppDelegate.h */,
 				A84C3FC519E9925D0015B635 /* AppDelegate.m */,
-				A84C3FCE19E9925D0015B635 /* ViewController.h */,
-				A84C3FCF19E9925D0015B635 /* ViewController.m */,
+				A84C3FCE19E9925D0015B635 /* RootViewController.h */,
+				A84C3FCF19E9925D0015B635 /* RootViewController.m */,
 				A84C3FD119E9925D0015B635 /* Images.xcassets */,
 				A84C3FC719E9925D0015B635 /* Package */,
 				A84C3FBC19E9925D0015B635 /* Supporting Files */,
@@ -402,8 +402,8 @@
 				A8F6D76319D6796000B549D0 /* AppDelegate.m */,
 				A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */,
 				A8F6D76819D6796000B549D0 /* Main_iPad.storyboard */,
-				A8F6D76B19D6796000B549D0 /* ViewController.h */,
-				A8F6D76C19D6796000B549D0 /* ViewController.m */,
+				A8F6D76B19D6796000B549D0 /* RootViewController.h */,
+				A8F6D76C19D6796000B549D0 /* RootViewController.m */,
 				A8F6D76E19D6796000B549D0 /* Images.xcassets */,
 				A8F6D75A19D6795F00B549D0 /* Supporting Files */,
 			);
@@ -809,7 +809,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A84C3FD019E9925D0015B635 /* ViewController.m in Sources */,
+				A84C3FD019E9925D0015B635 /* RootViewController.m in Sources */,
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
 				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				A84C3FC219E9925D0015B635 /* main.m in Sources */,
@@ -846,7 +846,7 @@
 				A8FD460A19D67D7200EF2C6D /* LuaManager.m in Sources */,
 				A8FD460719D67D6B00EF2C6D /* LUAScripSupport.m in Sources */,
 				ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */,
-				A8F6D76D19D6796000B549D0 /* ViewController.m in Sources */,
+				A8F6D76D19D6796000B549D0 /* RootViewController.m in Sources */,
 				A8FD460519D67D6700EF2C6D /* UIFakeKeypress.m in Sources */,
 				AB80259F19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
@@ -961,7 +961,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				INFOPLIST_FILE = "LUAScriptElfUI/LUAScriptElfUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -1008,7 +1008,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				INFOPLIST_FILE = "LUAScriptElfUI/LUAScriptElfUI-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

@@ -1723,12 +1723,12 @@ function getGoalAddress()
 	--score
     if memoryRead then
         if w == 960 then
-            ret = checkAddress(0x061bb7a8, 0x061bb808);
+            ret = checkAddress(0x061bb788, 0x061bb808);
             if ret == nil then
-                ret = checkAddress(0x061397a8, 0x06139808);
+                ret = checkAddress(0x06139788, 0x06139808);
             end
         else
-            ret = checkAddress(0x060fc798, 0x060fc808);
+            ret = checkAddress(0x060fc788, 0x060fc808);
         end
 	end
     return ret;
@@ -1736,7 +1736,7 @@ end
 
 function modifyGoal(address)
 	if memoryWrite then
-   	 	memoryWrite("com.ea.fifa15.bv", address, 10, "U32");
+   	 	memoryWrite("com.ea.fifa15.bv", address, 17, "U32");
    	 	memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
 	end
 end
@@ -1829,7 +1829,7 @@ function main()
 		end,
 		isSecurityVerificationPage, function ()
 
-			noError = waitUtilMeetCondition(isBaseControlPage, function ()
+			noError = waitUtilMeetCondition2(isSecurityVerificationPage, function ()
 					local a;
 					if w == 960 then
 						a = parseVerificationCodeFromRegion(500, 193, 674, 235);
@@ -1843,10 +1843,17 @@ function main()
 
 					end
 
+				end, 
+				isMainPage, function ()
+					return true;
 				end);
 
+			if not noError then
+				return true;
+			else
+				return false;
+			end
 
-			return false;
 		end,
 		isMainPage, function ()
 			shouldGotoMainPage = true;
@@ -1938,6 +1945,8 @@ function main()
 			return false;
 		end, 
 		isSeasonSelectionPage, function ()
+			address = 0;
+
 			mSleep(500);
 			moveTo(width(800 + 176), 319, 50, 319);
 			mSleep(500);
@@ -1948,6 +1957,9 @@ function main()
 			click(width(1076), 128);
 			mSleep(1000);
 			click(714, 508);
+			
+			mSleep(500);
+
 			return false;
 		end);
 
@@ -2079,7 +2091,7 @@ function main()
 		isInSimulateMatchPage, function ()
             runLoopCount = runLoopCount + 1;
                                      
-            if address == 0 and runLoopCount >= 4 then
+            if (address == 0 or address == nil) and runLoopCount >= 2 then
                 address = getGoalAddress();
             end
             if address and address > 0 then

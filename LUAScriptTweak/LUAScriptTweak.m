@@ -21,6 +21,9 @@
 #import "NSTimer+Blocks.h"
 #import <IOKit/hid/IOHIDEvent.h>
 
+
+static NSString *scriptPath = nil;
+
 static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef dataRef) {
     
     NSLog(@"LUAScriptTweak processMessage messageId:%d", (int)messageId);
@@ -45,6 +48,14 @@ static void processMessage(SInt32 messageId, mach_port_t replyPort, CFDataRef da
                 NSString *message = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误" message:message delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil];
                 [alertView show];
+                LMSendReply(replyPort, NULL, 0);
+                
+                break;
+            }
+            case TweakMessageIdSetScriptPath: {
+                NSData *data = (__bridge NSData *)dataRef;
+                NSString *path = [[NSString alloc] initWithData:data  encoding:NSUTF8StringEncoding];
+                scriptPath = path;
                 LMSendReply(replyPort, NULL, 0);
                 
                 break;
@@ -91,12 +102,18 @@ static UIAlertView *cancelAlertView = nil;
         
     } else if (buttonIndex == 1) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-            system("LUAScriptElf /var/touchelf/scripts/fifa15_.lua");
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                cancelAlertView = [[UIAlertView alloc] initWithTitle:nil message:@"播放结束" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
-                [cancelAlertView show];
-            });
+            if (scriptPath) {
+//                system("LUAScriptElf /var/touchelf/scripts/fifa15_.lua");
+                
+                system([[NSString stringWithFormat:@"LUAScriptElf %@", scriptPath] UTF8String]);
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    NSString *message = [NSString stringWithFormat:@"%@播放结束", scriptPath];
+
+                    cancelAlertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                    [cancelAlertView show];
+                });
+            }
         });
     }
 }
@@ -112,7 +129,7 @@ static AlertViewDeletege *delegate = nil;
 
 static void handleVolumeDownButtonLongPress()
 {
-    if (cancelAlertView || runAlertView) {
+    if (!scriptPath || cancelAlertView || runAlertView) {
         return;
     }
     
@@ -125,10 +142,12 @@ static void handleVolumeDownButtonLongPress()
                 kill(pid, SIGKILL);
             } else {
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    NSString *message = @"是否运行lua脚本";
-                    delegate = [[AlertViewDeletege alloc] init];
-                    runAlertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:delegate cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-                    [runAlertView show];
+                    if (scriptPath) {
+                        NSString *message = [NSString stringWithFormat:@"是否运行%@", scriptPath];
+                        delegate = [[AlertViewDeletege alloc] init];
+                        runAlertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:delegate cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                        [runAlertView show];
+                    }
                 });
             }
         }

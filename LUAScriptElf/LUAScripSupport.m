@@ -124,18 +124,18 @@ static int l_logDebug(lua_State *L) {
             static NSDateFormatter *dateFormatter = nil;
             if (!logFile){
                 NSError *error = nil;
-                BOOL ok = [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/luascriptself/" withIntermediateDirectories:YES attributes:nil error:&error];
+                BOOL ok = [[NSFileManager defaultManager] createDirectoryAtPath:@"/var/mobile/luascriptelf/" withIntermediateDirectories:YES attributes:nil error:&error];
                 if (!ok) {
                     NSLog(@"%@", error);
                 }
-                logFile = fopen("/var/mobile/luascriptself/log.txt", "w");
+                logFile = fopen("/var/mobile/luascriptelf/log.txt", "w");
                 
                 dateFormatter = [[NSDateFormatter alloc] init];
                 [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             }
             
             if(logFile != NULL)
-                fprintf(logFile, "%s: %s\n", [[dateFormatter stringFromDate:[NSDate date]] UTF8String], message);
+                fprintf(logFile, "[%s] %s\n", [[dateFormatter stringFromDate:[NSDate date]] UTF8String], message);
         }
     }
     return 0;
