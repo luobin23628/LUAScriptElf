@@ -20,3 +20,19 @@
 - (CGPoint)findColor:(UIColor *)color;
 
 @end
+
+@interface UIImage (NYX_Rotating)
+
+-(UIImage*)rotateInRadians:(float)radians;
+
+-(UIImage*)rotateInDegrees:(float)degrees;
+
+-(UIImage*)rotateImagePixelsInRadians:(float)radians;
+
+-(UIImage*)rotateImagePixelsInDegrees:(float)degrees;
+
+-(UIImage*)verticalFlip;
+
+-(UIImage*)horizontalFlip;
+
+@end

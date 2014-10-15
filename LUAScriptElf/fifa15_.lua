@@ -1736,7 +1736,7 @@ end
 
 function modifyGoal(address)
 	if memoryWrite then
-   	 	memoryWrite("com.ea.fifa15.bv", address, 17, "U32");
+   	 	memoryWrite("com.ea.fifa15.bv", address, 15, "U32");
    	 	memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
 	end
 end
@@ -2070,6 +2070,8 @@ function main()
 
     local runLoopCount = 0;
 
+    local isFirst = true;
+
 	noError = waitUtilMeetCondition4(isSkillDetailPage, function()
 			mSleep(1000);
 			click(width(1088), 44);
@@ -2095,7 +2097,8 @@ function main()
                 address = getGoalAddress();
             end
             if address and address > 0 then
-                if runLoopCount %20 == 0 then
+                if isFirst or runLoopCount %20 == 0 then
+                	isFirst = false;
                 	logDebug(string.format("address === %x", address));
               		 modifyGoal(address);
               	end

@@ -28,8 +28,8 @@
     
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-    imageView.image = [UIImage imageNamed:@"Screenshot 2014.10.12 01.07.40@2x.png"];
-    imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    imageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    imageView.image = [UIImage imageNamed:@"960.png"];
     [self.view addSubview:imageView];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -48,7 +48,7 @@
 - (void)test {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"lua"];
     [[LuaManager shareInstance] runCodeFromFileWithPath:path];
-    
+    [[LuaManager shareInstance] callFunctionNamed:@"main" withObject:nil];
 //
 //    kern_return_t ret = LMConnectionSendEmptyOneWay(&connection, GMMessageIdRun);
 //    

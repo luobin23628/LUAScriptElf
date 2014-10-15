@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LUAScriptElf/UIImageAddition.m"
-            timestampString = "434477924.476643"
+            timestampString = "435081507.382031"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "332"
-            endingLineNumber = "332">
+            startingLineNumber = "461"
+            endingLineNumber = "461">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
