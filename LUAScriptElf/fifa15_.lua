@@ -1765,7 +1765,9 @@ function main()
 	local noError = false;
 	local shouldGotoMainPage = false;
     local address = 0;
-    
+    local isFirst = true;
+    local runLoopCount = 0;
+
 	if isPausePage() then
 		goto inGame;
 	end
@@ -1946,7 +1948,9 @@ function main()
 		end, 
 		isSeasonSelectionPage, function ()
 			address = 0;
-
+			isFirst = true;
+			runLoopCount = 0;
+			
 			mSleep(500);
 			moveTo(width(800 + 176), 319, 50, 319);
 			mSleep(500);
@@ -2067,10 +2071,6 @@ function main()
 	::inGame::
 
 	setWaitLoopCount(2 * 60 * 60*24*356);
-
-    local runLoopCount = 0;
-
-    local isFirst = true;
 
 	noError = waitUtilMeetCondition4(isSkillDetailPage, function()
 			mSleep(1000);
