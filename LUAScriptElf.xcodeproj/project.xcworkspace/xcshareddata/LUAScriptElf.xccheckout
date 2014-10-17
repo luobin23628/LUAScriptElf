@@ -10,33 +10,33 @@
 	<string>LUAScriptElf</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>06829E3C-057E-4993-81BE-5B801B52DC83</key>
-		<string>https://github.com/luobin23628/LUAScriptElf.git</string>
 		<key>A16B5E15-B7F7-4BB2-A218-1DC8DC9B6486</key>
 		<string>https://github.com/DHowett/theos.git</string>
+		<key>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</key>
+		<string>https://github.com/luobin23628/LUAScriptElf.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LUAScriptElf.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>06829E3C-057E-4993-81BE-5B801B52DC83</key>
-		<string>../..</string>
 		<key>A16B5E15-B7F7-4BB2-A218-1DC8DC9B6486</key>
-		<string>../../../../../../../opt/theos</string>
+		<string>../../../opt/theos</string>
+		<key>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/luobin23628/LUAScriptElf.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>06829E3C-057E-4993-81BE-5B801B52DC83</string>
+	<string>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>06829E3C-057E-4993-81BE-5B801B52DC83</string>
+			<string>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LUAScriptElf</string>
 		</dict>

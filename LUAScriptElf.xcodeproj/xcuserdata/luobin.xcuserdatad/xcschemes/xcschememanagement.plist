@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>LUAScriptElfUI.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>LUAScriptTweak.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,6 +32,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A84C3FB619E9925D0015B635</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A85EC1E019DFD70A00376678</key>
 		<dict>
 			<key>primary</key>

@@ -102,6 +102,7 @@
 		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */; };
+		ABE33FF119F0FCB90036CEB0 /* ScriptEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE33FF019F0FCB90036CEB0 /* ScriptEditorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,8 @@
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
 		ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VolumeTweak.mm; sourceTree = "<group>"; };
 		ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VolumeTweak.xm; sourceTree = "<group>"; };
+		ABE33FEF19F0FCB90036CEB0 /* ScriptEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEditorViewController.h; sourceTree = "<group>"; };
+		ABE33FF019F0FCB90036CEB0 /* ScriptEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScriptEditorViewController.m; sourceTree = "<group>"; };
 		BBA5C5340ABE4C539214A501 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -293,6 +296,8 @@
 				A84C3FC519E9925D0015B635 /* AppDelegate.m */,
 				A84C3FCE19E9925D0015B635 /* RootViewController.h */,
 				A84C3FCF19E9925D0015B635 /* RootViewController.m */,
+				ABE33FEF19F0FCB90036CEB0 /* ScriptEditorViewController.h */,
+				ABE33FF019F0FCB90036CEB0 /* ScriptEditorViewController.m */,
 				A84C3FD119E9925D0015B635 /* Images.xcassets */,
 				A84C3FC719E9925D0015B635 /* Package */,
 				A84C3FBC19E9925D0015B635 /* Supporting Files */,
@@ -809,6 +814,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABE33FF119F0FCB90036CEB0 /* ScriptEditorViewController.m in Sources */,
 				A84C3FD019E9925D0015B635 /* RootViewController.m in Sources */,
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
 				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
@@ -943,7 +949,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
@@ -993,7 +1000,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
@@ -1031,7 +1039,7 @@
 					armv7s,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
@@ -1078,7 +1086,7 @@
 					armv7s,
 				);
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";

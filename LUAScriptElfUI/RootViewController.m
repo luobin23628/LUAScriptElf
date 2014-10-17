@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "Global.h"
+#import "ScriptEditorViewController.h"
 
 @interface RootViewController ()<UIAlertViewDelegate>
 
@@ -91,7 +92,8 @@
             NSLog(@"KERN_SUCCESS");
         }
     } else if (buttonIndex == 1) {
-        
+        ScriptEditorViewController *scriptEditorViewController = [[ScriptEditorViewController alloc] initWithScriptPath:scriptPath];
+        [self.navigationController pushViewController:scriptEditorViewController animated:YES];
     }
 }
 
