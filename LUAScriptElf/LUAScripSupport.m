@@ -25,6 +25,7 @@
 #import "Global.h"
 #import "lua.h"
 #import "lua/lobject.h"
+#import <TesseractOCR/TesseractOCR.h>
 
 static BOOL keepScreen;
 static NSInteger rotateDegree;
@@ -490,8 +491,43 @@ static int l_snapshotRegion(lua_State *L) {
 }
 
 static int l_localOcrText(lua_State *L) {
+    const char *tessdata = lua_tostring(L, 1);
+    const char *langue = lua_tostring(L, 2);
     
-    lua_pushstring(L, "Unsupport");
+    if (langue == nil || tessdata == nil) {
+        lua_pushstring(L, "");
+        return 1;
+    }
+    
+    CGFloat x1 = lua_tonumber(L, 3);
+    CGFloat y1 = lua_tonumber(L, 4);
+    
+    CGFloat x2 = lua_tonumber(L, 5);
+    CGFloat y2 = lua_tonumber(L, 6);
+    
+    const char *whiteChar = lua_tostring(L, 7);
+    
+    Tesseract* tesseract = [[Tesseract alloc] initWithLanguage:[NSString stringWithUTF8String:langue]];
+    setenv("TESSDATA_PREFIX", tessdata, 1);
+
+    if (whiteChar) {
+        [tesseract setVariableValue:[NSString stringWithUTF8String:whiteChar] forKey:@"tessedit_char_whitelist"]; //limit search
+    }
+    
+    CGRect rect = CGRectMake(MIN(x1, x2), MIN(y1, y2), fabs(x2 - x1), fabs(y2 - y1));
+    
+    UIImage *image = [[UIImage screenshot] rotateInDegrees:90];
+    
+    image = [UIImage imageWithCGImage:image.CGImage scale:0 orientation:image.imageOrientation];
+    
+    [tesseract setImage:image]; //image to check
+    [tesseract setRect:rect];
+
+    [tesseract recognize];
+    
+    NSString *recognizedText = [tesseract recognizedText];
+    
+    lua_pushstring(L, [recognizedText UTF8String]);
     return 1;
 }
 

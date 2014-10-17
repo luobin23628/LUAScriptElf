@@ -11,6 +11,15 @@
 		A81E432219D6FC26005C7758 /* fifa15NoobPackage.lua in Resources */ = {isa = PBXBuildFile; fileRef = A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */; };
 		A820CF9719E01B0B0075DC26 /* LightMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = A85EC20519DFF13F00376678 /* LightMessaging.m */; };
 		A820CF9819E01B370075DC26 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC20A19DFF47600376678 /* librocketbootstrap.dylib */; };
+		A82BB06119EEAB4900AAB670 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06019EEAB4900AAB670 /* TesseractOCR.framework */; };
+		A82BB06219EEAB4900AAB670 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06019EEAB4900AAB670 /* TesseractOCR.framework */; };
+		A82BB06519EEABB300AAB670 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06419EEABB300AAB670 /* CoreImage.framework */; };
+		A82BB06619EEABB900AAB670 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06419EEABB300AAB670 /* CoreImage.framework */; };
+		A82BB06819EEADAB00AAB670 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06719EEADAB00AAB670 /* libstdc++.6.0.9.dylib */; };
+		A82BB06919EEADB700AAB670 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06719EEADAB00AAB670 /* libstdc++.6.0.9.dylib */; };
+		A82BB06B19EEAFD300AAB670 /* 1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A82BB06A19EEAFD300AAB670 /* 1136@2x.png */; };
+		A82BB07619EEB36D00AAB670 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = A82BB07519EEB36D00AAB670 /* tessdata */; };
+		A82BB07819EEBB6E00AAB670 /* 960@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A82BB07719EEBB6E00AAB670 /* 960@2x.png */; };
 		A84C3FB819E9925D0015B635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
 		A84C3FB919E9925D0015B635 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8D7865719D677A8003D7645 /* CoreGraphics.framework */; };
 		A84C3FBA19E9925D0015B635 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
@@ -91,7 +100,6 @@
 		AB4EA31719D53C7C005F1AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4EA31619D53C7C005F1AF5 /* main.m */; };
 		AB56F07219D7B864008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB56F07319D7B871008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
-		AB5881B019D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */; };
 		AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
 		AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
@@ -126,6 +134,12 @@
 		76CBE73ACC174A8987D20574 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		A81E431E19D6F477005C7758 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 		A81E432119D6FC26005C7758 /* fifa15NoobPackage.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15NoobPackage.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		A82BB06019EEAB4900AAB670 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TesseractOCR.framework; sourceTree = "<group>"; };
+		A82BB06419EEABB300AAB670 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		A82BB06719EEADAB00AAB670 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		A82BB06A19EEAFD300AAB670 /* 1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1136@2x.png"; sourceTree = "<group>"; };
+		A82BB07519EEB36D00AAB670 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
+		A82BB07719EEBB6E00AAB670 /* 960@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "960@2x.png"; sourceTree = "<group>"; };
 		A84C3FB719E9925D0015B635 /* LUAScriptElfUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LUAScriptElfUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A84C3FBD19E9925D0015B635 /* LUAScriptElfUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LUAScriptElfUI-Info.plist"; sourceTree = "<group>"; };
 		A84C3FBF19E9925D0015B635 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -204,7 +218,6 @@
 		AB4EA31519D53C7C005F1AF5 /* 0xdeadfa11 */ = {isa = PBXFileReference; lastKnownFileType = text; name = 0xdeadfa11; path = Package/usr/bin/0xdeadfa11; sourceTree = "<group>"; };
 		AB4EA31619D53C7C005F1AF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsimulatetouch.dylib; path = ../../../../../../opt/iOSOpenDev/lib/libsimulatetouch.dylib; sourceTree = "<group>"; };
-		AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screenshot 2014.09.28 14.11.30@2x.png"; sourceTree = "<group>"; };
 		AB80255C19E9176300F2F85F /* librocketbootstrap.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = librocketbootstrap.dylib; path = ../../../../../../opt/iOSOpenDev/lib/librocketbootstrap.dylib; sourceTree = "<group>"; };
 		AB80256219E917BB00F2F85F /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../../../opt/iOSOpenDev/frameworks/IOKit.framework; sourceTree = "<group>"; };
 		AB80256319E917BB00F2F85F /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = ../../../../../../opt/iOSOpenDev/frameworks/IOSurface.framework; sourceTree = "<group>"; };
@@ -255,6 +268,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82BB06819EEADAB00AAB670 /* libstdc++.6.0.9.dylib in Frameworks */,
+				A82BB06619EEABB900AAB670 /* CoreImage.framework in Frameworks */,
+				A82BB06219EEAB4900AAB670 /* TesseractOCR.framework in Frameworks */,
 				A820CF9819E01B370075DC26 /* librocketbootstrap.dylib in Frameworks */,
 				A85EC1D919DF086C00376678 /* IOKit.framework in Frameworks */,
 				A85EC1DA19DF086C00376678 /* IOMobileFramebuffer.framework in Frameworks */,
@@ -272,6 +288,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A82BB06919EEADB700AAB670 /* libstdc++.6.0.9.dylib in Frameworks */,
+				A82BB06519EEABB300AAB670 /* CoreImage.framework in Frameworks */,
+				A82BB06119EEAB4900AAB670 /* TesseractOCR.framework in Frameworks */,
 				A85EC20C19DFF48700376678 /* librocketbootstrap.dylib in Frameworks */,
 				A85EC1FF19DFDC3000376678 /* libactivator.dylib in Frameworks */,
 				A85EC1D419DF074C00376678 /* IOKit.framework in Frameworks */,
@@ -401,8 +420,10 @@
 		A8F6D75919D6795F00B549D0 /* TestLUA */ = {
 			isa = PBXGroup;
 			children = (
-				AB5881AF19D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png */,
+				A82BB06A19EEAFD300AAB670 /* 1136@2x.png */,
 				AB03988819E54BB500431826 /* 1@2x.png */,
+				A82BB07719EEBB6E00AAB670 /* 960@2x.png */,
+				A82BB07519EEB36D00AAB670 /* tessdata */,
 				A8F6D76219D6796000B549D0 /* AppDelegate.h */,
 				A8F6D76319D6796000B549D0 /* AppDelegate.m */,
 				A8F6D76519D6796000B549D0 /* Main_iPhone.storyboard */,
@@ -453,6 +474,9 @@
 		AB4EA30919D53C7C005F1AF5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A82BB06719EEADAB00AAB670 /* libstdc++.6.0.9.dylib */,
+				A82BB06419EEABB300AAB670 /* CoreImage.framework */,
+				A82BB06019EEAB4900AAB670 /* TesseractOCR.framework */,
 				A88A79C219EC0E7B007D01EA /* GraphicsServices.framework */,
 				A88A79C019EC09A1007D01EA /* libsubstrate.dylib */,
 				AB80258819E91C7600F2F85F /* AVFoundation.framework */,
@@ -695,14 +719,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB03988919E54BB500431826 /* 1@2x.png in Resources */,
-				AB5881B019D7E42A00C12DC0 /* Screenshot 2014.09.28 14.11.30@2x.png in Resources */,
 				A84C3FF219E99B6D0015B635 /* Screenshot 2014.10.12 01.07.40@2x.png in Resources */,
+				A82BB07619EEB36D00AAB670 /* tessdata in Resources */,
 				A8F71B9D19E8256C0009CF62 /* Screenshot 2014.10.10 22.22.39@2x.png in Resources */,
 				A81E431F19D6F477005C7758 /* entitlements.plist in Resources */,
 				A8FD460C19D6836A00EF2C6D /* test.lua in Resources */,
+				A82BB07819EEBB6E00AAB670 /* 960@2x.png in Resources */,
 				A8F6D76A19D6796000B549D0 /* Main_iPad.storyboard in Resources */,
 				A8F6D76F19D6796000B549D0 /* Images.xcassets in Resources */,
 				ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */,
+				A82BB06B19EEAFD300AAB670 /* 1136@2x.png in Resources */,
 				A8F6D76719D6796000B549D0 /* Main_iPhone.storyboard in Resources */,
 				A8F6D75E19D6796000B549D0 /* InfoPlist.strings in Resources */,
 				A81E432219D6FC26005C7758 /* fifa15NoobPackage.lua in Resources */,
@@ -954,6 +980,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LUAScriptElfUI/LUAScriptElfUI-Prefix.pch";
@@ -1006,6 +1033,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LUAScriptElfUI/LUAScriptElfUI-Prefix.pch";
@@ -1152,6 +1180,7 @@
 					Frameworks/IOSurface,
 					"$(PROJECT_DIR)/PrivateFrameworks",
 					/opt/theos/frameworks,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestLUA/TestLUA-Prefix.pch";
@@ -1178,6 +1207,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					/opt/theos/lib,
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/LUAScriptElf/TesseractOCR/lib",
 				);
 				OTHER_CFLAGS = (
 					"-isystem",
@@ -1223,6 +1253,7 @@
 					Frameworks/IOSurface,
 					"$(PROJECT_DIR)/PrivateFrameworks",
 					/opt/theos/frameworks,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestLUA/TestLUA-Prefix.pch";
@@ -1245,6 +1276,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 					/opt/theos/lib,
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/LUAScriptElf/TesseractOCR/lib",
 				);
 				OTHER_CFLAGS = (
 					"-isystem",
@@ -1347,6 +1379,7 @@
 					Frameworks/IOSurface,
 					"$(PROJECT_DIR)/PrivateFrameworks",
 					/opt/theos/frameworks,
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1361,6 +1394,7 @@
 					"$(inherited)",
 					/opt/theos/lib,
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/LUAScriptElf/TesseractOCR/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
@@ -1396,6 +1430,7 @@
 					Frameworks/IOSurface,
 					"$(PROJECT_DIR)/PrivateFrameworks",
 					/opt/theos/frameworks,
+					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1410,6 +1445,7 @@
 					"$(inherited)",
 					/opt/theos/lib,
 					/opt/iOSOpenDev/lib,
+					"$(PROJECT_DIR)/LUAScriptElf/TesseractOCR/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;

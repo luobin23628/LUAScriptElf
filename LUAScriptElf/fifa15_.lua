@@ -1736,7 +1736,7 @@ end
 
 function modifyGoal(address)
 	if memoryWrite then
-   	 	memoryWrite("com.ea.fifa15.bv", address, 17, "U32");
+   	 	memoryWrite("com.ea.fifa15.bv", address, 15, "U32");
    	 	memoryWrite("com.ea.fifa15.bv", address + 4, 0, "U32");
 	end
 end
@@ -1765,7 +1765,9 @@ function main()
 	local noError = false;
 	local shouldGotoMainPage = false;
     local address = 0;
-    
+    local isFirst = true;
+    local runLoopCount = 0;
+
 	if isPausePage() then
 		goto inGame;
 	end
@@ -1946,7 +1948,9 @@ function main()
 		end, 
 		isSeasonSelectionPage, function ()
 			address = 0;
-
+			isFirst = true;
+			runLoopCount = 0;
+			
 			mSleep(500);
 			moveTo(width(800 + 176), 319, 50, 319);
 			mSleep(500);
@@ -2068,8 +2072,6 @@ function main()
 
 	setWaitLoopCount(2 * 60 * 60*24*356);
 
-    local runLoopCount = 0;
-
 	noError = waitUtilMeetCondition4(isSkillDetailPage, function()
 			mSleep(1000);
 			click(width(1088), 44);
@@ -2095,7 +2097,8 @@ function main()
                 address = getGoalAddress();
             end
             if address and address > 0 then
-                if runLoopCount %20 == 0 then
+                if isFirst or runLoopCount %20 == 0 then
+                	isFirst = false;
                 	logDebug(string.format("address === %x", address));
               		 modifyGoal(address);
               	end
