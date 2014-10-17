@@ -102,6 +102,10 @@ LUAScriptElf/Package/usr/bin/
 LUAScriptTweak/Package/Applications
 LUAScriptTweak/Package/Library/MobileSubstrate/DynamicLibraries/LUAScriptTweak.dylib
 
+LUAScriptElfUI/Package/Applications/
+LUAScriptElfUI/Package/usr/bin/
+LUAScriptElfUI/Package/Library/MobileSubstrate/DynamicLibraries/LUAScriptTweak.dylib
+
 ####
 # Xcode 4 - Deprecated classes
 #

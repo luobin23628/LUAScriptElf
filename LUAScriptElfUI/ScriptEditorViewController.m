@@ -37,9 +37,10 @@
     [self.view addSubview:textView];
     self.textView = textView;
     
+    [self startMonitorForFilePath:self.scriptPath];
 }
 
-- (void)startMonitorForProcess:(NSString *)filePath
+- (void)startMonitorForFilePath:(NSString *)filePath
 {
     [self stopMonitor];
     
