@@ -7,7 +7,8 @@
 //
 
 #import "ScriptEditorViewController.h"
-#import ""
+#import "TKAlertView.h"
+#import "UIViewAdditions.h"
 
 @interface ScriptEditorViewController ()<UITextViewDelegate>
 
@@ -23,9 +24,20 @@
     self = [super init];
     if (self) {
         self.scriptPath = scriptPath;
+        self.title = [scriptPath lastPathComponent];
         self.hasChange = NO;
     }
     return self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 - (void)viewDidLoad {
@@ -33,6 +45,7 @@
     // Do any additional setup after loading the view.
     
     UITextView *textView = [[UITextView alloc] initWithFrame:self.view.bounds];
+    textView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     textView.alwaysBounceVertical = YES;
     textView.delegate = self;
     textView.backgroundColor = [UIColor whiteColor];
@@ -41,10 +54,15 @@
     [self.view addSubview:textView];
     self.textView = textView;
     
-    
-    UIButton *backButton = [UIButton buttonWithType:101];
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    backButton.titleLabel.font = [UIFont systemFontOfSize:17];
+    [backButton setTitle:@"返回" forState:UIControlStateNormal];
+    [backButton setImage:[UIImage imageNamed:@"back_indicator_image"] forState:UIControlStateNormal];
+    [backButton setFrame:CGRectMake(0, 0, 25 + 22 + backButton.imageView.frame.size.width , 44)];
+    [backButton setClipsToBounds:NO];
+    [backButton setImageEdgeInsets:UIEdgeInsetsMake(0, - 15, 0, 0)];
+    [backButton setTitleEdgeInsets:UIEdgeInsetsMake(0, backButton.imageEdgeInsets.left+15, 0, 0)];
     [backButton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [backButton setTitle:@"脚本" forState:UIControlStateNormal];
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = backItem;
 
@@ -59,24 +77,76 @@
 }
 
 - (void)save {
-    [self.textView.text writeToFile:self.scriptPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    NSError *error = nil;
+    BOOL success = [self.textView.text writeToFile:self.scriptPath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+    if (success) {
+        self.hasChange = NO;
+    } else {
+        TKAlertView * alertView = [TKAlertView alertWithTitle:@"保存出错" message:[error description]];
+        [alertView addButtonWithTitle:@"确定" block:nil];
+        [alertView show];
+    }
 }
 
 - (void)back {
     if (self.hasChange) {
-        
+        TKAlertView * alertView = [TKAlertView alertWithTitle:nil message:@"确定要放弃所有修改吗？"];
+        [alertView addButtonWithTitle:@"确定" block:^{
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alertView addButtonWithTitle:@"取消" block:nil];
+        [alertView show];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     [self stopMonitor];
 }
 
 #pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView {
     self.hasChange = YES;
+}
+
+-(void) keyboardWillChangeFrameNotification:(NSNotification *)note{
+    //    // get keyboard size and loctaion
+    //	CGRect keyboardBounds;
+    //    [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
+    //
+    //    // Need to translate the bounds to account for rotation.
+    //    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    //    self.view.bottom = [UIScreen mainScreen].bounds.size.height - keyboardBounds.size.height;
+    //
+    
+    // get keyboard size and loctaion
+    CGRect keyboardBounds;
+    [[note.userInfo valueForKey:UIKeyboardFrameEndUserInfoKey] getValue: &keyboardBounds];
+    NSNumber *duration = [note.userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSNumber *curve = [note.userInfo objectForKey:UIKeyboardAnimationCurveUserInfoKey];
+    
+    // Need to translate the bounds to account for rotation.
+    keyboardBounds = [self.view convertRect:keyboardBounds toView:nil];
+    
+    if ([duration doubleValue]) {
+        // animations settings
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:[duration doubleValue]];
+        [UIView setAnimationCurve:[curve integerValue]];
+        [UIView setAnimationDelegate:self];
+    }
+    
+    // set views with new info
+    self.textView.height = self.view.height - keyboardBounds.size.height;
+    
+    if ([duration doubleValue]) {
+        
+        // commit animations
+        [UIView commitAnimations];
+    }
 }
 
 - (void)startMonitorForFilePath:(NSString *)filePath

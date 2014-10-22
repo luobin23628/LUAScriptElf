@@ -56,7 +56,7 @@
 		A88A7A0D19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
 		A88A7A0E19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
 		A88A7A0F19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
-		A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
+		A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
 		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
@@ -96,6 +96,7 @@
 		AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80C19D56FAB00F3A18A /* LuaManager.m */; };
 		AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED80F19D570ED00F3A18A /* LUAScripSupport.m */; };
 		AB0ED82819D584A600F3A18A /* UIFakeKeypress.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0ED82519D584A600F3A18A /* UIFakeKeypress.m */; };
+		AB1B1FF219F7AFBA0043AD9D /* IOMobileFramebuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1CE19DF072F00376678 /* IOMobileFramebuffer.framework */; };
 		AB2B26EA19F1315D00A7C180 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06019EEAB4900AAB670 /* TesseractOCR.framework */; };
 		AB2B26EB19F1316D00A7C180 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A82BB06719EEADAB00AAB670 /* libstdc++.6.0.9.dylib */; };
 		AB4EA30B19D53C7C005F1AF5 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4EA30A19D53C7C005F1AF5 /* CoreFoundation.framework */; };
@@ -113,9 +114,39 @@
 		ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7419E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
+		ABC5778F19F7944D0026EA43 /* NSInvocation+.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5777A19F7944D0026EA43 /* NSInvocation+.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779019F7944D0026EA43 /* TKActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5777C19F7944D0026EA43 /* TKActionSheet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779119F7944D0026EA43 /* TKActionSheetOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5777E19F7944D0026EA43 /* TKActionSheetOverlayWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779219F7944D0026EA43 /* TKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778019F7944D0026EA43 /* TKAlertManager.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779319F7944D0026EA43 /* TKAlertOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778219F7944D0026EA43 /* TKAlertOverlayWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779419F7944D0026EA43 /* TKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778419F7944D0026EA43 /* TKAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779519F7944D0026EA43 /* TKOverlayWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778619F7944D0026EA43 /* TKOverlayWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779619F7944D0026EA43 /* TKTextFieldAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778819F7944D0026EA43 /* TKTextFieldAlertView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779719F7944D0026EA43 /* UIDeviceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778A19F7944D0026EA43 /* UIDeviceAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779819F7944D0026EA43 /* UIImageExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778C19F7944D0026EA43 /* UIImageExtend.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779919F7944D0026EA43 /* UIViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5778E19F7944D0026EA43 /* UIViewAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779C19F7945E0026EA43 /* M9BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC5779B19F7945E0026EA43 /* M9BackgroundView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ABC5779E19F7A4650026EA43 /* back_indicator_image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC5779D19F7A4650026EA43 /* back_indicator_image@2x.png */; };
 		ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */; };
 		ABE33FF119F0FCB90036CEB0 /* ScriptEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE33FF019F0FCB90036CEB0 /* ScriptEditorViewController.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ABC5779F19F7A8AA0026EA43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4EA2FF19D53C7C005F1AF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB4EA30619D53C7C005F1AF5;
+			remoteInfo = LUAScriptElf;
+		};
+		ABC577A119F7A8AA0026EA43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB4EA2FF19D53C7C005F1AF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A85EC1E019DFD70A00376678;
+			remoteInfo = LUAScriptTweak;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		76CBE73ACC174A8987D20574 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -214,6 +245,31 @@
 		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
+		ABC5777919F7944D0026EA43 /* NSInvocation+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+.h"; path = "submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/NSInvocation+.h"; sourceTree = SOURCE_ROOT; };
+		ABC5777A19F7944D0026EA43 /* NSInvocation+.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+.m"; path = "submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/NSInvocation+.m"; sourceTree = SOURCE_ROOT; };
+		ABC5777B19F7944D0026EA43 /* TKActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKActionSheet.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKActionSheet.h; sourceTree = SOURCE_ROOT; };
+		ABC5777C19F7944D0026EA43 /* TKActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKActionSheet.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKActionSheet.m; sourceTree = SOURCE_ROOT; };
+		ABC5777D19F7944D0026EA43 /* TKActionSheetOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKActionSheetOverlayWindow.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKActionSheetOverlayWindow.h; sourceTree = SOURCE_ROOT; };
+		ABC5777E19F7944D0026EA43 /* TKActionSheetOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKActionSheetOverlayWindow.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKActionSheetOverlayWindow.m; sourceTree = SOURCE_ROOT; };
+		ABC5777F19F7944D0026EA43 /* TKAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKAlertManager.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertManager.h; sourceTree = SOURCE_ROOT; };
+		ABC5778019F7944D0026EA43 /* TKAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKAlertManager.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertManager.m; sourceTree = SOURCE_ROOT; };
+		ABC5778119F7944D0026EA43 /* TKAlertOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKAlertOverlayWindow.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertOverlayWindow.h; sourceTree = SOURCE_ROOT; };
+		ABC5778219F7944D0026EA43 /* TKAlertOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKAlertOverlayWindow.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertOverlayWindow.m; sourceTree = SOURCE_ROOT; };
+		ABC5778319F7944D0026EA43 /* TKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKAlertView.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertView.h; sourceTree = SOURCE_ROOT; };
+		ABC5778419F7944D0026EA43 /* TKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKAlertView.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKAlertView.m; sourceTree = SOURCE_ROOT; };
+		ABC5778519F7944D0026EA43 /* TKOverlayWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKOverlayWindow.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKOverlayWindow.h; sourceTree = SOURCE_ROOT; };
+		ABC5778619F7944D0026EA43 /* TKOverlayWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKOverlayWindow.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKOverlayWindow.m; sourceTree = SOURCE_ROOT; };
+		ABC5778719F7944D0026EA43 /* TKTextFieldAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TKTextFieldAlertView.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKTextFieldAlertView.h; sourceTree = SOURCE_ROOT; };
+		ABC5778819F7944D0026EA43 /* TKTextFieldAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TKTextFieldAlertView.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/TKTextFieldAlertView.m; sourceTree = SOURCE_ROOT; };
+		ABC5778919F7944D0026EA43 /* UIDeviceAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIDeviceAdditions.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIDeviceAdditions.h; sourceTree = SOURCE_ROOT; };
+		ABC5778A19F7944D0026EA43 /* UIDeviceAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIDeviceAdditions.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIDeviceAdditions.m; sourceTree = SOURCE_ROOT; };
+		ABC5778B19F7944D0026EA43 /* UIImageExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIImageExtend.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIImageExtend.h; sourceTree = SOURCE_ROOT; };
+		ABC5778C19F7944D0026EA43 /* UIImageExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIImageExtend.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIImageExtend.m; sourceTree = SOURCE_ROOT; };
+		ABC5778D19F7944D0026EA43 /* UIViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIViewAdditions.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIViewAdditions.h; sourceTree = SOURCE_ROOT; };
+		ABC5778E19F7944D0026EA43 /* UIViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIViewAdditions.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/UIViewAdditions.m; sourceTree = SOURCE_ROOT; };
+		ABC5779A19F7945E0026EA43 /* M9BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = M9BackgroundView.h; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/M9BackgroundView.h; sourceTree = SOURCE_ROOT; };
+		ABC5779B19F7945E0026EA43 /* M9BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = M9BackgroundView.m; path = submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/M9BackgroundView.m; sourceTree = SOURCE_ROOT; };
+		ABC5779D19F7A4650026EA43 /* back_indicator_image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_indicator_image@2x.png"; sourceTree = "<group>"; };
 		ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VolumeTweak.mm; sourceTree = "<group>"; };
 		ABE0ABF319EBEEF400E057C3 /* VolumeTweak.xm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VolumeTweak.xm; sourceTree = "<group>"; };
 		ABE33FEF19F0FCB90036CEB0 /* ScriptEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScriptEditorViewController.h; sourceTree = "<group>"; };
@@ -237,6 +293,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB1B1FF219F7AFBA0043AD9D /* IOMobileFramebuffer.framework in Frameworks */,
 				AB2B26EB19F1316D00A7C180 /* libstdc++.6.0.9.dylib in Frameworks */,
 				AB2B26EA19F1315D00A7C180 /* TesseractOCR.framework in Frameworks */,
 				A88A79C319EC0E7B007D01EA /* GraphicsServices.framework in Frameworks */,
@@ -301,6 +358,7 @@
 		A84C3FBB19E9925D0015B635 /* LUAScriptElfUI */ = {
 			isa = PBXGroup;
 			children = (
+				ABC5775719F793C30026EA43 /* TKAlertView */,
 				A84C3FC419E9925D0015B635 /* AppDelegate.h */,
 				A84C3FC519E9925D0015B635 /* AppDelegate.m */,
 				A84C3FCE19E9925D0015B635 /* RootViewController.h */,
@@ -317,6 +375,7 @@
 		A84C3FBC19E9925D0015B635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				ABC5779D19F7A4650026EA43 /* back_indicator_image@2x.png */,
 				A84C3FBD19E9925D0015B635 /* LUAScriptElfUI-Info.plist */,
 				A84C3FBE19E9925D0015B635 /* InfoPlist.strings */,
 				A84C3FC119E9925D0015B635 /* main.m */,
@@ -573,6 +632,37 @@
 			name = bin;
 			sourceTree = "<group>";
 		};
+		ABC5775719F793C30026EA43 /* TKAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				ABC5779A19F7945E0026EA43 /* M9BackgroundView.h */,
+				ABC5779B19F7945E0026EA43 /* M9BackgroundView.m */,
+				ABC5777919F7944D0026EA43 /* NSInvocation+.h */,
+				ABC5777A19F7944D0026EA43 /* NSInvocation+.m */,
+				ABC5777B19F7944D0026EA43 /* TKActionSheet.h */,
+				ABC5777C19F7944D0026EA43 /* TKActionSheet.m */,
+				ABC5777D19F7944D0026EA43 /* TKActionSheetOverlayWindow.h */,
+				ABC5777E19F7944D0026EA43 /* TKActionSheetOverlayWindow.m */,
+				ABC5777F19F7944D0026EA43 /* TKAlertManager.h */,
+				ABC5778019F7944D0026EA43 /* TKAlertManager.m */,
+				ABC5778119F7944D0026EA43 /* TKAlertOverlayWindow.h */,
+				ABC5778219F7944D0026EA43 /* TKAlertOverlayWindow.m */,
+				ABC5778319F7944D0026EA43 /* TKAlertView.h */,
+				ABC5778419F7944D0026EA43 /* TKAlertView.m */,
+				ABC5778519F7944D0026EA43 /* TKOverlayWindow.h */,
+				ABC5778619F7944D0026EA43 /* TKOverlayWindow.m */,
+				ABC5778719F7944D0026EA43 /* TKTextFieldAlertView.h */,
+				ABC5778819F7944D0026EA43 /* TKTextFieldAlertView.m */,
+				ABC5778919F7944D0026EA43 /* UIDeviceAdditions.h */,
+				ABC5778A19F7944D0026EA43 /* UIDeviceAdditions.m */,
+				ABC5778B19F7944D0026EA43 /* UIImageExtend.h */,
+				ABC5778C19F7944D0026EA43 /* UIImageExtend.m */,
+				ABC5778D19F7944D0026EA43 /* UIViewAdditions.h */,
+				ABC5778E19F7944D0026EA43 /* UIViewAdditions.m */,
+			);
+			name = TKAlertView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -601,6 +691,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				ABC577A019F7A8AA0026EA43 /* PBXTargetDependency */,
+				ABC577A219F7A8AA0026EA43 /* PBXTargetDependency */,
 			);
 			name = LUAScriptElfUI;
 			productName = LUAScriptElfUI;
@@ -703,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A84C3FC019E9925D0015B635 /* InfoPlist.strings in Resources */,
+				ABC5779E19F7A4650026EA43 /* back_indicator_image@2x.png in Resources */,
 				A84C3FD219E9925D0015B635 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,12 +926,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC5779919F7944D0026EA43 /* UIViewAdditions.m in Sources */,
+				ABC5779019F7944D0026EA43 /* TKActionSheet.m in Sources */,
 				ABE33FF119F0FCB90036CEB0 /* ScriptEditorViewController.m in Sources */,
 				A84C3FD019E9925D0015B635 /* RootViewController.m in Sources */,
+				ABC5779819F7944D0026EA43 /* UIImageExtend.m in Sources */,
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
+				ABC5779619F7944D0026EA43 /* TKTextFieldAlertView.m in Sources */,
+				ABC5778F19F7944D0026EA43 /* NSInvocation+.m in Sources */,
 				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
+				ABC5779419F7944D0026EA43 /* TKAlertView.m in Sources */,
+				ABC5779C19F7945E0026EA43 /* M9BackgroundView.m in Sources */,
+				ABC5779719F7944D0026EA43 /* UIDeviceAdditions.m in Sources */,
+				ABC5779119F7944D0026EA43 /* TKActionSheetOverlayWindow.m in Sources */,
+				ABC5779219F7944D0026EA43 /* TKAlertManager.m in Sources */,
+				ABC5779319F7944D0026EA43 /* TKAlertOverlayWindow.m in Sources */,
 				A84C3FC219E9925D0015B635 /* main.m in Sources */,
 				AB5B9AD619F5FF72001EB7B2 /* LightMessaging.m in Sources */,
+				ABC5779519F7944D0026EA43 /* TKOverlayWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +1007,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ABC577A019F7A8AA0026EA43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */;
+			targetProxy = ABC5779F19F7A8AA0026EA43 /* PBXContainerItemProxy */;
+		};
+		ABC577A219F7A8AA0026EA43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A85EC1E019DFD70A00376678 /* LUAScriptTweak */;
+			targetProxy = ABC577A119F7A8AA0026EA43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A84C3FBE19E9925D0015B635 /* InfoPlist.strings */ = {
@@ -1073,6 +1191,7 @@
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
 					/opt/theos/frameworks,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PrivateFrameworks",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1122,6 +1241,7 @@
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
 					/opt/theos/frameworks,
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PrivateFrameworks",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/include/**",

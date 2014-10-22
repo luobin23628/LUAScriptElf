@@ -12,6 +12,8 @@
 	<dict>
 		<key>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</key>
 		<string>https://github.com/luobin23628/LUAScriptElf.git</string>
+		<key>F634663F45F0D03AFBA94D5E9E9A6F1546406B5D</key>
+		<string>https://github.com/luobin23628/CustomActionSheetAndAlert.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>LUAScriptElf.xcworkspace</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</key>
 		<string>..</string>
+		<key>F634663F45F0D03AFBA94D5E9E9A6F1546406B5D</key>
+		<string>../submodules/CustomActionSheetAndAlert</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/luobin23628/LUAScriptElf.git</string>
@@ -28,6 +32,14 @@
 	<string>C84D529FD35E6796A79B8A58ECF05C8FBB589C4B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F634663F45F0D03AFBA94D5E9E9A6F1546406B5D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CustomActionSheetAndAlert</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

@@ -26,8 +26,8 @@
     if (self) {
         // Custom initialization
         self.navigationItem.title = @"脚本";
-        self.scriptsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-        self.scriptsPath = [self.scriptsPath stringByAppendingPathComponent:@"test"];
+        self.scriptsPath = @"/var/mobile/luascriptelf/scripts/";
+//        self.scriptsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     }
     return self;
 }
@@ -64,7 +64,6 @@
     }];
     
     self.scripts = scripts;
-//    self.scripts = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/luascriptelf/scripts/" error:&error];
     [self.tableView reloadData];
 }
 
@@ -90,8 +89,9 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *scriptPath = [self.scripts objectAtIndex:indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSString *scriptPath = [self.scripts objectAtIndex:indexPath.row];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:scriptPath message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"播放", @"编辑", nil];
     [alertView show];
 }
@@ -99,7 +99,8 @@
 #pragma mark - UIAlertViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *scriptPath = alertView.title;
-    
+    scriptPath = [self.scriptsPath stringByAppendingPathComponent:scriptPath];
+
     if (buttonIndex == 1) {
         NSData *data = [scriptPath dataUsingEncoding:NSUTF8StringEncoding];
         LMResponseBuffer buffer;
@@ -109,7 +110,6 @@
             NSLog(@"KERN_SUCCESS");
         }
     } else if (buttonIndex == 2) {
-        scriptPath = [self.scriptsPath stringByAppendingPathComponent:scriptPath];
         ScriptEditorViewController *scriptEditorViewController = [[ScriptEditorViewController alloc] initWithScriptPath:scriptPath];
         [self.navigationController pushViewController:scriptEditorViewController animated:YES];
     }
