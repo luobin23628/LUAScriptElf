@@ -13,6 +13,8 @@
 @interface RootViewController ()<UIAlertViewDelegate>
 
 @property (nonatomic, strong) NSArray *scripts;
+@property (nonatomic, strong) NSString *scriptsPath;
+@property (nonatomic, strong) dispatch_source_t source;
 
 @end
 
@@ -24,31 +26,46 @@
     if (self) {
         // Custom initialization
         self.navigationItem.title = @"脚本";
+        self.scriptsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        self.scriptsPath = [self.scriptsPath stringByAppendingPathComponent:@"test"];
     }
     return self;
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self stopMonitor];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self reloadData];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appDidBecomeActiveNotification:)
-                                                 name:UIApplicationDidBecomeActiveNotification
-                                               object:nil];
+    
+    [self startMonitorForFilePath:self.scriptsPath];
 }
 
 - (void)reloadData {
-    self.scripts = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/luascriptelf/scripts/" error:nil];
+    NSFileManager *fileManger = [NSFileManager defaultManager];
+    NSMutableArray *scripts = [NSMutableArray array];
+    NSDirectoryEnumerator *direnum = [fileManger enumeratorAtPath:self.scriptsPath];
+    
+    NSString *filename ;
+    while (filename = [direnum nextObject]) {
+        if ([[[direnum fileAttributes] fileType] isEqualToString:NSFileTypeRegular]
+            && [[[filename pathExtension] lowercaseString] isEqualToString:@"lua"]) {
+            [scripts addObject: filename];
+        }
+    }
+    
+    [scripts sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSDate *creationDate1 = [[fileManger attributesOfItemAtPath:[self.scriptsPath stringByAppendingPathComponent:obj1] error:nil] fileModificationDate];
+        NSDate *creationDate2 = [[fileManger attributesOfItemAtPath:[self.scriptsPath stringByAppendingPathComponent:obj2] error:nil] fileModificationDate];
+        return [creationDate2 compare:creationDate1];
+    }];
+    
+    self.scripts = scripts;
+//    self.scripts = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/luascriptelf/scripts/" error:&error];
     [self.tableView reloadData];
-}
-
-- (void)appDidBecomeActiveNotification:(NSNotification *)notification {
-    [self reloadData];
 }
 
 #pragma mark - UITableView Datasource
@@ -83,7 +100,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSString *scriptPath = alertView.title;
     
-    if (buttonIndex == 0) {
+    if (buttonIndex == 1) {
         NSData *data = [scriptPath dataUsingEncoding:NSUTF8StringEncoding];
         LMResponseBuffer buffer;
         kern_return_t ret = LMConnectionSendTwoWayData(&tweakConnection, TweakMessageIdSetScriptPath, (__bridge CFDataRef)data, &buffer);
@@ -91,11 +108,46 @@
         if (ret == KERN_SUCCESS) {
             NSLog(@"KERN_SUCCESS");
         }
-    } else if (buttonIndex == 1) {
+    } else if (buttonIndex == 2) {
+        scriptPath = [self.scriptsPath stringByAppendingPathComponent:scriptPath];
         ScriptEditorViewController *scriptEditorViewController = [[ScriptEditorViewController alloc] initWithScriptPath:scriptPath];
         [self.navigationController pushViewController:scriptEditorViewController animated:YES];
     }
 }
 
+- (void)startMonitorForFilePath:(NSString *)filePath {
+    [self stopMonitor];
+    
+    int fd = open(filePath.UTF8String, O_RDONLY);
+    if (fd == -1)
+        return;
+    
+    dispatch_queue_t queue = dispatch_get_main_queue();
+    
+    dispatch_source_t source = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fd, DISPATCH_VNODE_DELETE | DISPATCH_VNODE_WRITE | DISPATCH_VNODE_EXTEND | DISPATCH_VNODE_RENAME | DISPATCH_VNODE_REVOKE, queue);
+    
+    self.source = source;
+    if (source)
+    {
+        dispatch_source_set_event_handler(source, ^{
+            [self reloadData];
+        });
+        
+        dispatch_source_set_cancel_handler(source, ^{
+            close((int)dispatch_source_get_handle(source));
+        });
+        
+        dispatch_resume(source);
+    } else {
+        close(fd);
+    }
+}
+
+- (void)stopMonitor {
+    if (self.source) {
+        dispatch_source_cancel(self.source);
+        self.source = nil;
+    }
+}
 
 @end

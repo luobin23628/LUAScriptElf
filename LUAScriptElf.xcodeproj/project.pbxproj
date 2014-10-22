@@ -102,6 +102,8 @@
 		AB4EA31719D53C7C005F1AF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB4EA31619D53C7C005F1AF5 /* main.m */; };
 		AB56F07219D7B864008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
 		AB56F07319D7B871008D9A83 /* libsimulatetouch.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB56F07119D7B864008D9A83 /* libsimulatetouch.dylib */; };
+		AB5B9AD619F5FF72001EB7B2 /* LightMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = A85EC20519DFF13F00376678 /* LightMessaging.m */; };
+		AB5B9AD719F5FF96001EB7B2 /* librocketbootstrap.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AB80255C19E9176300F2F85F /* librocketbootstrap.dylib */; };
 		AB80259819E92EB600F2F85F /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		AB80259C19E9511100F2F85F /* ProcessHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = AB80259A19E9511100F2F85F /* ProcessHelper.h */; };
 		AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
@@ -114,23 +116,6 @@
 		ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */ = {isa = PBXBuildFile; fileRef = ABE0ABF219EBEEF400E057C3 /* VolumeTweak.mm */; };
 		ABE33FF119F0FCB90036CEB0 /* ScriptEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABE33FF019F0FCB90036CEB0 /* ScriptEditorViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A84C3FEB19E993920015B635 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB4EA2FF19D53C7C005F1AF5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AB4EA30619D53C7C005F1AF5;
-			remoteInfo = LUAScriptElf;
-		};
-		A84C3FED19E993940015B635 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AB4EA2FF19D53C7C005F1AF5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A85EC1E019DFD70A00376678;
-			remoteInfo = LUAScriptTweak;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		76CBE73ACC174A8987D20574 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -241,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5B9AD719F5FF96001EB7B2 /* librocketbootstrap.dylib in Frameworks */,
 				A84C3FB919E9925D0015B635 /* CoreGraphics.framework in Frameworks */,
 				A84C3FBA19E9925D0015B635 /* UIKit.framework in Frameworks */,
 				A84C3FB819E9925D0015B635 /* Foundation.framework in Frameworks */,
@@ -615,8 +601,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A84C3FEE19E993940015B635 /* PBXTargetDependency */,
-				A84C3FEC19E993920015B635 /* PBXTargetDependency */,
 			);
 			name = LUAScriptElfUI;
 			productName = LUAScriptElfUI;
@@ -854,6 +838,7 @@
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
 				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				A84C3FC219E9925D0015B635 /* main.m in Sources */,
+				AB5B9AD619F5FF72001EB7B2 /* LightMessaging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,19 +903,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A84C3FEC19E993920015B635 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AB4EA30619D53C7C005F1AF5 /* LUAScriptElf */;
-			targetProxy = A84C3FEB19E993920015B635 /* PBXContainerItemProxy */;
-		};
-		A84C3FEE19E993940015B635 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A85EC1E019DFD70A00376678 /* LUAScriptTweak */;
-			targetProxy = A84C3FED19E993940015B635 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		A84C3FBE19E9925D0015B635 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
@@ -971,6 +943,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -984,8 +960,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
@@ -1005,13 +981,16 @@
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				INFOPLIST_FILE = "LUAScriptElfUI/LUAScriptElfUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/lib/**",
+					/opt/iOSOpenDev/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 10.2.10.15;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1024,6 +1003,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = (
+					armv7,
+					armv7s,
+				);
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1037,8 +1020,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
@@ -1055,13 +1038,16 @@
 				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
 				INFOPLIST_FILE = "LUAScriptElfUI/LUAScriptElfUI-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				LIBRARY_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/lib/**",
+					/opt/iOSOpenDev/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = "";
+				iOSOpenDevDevice = 10.2.10.15;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1110,9 +1096,9 @@
 				PROVISIONING_PROFILE = "";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.104;
+				iOSOpenDevDevice = "";
 				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevPath = /opt/iOSOpenDev;
 				iOSOpenDevRespringOnInstall = YES;
 				iOSOpenDevUsePackageVersionPList = YES;
@@ -1155,9 +1141,9 @@
 				PROVISIONING_PROFILE = "";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.104;
+				iOSOpenDevDevice = "";
 				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevPath = /opt/iOSOpenDev;
 				iOSOpenDevRespringOnInstall = YES;
 				iOSOpenDevUsePackageVersionPList = YES;
@@ -1416,9 +1402,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevDevice = "";
 				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevRespringOnInstall = NO;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
@@ -1467,9 +1453,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.102;
+				iOSOpenDevDevice = "";
 				iOSOpenDevInstallOnAnyBuild = NO;
-				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevInstallOnProfiling = NO;
 				iOSOpenDevRespringOnInstall = NO;
 				iOSOpenDevUsePackageVersionPList = YES;
 			};
