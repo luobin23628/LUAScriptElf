@@ -1078,8 +1078,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
 					"$(SDKROOT)/System/Library/PrivateFrameworks",
@@ -1138,8 +1138,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: 下 罗 (Y2M3LE6A7L)";
 				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(iOSOpenDevPath)/frameworks/**",
