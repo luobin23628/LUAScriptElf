@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Addition)
+@interface UIColor(Addition)
 
 - (void)getRGBComponents:(unsigned char[4])components;
 

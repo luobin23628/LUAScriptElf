@@ -242,7 +242,7 @@
 		AB80258819E91C7600F2F85F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB80259A19E9511100F2F85F /* ProcessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessHelper.h; sourceTree = "<group>"; };
 		AB80259B19E9511100F2F85F /* ProcessHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessHelper.m; sourceTree = "<group>"; };
-		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.lua; };
+		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
 		ABC5777919F7944D0026EA43 /* NSInvocation+.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+.h"; path = "submodules/CustomActionSheetAndAlert/ActionSheetAndAlert/NSInvocation+.h"; sourceTree = SOURCE_ROOT; };
@@ -1103,6 +1103,7 @@
 					"$(iOSOpenDevPath)/lib/**",
 					/opt/iOSOpenDev/lib,
 				);
+				OTHER_LDFLAGS = "-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -1160,6 +1161,7 @@
 					"$(iOSOpenDevPath)/lib/**",
 					/opt/iOSOpenDev/lib,
 				);
+				OTHER_LDFLAGS = "-Wl,-sectcreate,__RESTRICT,__restrict,/dev/null";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
