@@ -171,9 +171,9 @@ extern UIImage* _UICreateScreenUIImage();
 	// context.
 	unsigned char* data = CGBitmapContextGetData (cgctx);
 	if (data != NULL) {
-        for (int i = 0; i < w; i++) {
-            for (int j = 0; j < h; j++) {
-                int offset = 4*((w*i)+j);
+        for (size_t i = 0; i < w; i++) {
+            for (size_t j = 0; j < h; j++) {
+                size_t offset = 4*((w*i)+j);
 //                int alpha =  data[offset];
                 unsigned char red = data[offset+1];
                 unsigned char green = data[offset+2];

@@ -1729,6 +1729,9 @@ function getGoalAddress()
             end
         else
             ret = checkAddress(0x060fc788, 0x060fc808);
+            if ret == nil then
+                ret = checkAddress(0x0611F788, 0x0611F808);
+            end
         end
 	end
     return ret;
@@ -1783,7 +1786,12 @@ function main()
 		mSleep(1000);
 	end
 
-	
+	address = 0;
+	isFirst = true;
+	runLoopCount = 0;
+
+	setWaitLoopCount(2 * 60 * 3);
+
 	noError = waitUtilMeetCondition2(isLincseAgreeAlert, function ()
 			if w == 960 then
 				click(632, 478);
@@ -1794,6 +1802,8 @@ function main()
 		end, isStartPage, function ()
 			return true;
 		end);
+
+	setWaitLoopCount(2 * 60 * 1);
 
 	if not noError then
 		goto restart;
@@ -1936,6 +1946,8 @@ function main()
 	::seasonPage::
 
 	noError = waitUtilMeetCondition3(isSeasonPage, function ()
+			logDebug("isSeasonPage");
+			
 			mSleep(500);
 			click(width(1087), 119)
 			mSleep(500);
@@ -1947,6 +1959,9 @@ function main()
 			return false;
 		end, 
 		isSeasonSelectionPage, function ()
+
+			logDebug("isSeasonSelectionPage");
+
 			address = 0;
 			isFirst = true;
 			runLoopCount = 0;
@@ -1962,7 +1977,7 @@ function main()
 			mSleep(1000);
 			click(714, 508);
 			
-			mSleep(500);
+			mSleep(2000);
 
 			return false;
 		end);
@@ -1983,7 +1998,7 @@ function main()
 
 			adjustPlayer();
 
-			mSleep(500);
+			mSleep(1500);
 			click(width(1085), 43);
 			mSleep(500);
 

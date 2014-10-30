@@ -104,16 +104,6 @@ static void windowToScreenPosition(CGFloat *x, CGFloat *y) {
     }
 }
 
-static UIImage *getScreenUIImage() {
-    @autoreleasepool {
-        static UIImage *image = nil;
-        if (!image || !keepScreen) {
-            image = [UIImage screenshot];
-        }
-        return image;
-    }
-}
-
 extern void AudioServicesPlaySystemSoundWithVibration(SystemSoundID inSystemSoundID,id arg,NSDictionary* vibratePattern);
 extern void AudioServicesStopSystemSound(SystemSoundID inSystemSoundID);
 
@@ -238,7 +228,7 @@ static int l_touchDown(lua_State *L) {
         
         CGFloat scale = [UIScreen mainScreen].scale;
         CGPoint point = CGPointMake(x/scale, y/scale);
-        int r = [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchDown];
+        int r = [SimulateTouch simulateTouch:(int)ID atPoint:point withType:STTouchDown];
         lua_pushinteger(L, r);
     }
     return 1;
@@ -252,7 +242,7 @@ static int l_touchMove(lua_State *L) {
         windowToScreenPosition(&x, &y);
         CGFloat scale = [UIScreen mainScreen].scale;
         CGPoint point = CGPointMake(x/scale, y/scale);
-        [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchMove];
+        [SimulateTouch simulateTouch:(int)ID atPoint:point withType:STTouchMove];
     }
     return 0;
 }
@@ -266,7 +256,7 @@ static int l_touchUp(lua_State *L) {
         
         CGFloat scale = [UIScreen mainScreen].scale;
         CGPoint point = CGPointMake(x/scale, y/scale);
-        [SimulateTouch simulateTouch:ID atPoint:point withType:STTouchUp];
+        [SimulateTouch simulateTouch:(int)ID atPoint:point withType:STTouchUp];
     }
     return 0;
 }
