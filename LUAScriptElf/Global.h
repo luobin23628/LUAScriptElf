@@ -36,6 +36,6 @@ static LMConnection daemonConnection = {
 #define DaemonConnectionMessageIdRunStatus    10003
 
 
-
+NSString *uniqueDeviceID(void);
 
 #endif

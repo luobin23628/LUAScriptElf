@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "Global.h"
 
 @implementation AppDelegate
 
@@ -19,6 +20,7 @@
     RootViewController *rootViewController = [[RootViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
     self.window.rootViewController = nav;
+    
     
     [self.window makeKeyAndVisible];
     return YES;

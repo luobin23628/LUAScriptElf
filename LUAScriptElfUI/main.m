@@ -25,7 +25,9 @@ static void disable_gdb() {
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
+#ifdef __OPTIMIZE__
         disable_gdb();
+#endif
         setuid(0);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }

@@ -26,5 +26,10 @@
     <true/>
     <key>com.apple.private.hid.client.service-protected</key>
     <true/>
+    <key>com.apple.private.MobileGestalt.AllowedProtectedKeys</key>
+    <array>
+        <string>SerialNumber</string>
+        <string>UniqueDeviceID</string>
+    </array>
 </dict>
 </plist>

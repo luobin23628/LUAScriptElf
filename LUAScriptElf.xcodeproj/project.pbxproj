@@ -110,6 +110,10 @@
 		AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
 		AB80259F19E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
 		AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AB80259B19E9511100F2F85F /* ProcessHelper.m */; };
+		AB9D4E1219FF9BCD00474A52 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D4E1119FF9BCC00474A52 /* Global.m */; };
+		AB9D4E1319FF9BCD00474A52 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D4E1119FF9BCC00474A52 /* Global.m */; };
+		AB9D4E1419FF9BCD00474A52 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D4E1119FF9BCC00474A52 /* Global.m */; };
+		AB9D4E1519FF9BCD00474A52 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = AB9D4E1119FF9BCC00474A52 /* Global.m */; };
 		ABAC3D6F19E65E850053DB5F /* fifa15_.lua in Resources */ = {isa = PBXBuildFile; fileRef = ABAC3D6E19E65E850053DB5F /* fifa15_.lua */; };
 		ABAC3D7219E680100053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
 		ABAC3D7319E680180053DB5F /* ScreenUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = ABAC3D7119E680100053DB5F /* ScreenUtil.m */; };
@@ -242,6 +246,7 @@
 		AB80258819E91C7600F2F85F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB80259A19E9511100F2F85F /* ProcessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProcessHelper.h; sourceTree = "<group>"; };
 		AB80259B19E9511100F2F85F /* ProcessHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProcessHelper.m; sourceTree = "<group>"; };
+		AB9D4E1119FF9BCC00474A52 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		ABAC3D6E19E65E850053DB5F /* fifa15_.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fifa15_.lua; sourceTree = "<group>"; };
 		ABAC3D7019E680100053DB5F /* ScreenUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenUtil.h; sourceTree = "<group>"; };
 		ABAC3D7119E680100053DB5F /* ScreenUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenUtil.m; sourceTree = "<group>"; };
@@ -581,6 +586,7 @@
 				A88A7A0A19EC276C007D01EA /* NSTimer+Blocks.h */,
 				A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */,
 				A85EC20719DFF16100376678 /* Global.h */,
+				AB9D4E1119FF9BCC00474A52 /* Global.m */,
 				A85EC20419DFF13F00376678 /* LightMessaging.h */,
 				A85EC20519DFF13F00376678 /* LightMessaging.m */,
 				AB4EA30D19D53C7C005F1AF5 /* Package */,
@@ -934,6 +940,7 @@
 				A84C3FC619E9925D0015B635 /* AppDelegate.m in Sources */,
 				ABC5779619F7944D0026EA43 /* TKTextFieldAlertView.m in Sources */,
 				ABC5778F19F7944D0026EA43 /* NSInvocation+.m in Sources */,
+				AB9D4E1519FF9BCD00474A52 /* Global.m in Sources */,
 				A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */,
 				ABC5779419F7944D0026EA43 /* TKAlertView.m in Sources */,
 				ABC5779C19F7945E0026EA43 /* M9BackgroundView.m in Sources */,
@@ -954,6 +961,7 @@
 				AB03988519E5422B00431826 /* MemoryUtil.m in Sources */,
 				AB03988619E5422D00431826 /* LuaManager.m in Sources */,
 				AB8025A019E9511100F2F85F /* ProcessHelper.m in Sources */,
+				AB9D4E1419FF9BCD00474A52 /* Global.m in Sources */,
 				AB03988119E5422000431826 /* UIFakeKeypress.m in Sources */,
 				AB03988219E5422300431826 /* LUAScripSupport.m in Sources */,
 				ABE0ABF519EBF06700E057C3 /* VolumeTweak.mm in Sources */,
@@ -982,6 +990,7 @@
 				AB80259F19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A8F6D76419D6796000B549D0 /* AppDelegate.m in Sources */,
 				A8F6D76019D6796000B549D0 /* main.m in Sources */,
+				AB9D4E1319FF9BCD00474A52 /* Global.m in Sources */,
 				A8FD460919D67D6F00EF2C6D /* UIColorAddition.m in Sources */,
 				A820CF9719E01B0B0075DC26 /* LightMessaging.m in Sources */,
 			);
@@ -994,6 +1003,7 @@
 				A8F1A78219DEF6E600B09A8A /* AppUtil.m in Sources */,
 				AB0ED80D19D56FAB00F3A18A /* LuaManager.m in Sources */,
 				A85EC20619DFF13F00376678 /* LightMessaging.m in Sources */,
+				AB9D4E1219FF9BCD00474A52 /* Global.m in Sources */,
 				AB80259E19E9511100F2F85F /* ProcessHelper.m in Sources */,
 				A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */,
 				AB0ED81019D570ED00F3A18A /* LUAScripSupport.m in Sources */,
@@ -1078,6 +1088,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1139,6 +1150,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = LUAScriptElf/entitlements.plist;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yang Baocheng (NZZFV2EG7U)";
 				ENABLE_NS_ASSERTIONS = NO;
