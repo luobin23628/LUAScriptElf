@@ -125,6 +125,14 @@
 }
 
 + (NSArray*) getAppIdentifiers:(BOOL)onlyActive {
+    
+    
+//    #include <objc/runtime.h>
+//    Class LSApplicationWorkspace_class = objc_getClass("LSApplicationWorkspace");
+//    NSObject* workspace = [LSApplicationWorkspace_class performSelector:@selector(defaultWorkspace)];
+//    NSLog(@"apps: %@", [workspace performSelector:@selector(allApplications)]);
+    
+    
     CFArrayRef (*SBSCopyApplicationDisplayIdentifiers)(Boolean onlyActive, Boolean unknown) = [self lookupSymbol:@"SBSCopyApplicationDisplayIdentifiers"];
     
     NSArray *activeDisplayIdentifiers = (__bridge NSArray *)SBSCopyApplicationDisplayIdentifiers(onlyActive, NO);

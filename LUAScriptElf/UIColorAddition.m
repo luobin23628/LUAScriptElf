@@ -5,7 +5,6 @@
 //  Created by luobin on 14-9-26.
 //
 //
-
 #import "UIColorAddition.h"
 
 @implementation UIColor(Addition)
