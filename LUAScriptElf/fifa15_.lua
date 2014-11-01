@@ -1728,7 +1728,7 @@ function getGoalAddress()
                 ret = checkAddress(0x06139788, 0x06139808);
             end
         else
-            ret = checkAddress(0x060fc788, 0x060fc808);
+            ret = checkAddress(0x06082788, 0x06082808);
             if ret == nil then
                 ret = checkAddress(0x0611F788, 0x0611F808);
             end
