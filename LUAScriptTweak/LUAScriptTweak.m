@@ -108,7 +108,7 @@ static UIAlertView *cancelAlertView = nil;
                 system([[NSString stringWithFormat:@"LUAScriptElf %@", scriptPath] UTF8String]);
                 
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    NSString *message = [NSString stringWithFormat:@"%@播放结束", scriptPath];
+                    NSString *message = [NSString stringWithFormat:@"%@播放结束", [scriptPath lastPathComponent]];
 
                     cancelAlertView = [[UIAlertView alloc] initWithTitle:nil message:message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
                     [cancelAlertView show];
@@ -143,7 +143,7 @@ static void handleVolumeDownButtonLongPress()
             } else {
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     if (scriptPath) {
-                        NSString *message = [NSString stringWithFormat:@"是否运行%@", scriptPath];
+                        NSString *message = [NSString stringWithFormat:@"是否运行%@", [scriptPath lastPathComponent]];
                         delegate = [[AlertViewDeletege alloc] init];
                         runAlertView = [[UIAlertView alloc] initWithTitle:message message:nil delegate:delegate cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
                         [runAlertView show];

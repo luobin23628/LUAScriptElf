@@ -38,8 +38,6 @@
 		A85EC1E219DFD70A00376678 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB0ED80919D55B7400F3A18A /* Foundation.framework */; };
 		A85EC1E319DFD70A00376678 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
 		A85EC1EC19DFD70A00376678 /* LUAScriptTweak.m in Sources */ = {isa = PBXBuildFile; fileRef = A85EC1EB19DFD70A00376678 /* LUAScriptTweak.m */; };
-		A85EC1FF19DFDC3000376678 /* libactivator.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1FE19DFDC3000376678 /* libactivator.dylib */; };
-		A85EC20019DFDC4500376678 /* libactivator.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1FE19DFDC3000376678 /* libactivator.dylib */; };
 		A85EC20119DFDD1000376678 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1D119DF074C00376678 /* IOKit.framework */; };
 		A85EC20219DFDD1000376678 /* IOMobileFramebuffer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1D219DF074C00376678 /* IOMobileFramebuffer.framework */; };
 		A85EC20319DFDD1000376678 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A85EC1D319DF074C00376678 /* IOSurface.framework */; };
@@ -301,7 +299,6 @@
 				A85EC20119DFDD1000376678 /* IOKit.framework in Frameworks */,
 				A85EC20219DFDD1000376678 /* IOMobileFramebuffer.framework in Frameworks */,
 				AB03987F19E541BE00431826 /* libPods.a in Frameworks */,
-				A85EC20019DFDC4500376678 /* libactivator.dylib in Frameworks */,
 				A85EC1E219DFD70A00376678 /* Foundation.framework in Frameworks */,
 				A85EC1E319DFD70A00376678 /* UIKit.framework in Frameworks */,
 			);
@@ -335,7 +332,6 @@
 				A82BB06519EEABB300AAB670 /* CoreImage.framework in Frameworks */,
 				A82BB06119EEAB4900AAB670 /* TesseractOCR.framework in Frameworks */,
 				A85EC20C19DFF48700376678 /* librocketbootstrap.dylib in Frameworks */,
-				A85EC1FF19DFDC3000376678 /* libactivator.dylib in Frameworks */,
 				A85EC1D419DF074C00376678 /* IOKit.framework in Frameworks */,
 				A85EC1D519DF074C00376678 /* IOMobileFramebuffer.framework in Frameworks */,
 				A85EC1D619DF074C00376678 /* IOSurface.framework in Frameworks */,
@@ -1101,7 +1097,7 @@
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.105;
+				iOSOpenDevDevice = 192.168.1.100;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1159,7 +1155,7 @@
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.105;
+				iOSOpenDevDevice = 192.168.1.100;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
