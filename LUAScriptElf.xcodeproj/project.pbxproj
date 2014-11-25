@@ -53,6 +53,10 @@
 		A88A7A0E19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
 		A88A7A0F19EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; };
 		A88A7A1019EC276C007D01EA /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		A88B44711A237E2D00FDF9DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B446D1A237E2D00FDF9DF /* Icon.png */; };
+		A88B44721A237E2D00FDF9DF /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B446E1A237E2D00FDF9DF /* Default-736h@3x.png */; };
+		A88B44731A237E2D00FDF9DF /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B446F1A237E2D00FDF9DF /* Default-667h@2x.png */; };
+		A88B44741A237E2D00FDF9DF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A88B44701A237E2D00FDF9DF /* Default-568h@2x.png */; };
 		A89BFC0819D6710500DDC568 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89BFC0719D6710500DDC568 /* UIKit.framework */; };
 		A89D202819D59E1D0049153D /* UIImageAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202719D59E1D0049153D /* UIImageAddition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		A89D202B19D5B3020049153D /* UIColorAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = A89D202A19D5B3020049153D /* UIColorAddition.m */; };
@@ -190,6 +194,10 @@
 		A88A79C219EC0E7B007D01EA /* GraphicsServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GraphicsServices.framework; path = ../../../../../opt/theos/frameworks/GraphicsServices.framework; sourceTree = "<group>"; };
 		A88A7A0A19EC276C007D01EA /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
 		A88A7A0B19EC276C007D01EA /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		A88B446D1A237E2D00FDF9DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		A88B446E1A237E2D00FDF9DF /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
+		A88B446F1A237E2D00FDF9DF /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		A88B44701A237E2D00FDF9DF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		A89BFC0719D6710500DDC568 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A89D202619D59E1D0049153D /* UIImageAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageAddition.h; sourceTree = "<group>"; };
 		A89D202719D59E1D0049153D /* UIImageAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageAddition.m; sourceTree = "<group>"; };
@@ -367,6 +375,10 @@
 		A84C3FBC19E9925D0015B635 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A88B446D1A237E2D00FDF9DF /* Icon.png */,
+				A88B446E1A237E2D00FDF9DF /* Default-736h@3x.png */,
+				A88B446F1A237E2D00FDF9DF /* Default-667h@2x.png */,
+				A88B44701A237E2D00FDF9DF /* Default-568h@2x.png */,
 				ABC5779D19F7A4650026EA43 /* back_indicator_image@2x.png */,
 				A84C3FBD19E9925D0015B635 /* LUAScriptElfUI-Info.plist */,
 				A84C3FBE19E9925D0015B635 /* InfoPlist.strings */,
@@ -782,8 +794,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88B44711A237E2D00FDF9DF /* Icon.png in Resources */,
+				A88B44731A237E2D00FDF9DF /* Default-667h@2x.png in Resources */,
 				A84C3FC019E9925D0015B635 /* InfoPlist.strings in Resources */,
+				A88B44721A237E2D00FDF9DF /* Default-736h@3x.png in Resources */,
 				ABC5779E19F7A4650026EA43 /* back_indicator_image@2x.png in Resources */,
+				A88B44741A237E2D00FDF9DF /* Default-568h@2x.png in Resources */,
 				A84C3FD219E9925D0015B635 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1053,8 +1069,6 @@
 					armv7,
 					armv7s,
 				);
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1097,7 +1111,7 @@
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 192.168.1.115;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1114,8 +1128,6 @@
 					armv7,
 					armv7s,
 				);
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1155,7 +1167,7 @@
 				WRAPPER_EXTENSION = app;
 				iOSOpenDevBuildPackageOnAnyBuild = NO;
 				iOSOpenDevCopyOnBuild = NO;
-				iOSOpenDevDevice = 192.168.1.100;
+				iOSOpenDevDevice = 192.168.1.115;
 				iOSOpenDevInstallOnAnyBuild = NO;
 				iOSOpenDevInstallOnProfiling = YES;
 				iOSOpenDevPath = /opt/iOSOpenDev;
@@ -1167,10 +1179,7 @@
 		A85EC1F819DFD70B00376678 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1217,10 +1226,7 @@
 		A85EC1F919DFD70B00376678 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					armv7,
-					armv7s,
-				);
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;

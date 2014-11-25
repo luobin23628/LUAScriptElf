@@ -1730,6 +1730,9 @@ function getGoalAddress()
         else
             ret = checkAddress(0x06082788, 0x06082808);
             if ret == nil then
+                ret = checkAddress(0x0606D788, 0x0606D808);
+            end
+            if ret == nil then
                 ret = checkAddress(0x0611F788, 0x0611F808);
             end
         end
